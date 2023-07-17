@@ -17,7 +17,7 @@ const StButton = styled.button`
   cursor: pointer;
   align-items: center;
   background-color: ${props => props.$bgColor || 'transparent'};
-  border: ${props => props.$stBorder || 'solid 3px #8babfc'};
+  border: ${props => props.$stBorder || 'solid 3px #9ADCFF'};
   color: ${props => props.$fontColor || '#fff'};
   border-radius: 8px;
   padding: 1px 0;
@@ -52,7 +52,7 @@ const StButton = styled.button`
     position: absolute;
     border-radius: 4px;
     z-index: -1;
-    background-color: #8babfc;
+    background-color: #9adcff;
     left: 0;
     top: 0;
     transition: 0.3s ease-in-out;

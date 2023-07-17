@@ -1,14 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 // import todayTrip from '../public/todayTrip.png';
 
 const Header = () => {
+  const navigate = useNavigate('');
   return (
     <div>
-      <h1>
-        <a href="">
-          {/* <img src={todayTrip} alt="오늘의 여행 로고" /> */}
-          오늘의 여행
-        </a>
+      <h1 onClick={() => navigate('/')}>
+        {/* <img src={todayTrip} alt="오늘의 여행 로고" /> */}
+        오늘의 여행
       </h1>
       {/* 검색창 */}
       <div>
