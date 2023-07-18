@@ -1,9 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { StButton } from './Button';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { auth } from '../../firebase';
 // import todayTrip from '../public/todayTrip.png';
 
 const Header = () => {
+  // 로그인 유저를 state...?
+  // const [loginUser, setLoginUser] = useState();
+
   const navigate = useNavigate('');
+
+  useEffect(() => {
+    onAuthStateChanged(auth, user => {
+      console.log('userUseEffect1', user);
+    });
+  }, []);
+
+  const user = auth.currentUser;
+
+  const logoutHandler = async () => {
+    await signOut(auth);
+    navigate('/');
+  };
+
   return (
     <div>
       <h1 onClick={() => navigate('/')}>
@@ -18,8 +38,28 @@ const Header = () => {
       </div>
       {/* 로그인버튼 */}
       <div>
-        <button>로그인</button>
-        <button>회원가입</button>
+        {user ? (
+          <StButton onClick={logoutHandler} $btnSize="small">
+            로그아웃
+          </StButton>
+        ) : (
+          <>
+            <button
+              onClick={() => {
+                navigate('/login');
+              }}
+            >
+              로그인
+            </button>
+            <button
+              onClick={() => {
+                navigate('/join');
+              }}
+            >
+              회원가입
+            </button>
+          </>
+        )}
       </div>
     </div>
   );
