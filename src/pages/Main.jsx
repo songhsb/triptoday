@@ -15,8 +15,6 @@ const Main = () => {
   //   return <h1>오류가 발생했어요!</h1>;
   // }
 
-  console.log(data);
-
   const handleDetailButtonClick = id => {
     navigate(`/detail/${id}`);
   };

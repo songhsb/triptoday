@@ -2,8 +2,8 @@ import React from 'react';
 import BasicButtons from '../components/common/BasicButtons';
 import { StButton } from '../components/common/Button';
 import { useParams } from 'react-router-dom';
-import { useQuery } from 'react-query';
-import { getPosts } from '../api/posts';
+import { useMutation, useQuery, useQueryClient } from 'react-query';
+import { deletePosts, getPosts } from '../api/posts';
 import { StCategory, StTitle } from './Main';
 import { styled } from 'styled-components';
 
@@ -15,8 +15,15 @@ const Detail = () => {
 
   const posts = data.data.find(item => item.id == id);
 
-  console.log(posts);
-
+  const queryClient = useQueryClient();
+  const postsMutation = useMutation(deletePosts, {
+    onSuccess: () => {
+      queryClient.invalidateQueries('postsData');
+    },
+  });
+  const handleDeleteButtonClick = async id => {
+    postsMutation.mutate(id);
+  };
   return (
     <>
       <StTitle>{posts.location}</StTitle>
@@ -25,6 +32,12 @@ const Detail = () => {
         <p>{posts.description}</p>
       </div>
       <StButton $fontColor={'black'}>버튼입니다</StButton>
+      <div>
+        <StButton $fontColor={'black'}>수정</StButton>
+        <StButton $fontColor={'black'} onClick={() => handleDeleteButtonClick(posts.id)}>
+          삭제
+        </StButton>
+      </div>
     </>
   );
 };

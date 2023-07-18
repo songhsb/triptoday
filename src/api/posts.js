@@ -12,5 +12,10 @@ const getPosts = async () => {
 const addPosts = async newPosts => {
   await axios.post(`${process.env.REACT_APP_SERVER_URL}/posts`, newPosts);
 };
-
-export { getPosts, addPosts };
+const updatePosts = async newPosts => {
+  await axios.patch(`${process.env.REACT_APP_SERVER_URL}/posts`, newPosts);
+};
+const deletePosts = async id => {
+  await axios.delete(`${process.env.REACT_APP_SERVER_URL}/posts/${id}`);
+};
+export { getPosts, addPosts, updatePosts, deletePosts };
