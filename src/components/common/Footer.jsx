@@ -1,14 +1,19 @@
 import React from 'react';
+import { styled } from 'styled-components';
 
 const Footer = () => {
   return (
     <>
-      <div>
+      {/* <div>
         <img src="" alt="푸터로고" />
-      </div>
-      <div>푸터 정보</div>
+      </div> */}
+      <StFooter>푸터 정보</StFooter>
     </>
   );
 };
 
 export default Footer;
+
+const StFooter = styled.div`
+  background-color: #ccc;
+`;

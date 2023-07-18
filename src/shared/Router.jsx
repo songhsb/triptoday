@@ -8,6 +8,7 @@ import Layout from '../components/common/Layout';
 import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Write from '../pages/Write';
 
 const Router = () => {
   return (
@@ -16,9 +17,10 @@ const Router = () => {
       <Layout>
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/detail" element={<Detail />} />
+          <Route path="/detail/:id" element={<Detail />} />
           <Route path="/join" element={<Join />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/write" element={<Write />} />
         </Routes>
       </Layout>
       <Footer />
