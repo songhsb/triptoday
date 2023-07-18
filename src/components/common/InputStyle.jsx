@@ -16,10 +16,13 @@ const StLabel = styled.label``;
 const StInput = styled.input`
   width: ${props => props.$inputWidth || '100%'};
   border: 0;
-  border: solid 3px #9adcff;
+  border: solid 1px #ddd;
   border-radius: 10px;
-  padding: 10px;
-  margin: 8px 0 12px;
+  padding: 13px;
+  margin: 12px 0;
+  &::placeholder {
+    color: #cecece;
+  }
   &:focus {
     border: 0;
     border: solid 3px #9adcff;

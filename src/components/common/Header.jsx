@@ -1,12 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
 import { StButton } from './Button';
 import logoimg from '../../img/logoImg.png';
 import Search from '../../img/Search.png';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { auth } from '../../firebase';
+// import todayTrip from '../public/todayTrip.png';
 
 const Header = () => {
+  // 로그인 유저를 state...?
+  // const [loginUser, setLoginUser] = useState();
+
   const navigate = useNavigate('');
+
+  useEffect(() => {
+    onAuthStateChanged(auth, user => {
+      console.log('userUseEffect1', user);
+    });
+  }, []);
+
+  const user = auth.currentUser;
+
+  const logoutHandler = async () => {
+    await signOut(auth);
+    navigate('/');
+  };
+
   return (
     <StHeader>
       <StLogo onClick={() => navigate('/')}>
@@ -24,6 +44,28 @@ const Header = () => {
           글쓰기
         </StButton>
         <StButton $fontColor={'black'}>회원가입</StButton>
+        {user ? (
+          <StButton onClick={logoutHandler} $btnSize="small">
+            로그아웃
+          </StButton>
+        ) : (
+          <>
+            <button
+              onClick={() => {
+                navigate('/login');
+              }}
+            >
+              로그인
+            </button>
+            <button
+              onClick={() => {
+                navigate('/join');
+              }}
+            >
+              회원가입
+            </button>
+          </>
+        )}
       </StContener>
     </StHeader>
   );
