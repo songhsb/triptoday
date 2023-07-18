@@ -24,7 +24,8 @@ const StButton = styled.button`
   color: ${props => props.$fontColor || '#black'};
   border-radius: 8px;
   padding: 1px 0;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
   ${({ $btnSize }) => {
     let btnHeight;
