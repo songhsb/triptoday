@@ -1,7 +1,15 @@
-import React from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import React, { useEffect } from 'react';
 import { styled } from 'styled-components';
+import { auth } from '../../firebase';
 
 const Layout = ({ children }) => {
+  useEffect(() => {
+    onAuthStateChanged(auth, user => {
+      console.log('userUseEffect', user);
+    });
+  }, []);
+
   return <Container>{children}</Container>;
 };
 

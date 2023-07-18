@@ -31,13 +31,17 @@ const StButton = styled.button`
     let btnWidth;
     switch ($btnSize) {
       case 'large':
-        btnWidth = '230px';
+        btnWidth = '100%';
+        btnHeight = '50px';
+        break;
+      case 'half':
+        btnWidth = '50%';
         btnHeight = '50px';
         break;
 
       case 'small':
-        btnWidth = '100px';
-        btnHeight = '40px';
+        btnWidth = '80px';
+        btnHeight = '36px';
         break;
 
       default:
