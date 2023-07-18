@@ -10,6 +10,7 @@ const Header = () => {
         {/* <img src={todayTrip} alt="오늘의 여행 로고" /> */}
         오늘의 여행
       </h1>
+      ``
       {/* 검색창 */}
       <div>
         <label htmlFor="">검색창</label>
