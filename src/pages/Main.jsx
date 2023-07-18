@@ -3,6 +3,7 @@ import { useQuery } from 'react-query';
 import { getPosts } from '../api/posts';
 import { styled } from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import { StButton } from '../components/common/Button';
 
 const Main = () => {
   const { isLoading, isError, data } = useQuery('postsData', getPosts);
@@ -66,17 +67,18 @@ const Main = () => {
 
       <div>
         {/* 셀렉트박스  */}
-        <select>
-          <option>전체</option>
-          <option>서울</option>
-          <option>경기</option>
-          <option>강원</option>
-          <option>부산</option>
-        </select>
+        <div>
+          <StButton $fontColor={'black'}>전체</StButton>
+          <StButton $fontColor={'black'}>서울</StButton>
+          <StButton $fontColor={'black'}>경기도</StButton>
+          <StButton $fontColor={'black'}>강원도</StButton>
+          <StButton $fontColor={'black'}>부산</StButton>
+        </div>
         <StUl>
           {data?.data.map((item, index) => (
             <StyledDiaryBox key={index} onClick={() => handleDetailButtonClick(item.id)}>
               <div>
+                <StImage src={item.image} />
                 <StTitle>{item.location}</StTitle>
                 <StMpCategory>{item.category}</StMpCategory>
               </div>
@@ -99,7 +101,7 @@ const StUl = styled.ul`
 `;
 
 const StyledDiaryBox = styled.li`
-  padding: 20px;
+  padding: 10px;
   background-color: #dbe9f6;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -109,6 +111,12 @@ const StyledDiaryBox = styled.li`
   &:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
+`;
+
+export const StImage = styled.img`
+  width: 190px;
+  height: 206px;
+  margin-bottom: 5px;
 `;
 
 export const StTitle = styled.h2`

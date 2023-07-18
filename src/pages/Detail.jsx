@@ -1,13 +1,14 @@
 import React from 'react';
 import BasicButtons from '../components/common/BasicButtons';
 import { StButton } from '../components/common/Button';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 import { deletePosts, getPosts } from '../api/posts';
 import { StCategory, StTitle } from './Main';
 import { styled } from 'styled-components';
 
 const Detail = () => {
+  const navigate = useNavigate();
   const param = useParams();
   const id = param.id;
 
@@ -23,12 +24,13 @@ const Detail = () => {
   });
   const handleDeleteButtonClick = async id => {
     postsMutation.mutate(id);
+    navigate('/');
   };
   return (
     <>
       <StTitle>{posts.location}</StTitle>
       <div>
-        <StDetailCategory>{posts.category}</StDetailCategory>
+        <StDetailCategory>지역: {posts.category}</StDetailCategory>
         <p>{posts.description}</p>
       </div>
       <StButton $fontColor={'black'}>버튼입니다</StButton>
@@ -46,7 +48,7 @@ export default Detail;
 
 const StDetailCategory = styled.p`
   color: black;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 800;
   margin: 10px 0px;
 `;

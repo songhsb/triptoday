@@ -13,7 +13,7 @@ function Write() {
   const [category, setCategory] = useInput('서울');
   const [location, setLocation] = useInput('');
   const [description, setDescription] = useInput('');
-  // const [URL, setURL] = useInput('');
+  const [image, setImage] = useInput('');
 
   const queryClient = useQueryClient();
 
@@ -33,6 +33,7 @@ function Write() {
       category,
       location,
       description,
+      image,
     });
     navigate('/');
   };
@@ -64,8 +65,8 @@ function Write() {
           <StSearchText value={description} onChange={setDescription} />
         </div>
         <div>
-          URL <br />
-          <StSearchText />
+          Image <br />
+          <StSearchText value={image} onChange={setImage} />
         </div>
         <StButton $fontColor={'black'}>등록</StButton>
       </form>
