@@ -1,6 +1,25 @@
 import React from 'react';
+import { useQuery } from 'react-query';
+import { getPosts } from '../api/posts';
+import { styled } from 'styled-components';
+import { useNavigate } from 'react-router-dom';
+import { StButton } from '../components/common/Button';
 
 const Main = () => {
+  const { isLoading, isError, data } = useQuery('postsData', getPosts);
+  const navigate = useNavigate();
+  // if (isLoading) {
+  //   return <h1>로딩중입니다.</h1>;
+  // }
+
+  // if (isError) {
+  //   return <h1>오류가 발생했어요!</h1>;
+  // }
+
+  const handleDetailButtonClick = id => {
+    navigate(`/detail/${id}`);
+  };
+
   return (
     <>
       {/* // 메인배너  */}
@@ -48,58 +67,67 @@ const Main = () => {
 
       <div>
         {/* 셀렉트박스  */}
-        <ul>
-          <li>
-            <button>전체</button>
-          </li>
-          <li>
-            <button>서울</button>
-          </li>
-          <li>
-            <button>경기</button>
-          </li>
-          <li>
-            <button>강원</button>
-          </li>
-          <li>
-            <button>부산</button>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <img src="" alt="여행지1" />
-          </li>
-          <li>
-            <img src="" alt="여행지2" />
-          </li>
-          <li>
-            <img src="" alt="여행지3" />
-          </li>
-          <li>
-            <img src="" alt="여행지4" />
-          </li>
-          <li>
-            <img src="" alt="여행지5" />
-          </li>
-          <li>
-            <img src="" alt="여행지6" />
-          </li>
-          <li>
-            <img src="" alt="여행지7" />
-          </li>
-          <li>
-            <img src="" alt="여행지8" />
-          </li>
-          <li>
-            <img src="" alt="여행지9" />
-          </li>
-          <li>
-            <img src="" alt="여행지10" />
-          </li>
-        </ul>
+        <div>
+          <StButton $fontColor={'black'}>전체</StButton>
+          <StButton $fontColor={'black'}>서울</StButton>
+          <StButton $fontColor={'black'}>경기도</StButton>
+          <StButton $fontColor={'black'}>강원도</StButton>
+          <StButton $fontColor={'black'}>부산</StButton>
+        </div>
+        <StUl>
+          {data?.data.map((item, index) => (
+            <StyledDiaryBox key={index} onClick={() => handleDetailButtonClick(item.id)}>
+              <div>
+                <StImage src={item.image} />
+                <StTitle>{item.location}</StTitle>
+                <StMpCategory>{item.category}</StMpCategory>
+              </div>
+            </StyledDiaryBox>
+          ))}
+        </StUl>
       </div>
     </>
   );
 };
 
 export default Main;
+
+const StUl = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 5px;
+  margin: 5px;
+  gap: 20px;
+`;
+
+const StyledDiaryBox = styled.li`
+  padding: 10px;
+  background-color: #dbe9f6;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+`;
+
+export const StImage = styled.img`
+  width: 190px;
+  height: 206px;
+  margin-bottom: 5px;
+`;
+
+export const StTitle = styled.h2`
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #293241;
+`;
+
+const StMpCategory = styled.p`
+  color: #888;
+  font-size: 14px;
+  margin-top: 5px;
+`;
