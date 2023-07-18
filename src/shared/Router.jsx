@@ -9,6 +9,7 @@ import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Write from '../pages/Write';
+import UpdateWrite from '../pages/UpdateWrite';
 
 const Router = () => {
   return (
@@ -21,6 +22,7 @@ const Router = () => {
           <Route path="/join" element={<Join />} />
           <Route path="/login" element={<Login />} />
           <Route path="/write" element={<Write />} />
+          <Route path="/update/:id" element={<UpdateWrite />} />
         </Routes>
       </Layout>
       <Footer />

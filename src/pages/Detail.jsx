@@ -22,6 +22,9 @@ const Detail = () => {
       queryClient.invalidateQueries('postsData');
     },
   });
+  const handleUpdateButtonClick = async id => {
+    navigate(`/update/${id}`);
+  };
   const handleDeleteButtonClick = async id => {
     postsMutation.mutate(id);
     navigate('/');
@@ -35,7 +38,9 @@ const Detail = () => {
       </div>
       <StButton $fontColor={'black'}>버튼입니다</StButton>
       <div>
-        <StButton $fontColor={'black'}>수정</StButton>
+        <StButton $fontColor={'black'} onClick={() => handleUpdateButtonClick(posts.id)}>
+          수정
+        </StButton>
         <StButton $fontColor={'black'} onClick={() => handleDeleteButtonClick(posts.id)}>
           삭제
         </StButton>
