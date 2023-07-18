@@ -5,7 +5,7 @@ import ReadMapInPost from '../components/Map/ReadMapInPost';
 const MapTest = () => {
   return (
     <>
-      <ReadMapInPost />
+      <MapTestNormal />
     </>
   );
 };
