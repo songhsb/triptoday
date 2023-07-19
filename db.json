@@ -38,6 +38,30 @@
       "email": "작성자 아이디",
       "body": "some comment",
       "postId": 1
+    },
+    {
+      "email": "작성자 아이디",
+      "body": "테스트",
+      "postId": "1",
+      "id": 2
+    },
+    {
+      "email": "작성자 아이디",
+      "body": "테스트입니다.",
+      "postId": "1",
+      "id": 3
+    },
+    {
+      "email": "작성자 아이디",
+      "body": "호호",
+      "postId": "1",
+      "id": 4
+    },
+    {
+      "email": "작성자 아이디",
+      "body": "ㄹㄹㄹ",
+      "postId": "1",
+      "id": 5
     }
   ]
 }
