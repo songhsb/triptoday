@@ -40,6 +40,18 @@
       "description": "ㅇ",
       "image": "ㅇ",
       "id": 3
+    },
+    {
+      "latLng": {
+        "latitude": 35.87957115455959,
+        "longitude": 129.22917703852363
+      },
+      "address": "경북 경주시 용강동 434-5",
+      "category": "서울",
+      "location": "d",
+      "description": "d",
+      "image": "d",
+      "id": 4
     }
   ],
   "comments": [
