@@ -1,16 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 const { kakao } = window;
+
 const MapForWrite = ({ markerInfo, setMarkerInfo }) => {
   const mapRef = useRef(null);
   const markerRef = useRef(null);
   const [map, setMap] = useState(null);
-  // const [markerInfo, setMarkerInfo] = useState(null);
   const [searchError, setSearchError] = useState(false);
 
   useEffect(() => {
     //맵을 보여줄 html요소에 Ref를 부여해 DOM 요소를 가져온다.
     const container = mapRef.current;
-    //지도를 생성할 때 필요한 기본 옵션 (대한민국 지도의 중앙 위치, 제주를 제외한 한반도 다 보여주기)
+    //지도를 생성할 때 필요한 기본 옵션
     const options = {
       center: new kakao.maps.LatLng(36.469287, 128.0803538),
       level: 13, // 확대/축소 레벨
@@ -18,6 +18,7 @@ const MapForWrite = ({ markerInfo, setMarkerInfo }) => {
     //
     //지도 생성 및 객체 리턴
     const newMap = new kakao.maps.Map(container, options);
+
     // 지도를 클릭했을 때 이벤트 핸들러(핀생성)
     const mapClickHandler = mouseEvent => {
       // 클릭한 위도, 경도 정보를 가져옵니다

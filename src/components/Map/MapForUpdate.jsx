@@ -2,19 +2,15 @@ import React, { useEffect, useRef, useState } from 'react';
 const { kakao } = window;
 
 const MapForUpdate = ({ markerInfo, setMarkerInfo, posts }) => {
-  console.log('map에 posts', posts);
-  console.log('markerInfo', markerInfo);
-
   const mapRef = useRef(null);
   const markerRef = useRef(null);
   const [map, setMap] = useState(null);
-  // const [markerInfo, setMarkerInfo] = useState(null);
   const [searchError, setSearchError] = useState(false);
 
   useEffect(() => {
     //맵을 보여줄 html요소에 Ref를 부여해 DOM 요소를 가져온다.
     const container = mapRef.current;
-    //지도를 생성할 때 필요한 기본 옵션 (대한민국 지도의 중앙 위치, 제주를 제외한 한반도 다 보여주기)
+    //지도를 생성할 때 필요한 기본 옵션
     const options = {
       center: new kakao.maps.LatLng(posts.latLng.latitude, posts.latLng.longitude),
       level: 4, // 확대/축소 레벨
