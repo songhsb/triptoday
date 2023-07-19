@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StSearchText } from '../components/common/Header';
 import { styled } from 'styled-components';
 import useInput from '../hooks/useInput';
@@ -6,6 +6,7 @@ import { StButton } from '../components/common/Button';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 import { getPosts, updatePosts } from '../api/posts';
 import { useNavigate, useParams } from 'react-router-dom';
+import MapForUpdate from '../components/Map/MapForUpdate';
 
 function UpdateWrite() {
   const navigate = useNavigate();
@@ -20,6 +21,7 @@ function UpdateWrite() {
   const [updatelocation, setLocation] = useInput(posts.location);
   const [updatedescription, setDescription] = useInput(posts.description);
   const [updateimage, setImage] = useInput(posts.image);
+  const [markerInfo, setMarkerInfo] = useState(null);
 
   const queryClient = useQueryClient();
 
@@ -31,13 +33,35 @@ function UpdateWrite() {
 
   const handleWriteButtonClick = e => {
     e.preventDefault();
-    const newPosts = {
-      category: updatecategory,
-      location: updatelocation,
-      description: updatedescription,
-      image: updateimage,
-      id,
-    };
+    let newPosts = {};
+    console.log('posts.latLng', posts.latLng);
+    console.log('posts.address', posts.address);
+    if (markerInfo === null) {
+      if (window.confirm('위치가 재설정되지 않았습니다. 수정전의 위치를 유지하겠습니까?')) {
+        newPosts = {
+          category: updatecategory,
+          location: updatelocation,
+          description: updatedescription,
+          image: updateimage,
+          id,
+          latLng: posts.latLng,
+          address: posts.address,
+        };
+      } else {
+        alert('위치를 재설정 해주세요');
+        return false;
+      }
+    } else if (!!markerInfo) {
+      newPosts = {
+        category: updatecategory,
+        location: updatelocation,
+        description: updatedescription,
+        image: updateimage,
+        id,
+        latLng: { latitude: markerInfo.position.getLat(), longitude: markerInfo.position.getLng() },
+        address: markerInfo.address,
+      };
+    }
     console.log(newPosts);
     console.log(posts);
     postsMutation.mutate({ id, posts, newPosts });
@@ -74,6 +98,7 @@ function UpdateWrite() {
           Image <br />
           <StSearchText value={updateimage} onChange={setImage} />
         </div>
+        <MapForUpdate markerInfo={markerInfo} setMarkerInfo={setMarkerInfo} posts={posts} />
         <StButton $fontColor={'black'}>수정</StButton>
         <StButton type="button" onClick={handleCancelButtonClick} $fontColor={'black'}>
           취소{' '}

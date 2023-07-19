@@ -18,40 +18,16 @@
       "image": "https://lh5.googleusercontent.com/p/AF1QipNjAAxD4nMsXhEs9BN0AdR34uwbyV_Kbwfyz93g=w408-h273-k-no"
     },
     {
-      "latLng": {
-        "latitude": 36.31200206233167,
-        "longitude": 127.13932064310768
-      },
-      "address": "충남 공주시 계룡면 경천리 649-1",
-      "category": "서울",
-      "location": "test",
-      "description": "test",
-      "image": "test",
-      "id": 2
-    },
-    {
-      "latLng": {
-        "latitude": 36.635805796073406,
-        "longitude": 127.9599755418372
-      },
-      "address": "경북 문경시 농암면 궁기리 산 1-1",
-      "category": "서울",
-      "location": "ㅇ",
-      "description": "ㅇ",
-      "image": "ㅇ",
-      "id": 3
-    },
-    {
-      "latLng": {
-        "latitude": 35.87957115455959,
-        "longitude": 129.22917703852363
-      },
-      "address": "경북 경주시 용강동 434-5",
       "category": "서울",
       "location": "d",
       "description": "d",
       "image": "d",
-      "id": 4
+      "latLng": {
+        "latitude": 35.85210507253965,
+        "longitude": 129.26207529902905
+      },
+      "address": "경북 경주시 북군동 194-15",
+      "id": 2
     }
   ],
   "comments": [

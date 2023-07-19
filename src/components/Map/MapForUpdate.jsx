@@ -1,22 +1,38 @@
 import React, { useEffect, useRef, useState } from 'react';
 const { kakao } = window;
 
-const MapForUpdate = () => {
+const MapForUpdate = ({ markerInfo, setMarkerInfo, posts }) => {
+  console.log('map에 posts', posts);
+  console.log('markerInfo', markerInfo);
+
   const mapRef = useRef(null);
   const markerRef = useRef(null);
   const overlayRef = useRef(null);
   const [map, setMap] = useState(null);
-  const [markerInfo, setMarkerInfo] = useState(null);
+  // const [markerInfo, setMarkerInfo] = useState(null);
   const [searchError, setSearchError] = useState(false);
 
   useEffect(() => {
     const container = mapRef.current;
     const options = {
-      center: new kakao.maps.LatLng(36.469287, 128.0803538),
-      level: 13,
+      center: new kakao.maps.LatLng(posts.latLng.latitude, posts.latLng.longitude),
+      level: 4, // 확대/축소 레벨
     };
-
+    //지도 생성 및 객체 리턴
     const newMap = new kakao.maps.Map(container, options);
+    // [ ] test
+    // let marker = new kakao.maps.Marker({
+    //   map: newMap,
+    //   position: new kakao.maps.LatLng(posts.latLng.latitude, posts.latLng.longitude),
+    // });
+    // marker.setMap(newMap);
+    const position = new kakao.maps.LatLng(posts.latLng.latitude, posts.latLng.longitude);
+    markerRef.current = new kakao.maps.Marker({
+      position,
+    });
+    markerRef.current.setMap(newMap);
+
+    // 지도를 클릭했을 때 이벤트 핸들러(핀생성)
     const mapClickHandler = mouseEvent => {
       const position = mouseEvent.latLng;
       if (markerRef.current) {
@@ -113,12 +129,19 @@ const MapForUpdate = () => {
       }
     });
   };
-
+  const handleOnKeyPress = e => {
+    e.preventDefault();
+    if (e.key === 'Enter') {
+      searchHandler(); // Enter 입력이 되면 클릭 이벤트 실행
+    }
+  };
   return (
     <div>
       <div>
-        <input id="search-input" type="text" placeholder="장소를 검색하세요" />
-        <button onClick={searchHandler}>검색</button>
+        <input id="search-input" type="text" placeholder="장소를 검색하세요" onKeyPress={handleOnKeyPress} />
+        <button type="button" onClick={searchHandler}>
+          검색
+        </button>
       </div>
       {searchError && <p>해당 장소를 찾을 수 없습니다.</p>}
       {markerInfo && (
@@ -133,5 +156,4 @@ const MapForUpdate = () => {
     </div>
   );
 };
-
 export default MapForUpdate;
