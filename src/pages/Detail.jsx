@@ -9,6 +9,7 @@ import { StCategory, StTitle } from './Main';
 import { styled } from 'styled-components';
 import { StButton } from '../components/common/Button';
 import { StInput } from '../components/common/InputStyle';
+import { StCommentLi } from '../components/comment/commentStyle';
 
 const Detail = () => {
   const navigate = useNavigate();
@@ -88,7 +89,7 @@ const Detail = () => {
           {comments
             ?.filter(comment => parseInt(comment.postId) === parseInt(id))
             .map((comment, index) => (
-              <li key={index}>{comment.body}</li>
+              <StCommentLi key={index}>{comment.body}</StCommentLi>
             ))}
         </ul>
       </section>
