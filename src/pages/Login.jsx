@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import useInput from '../hooks/useInput';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
+import logoImg from '../assets/img/logo-footer.svg';
 
 function Login() {
   const [email, emailOnchange] = useInput('');
@@ -17,18 +18,17 @@ function Login() {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       navigate('/');
-      console.log('login', userCredential.user);
+      // console.log('login', userCredential.user);
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log('error', errorCode, errorMessage);
+      // console.log('error', errorCode, errorMessage);
     }
   };
   return (
     <>
-      <div>Login</div>
       <StLoginLogo>
-        <img src="" alt="logo" />
+        <img src={logoImg} alt="logo" />
       </StLoginLogo>
       <StLoginForm onSubmit={loginHandler}>
         <StLabel>이메일</StLabel>
@@ -65,10 +65,12 @@ function Login() {
 
 export default Login;
 const StLoginLogo = styled.div`
-  width: 300px;
+  width: 20%;
   margin: 0 auto;
+  padding: 20px 0 40px;
   img {
     width: 100%;
+    filter: invert(75%) sepia(68%) saturate(606%) hue-rotate(182deg) brightness(150%) contrast(130%);
   }
 `;
 const StLoginForm = styled.form`
