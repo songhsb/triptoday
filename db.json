@@ -15,7 +15,21 @@
       "category": "강원도",
       "location": "대한민국 영월",
       "description": "작은 한반도가 숨어있는 영월군. 멀리서도 물속이 훤히 들여다보일 만큼 맑은 평창강이 감싸 안은 선암마을은 한반도를 빼닮아 한반도 지형이라는 이름을 갖고 있다. 이 아름다운 경관에 맞서는 신비로움이 숨어있으니 바로 고씨동굴이다. 약 5억 년 전에 형성된 것으로 추정되는 이 동굴은 석회동굴로 새로운 볼거리가 가득하다. 그 밖에 육지 속 작은 섬 청령포와 여름에는 래프팅을, 겨울이면 얼음낚시를 즐길 수 있는 동강도 인기 관광 코스! ",
-      "image": "https://lh5.googleusercontent.com/p/AF1QipNjAAxD4nMsXhEs9BN0AdR34uwbyV_Kbwfyz93g=w408-h273-k-no"
+      "image": "https://myro.co.kr/myro_image/city/yeongwol.jpg"
+    },
+    {
+      "category": "강원도",
+      "location": "대한민국 강릉",
+      "description": "은은한 커피향이 남다른 강원도 강릉시. 그중에도 카페거리로 유명한 안목해변은 발이 닿는 어디든 향긋한 커피 한 잔에 지평선 끝까지 펼쳐지는 바다 풍경은 덤으로 얻을 수 있다. 일출 명소로 유명한 정동진과 야경이 아름다운 경포대는 대표 여행 코스! 구름도 머물다 간다는 해발 1,100m에 위치한 강릉 안반데기 마을은 전망대에 올라 드넓게 펼쳐진 배추밭이 붉게 물드는 일출 전경이 일품이다.",
+      "image": "https://myro.co.kr/myro_image/city/gangneung.jpg",
+      "id": 2
+    },
+    {
+      "category": "서울",
+      "location": "대한민국 서울 ",
+      "description": "과거와 현재가 공존하며 하루가 다르게 변하는 서울을 여행하는 일은 매일이 새롭다. 도시 한복판에서 600년의 역사를 그대로 안고 있는 아름다운 고궁들과 더불어 대한민국의 트렌드를 이끌어나가는 예술과 문화의 크고 작은 동네들을 둘러볼 수 있는 서울은 도시 여행에 최적화된 장소다.",
+      "image": "https://myro.co.kr/myro_image/city/seoul.jpg",
+      "id": 3
     }
   ],
   "comments": [
