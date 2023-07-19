@@ -1,77 +1,158 @@
-import React, { useEffect, useState } from 'react';
-
+import React, { useEffect, useRef, useState } from 'react';
 const { kakao } = window;
 
-/**
- *
- * @param {데이터베이스에 저장되어 있는 위도} latitude
- * @param {데이터베이스에 저장되어 있는 경도} longitude
- * @returns
- */
-const ReadMapInPost = ({ latitude, longitude }) => {
-  const [mapMessage, setMapMessage] = useState(true);
-  // NOTE 데이터베이스에서 정보 못가져오니까 latitude랑 longitude 임시로 할당중
-  latitude = 33.450701;
-  longitude = 126.570667;
-  const 지도클릭시뜨는이름 = '여기';
+const ReadMapInPost = ({ markerInfo, setMarkerInfo, posts }) => {
+  const mapRef = useRef(null);
+  const markerRef = useRef(null);
+  const overlayRef = useRef(null);
+  const [map, setMap] = useState(null);
+  // const [markerInfo, setMarkerInfo] = useState(null);
+  const [searchError, setSearchError] = useState(false);
 
   useEffect(() => {
-    // * 📌 기본 map 공통 시작
-    //지도를 담을 영역의 DOM 레퍼런스
-    let container = document.getElementById('map');
-    //지도를 생성할 때 필요한 기본 옵션
-    let options = {
-      center: new kakao.maps.LatLng(latitude, longitude),
+    const container = mapRef.current;
+    const options = {
+      center: new kakao.maps.LatLng(posts.latLng.latitude, posts.latLng.longitude),
+      level: 4, // 확대/축소 레벨
       draggable: false, // 지도 이동 막음
       disableDoubleClickZoom: true,
-      level: 3,
+    };
+    //지도 생성 및 객체 리턴
+    const newMap = new kakao.maps.Map(container, options);
+    // [ ] test
+    // let marker = new kakao.maps.Marker({
+    //   map: newMap,
+    //   position: new kakao.maps.LatLng(posts.latLng.latitude, posts.latLng.longitude),
+    // });
+    // marker.setMap(newMap);
+    const position = new kakao.maps.LatLng(posts.latLng.latitude, posts.latLng.longitude);
+    markerRef.current = new kakao.maps.Marker({
+      position,
+    });
+    markerRef.current.setMap(newMap);
+
+    // 지도를 클릭했을 때 이벤트 핸들러(핀생성)
+    const mapClickHandler = mouseEvent => {
+      const position = mouseEvent.latLng;
+      if (markerRef.current) {
+        markerRef.current.setMap(null);
+      }
+      markerRef.current = new kakao.maps.Marker({
+        position,
+      });
+      markerRef.current.setMap(newMap);
+      const geocoder = new kakao.maps.services.Geocoder();
+      geocoder.coord2Address(position.getLng(), position.getLat(), (result, status) => {
+        if (status === kakao.maps.services.Status.OK) {
+          const address = result[0].address.address_name;
+          setMarkerInfo({ position, address });
+          showCustomOverlay(newMap, position, address);
+        }
+      });
     };
 
-    //지도 생성 및 객체 리턴
-    let map = new kakao.maps.Map(container, options);
-    // * 기본 map 공통 끝
+    kakao.maps.event.addListener(newMap, 'click', mapClickHandler);
+    const zoomControl = new kakao.maps.ZoomControl();
+    newMap.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
-    // 지도를 클릭한 위치에 표출할 마커입니다
-    let marker = new kakao.maps.Marker({
-      // 지도 중심좌표에 마커를 생성합니다
-      position: map.getCenter(),
-    });
-    // 지도에 마커를 표시합니다
-    marker.setMap(map);
+    const mapTypeControl = new kakao.maps.MapTypeControl();
+    newMap.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+    setMap(newMap);
+  }, []);
 
-    // 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-    var content = '<div class="customoverlay">' + '  <a href="https://map.kakao.com/link/map/11394059" target="_blank">' + '    <span class="title">구의야구공원</span>' + '  </a>' + '</div>';
+  const showCustomOverlay = (map, position, text) => {
+    if (overlayRef.current) {
+      overlayRef.current.setMap(null);
+      overlayRef.current = null;
+    }
 
-    // 커스텀 오버레이가 표시될 위치입니다
-    var position = new kakao.maps.LatLng(37.54699, 127.09598);
+    const content = `
+      <div style="position: absolute; padding: 5px; background-color: #fff; font-size: 12px;">
+        ${text}
+      </div>
+    `;
 
-    // 커스텀 오버레이를 생성합니다
-    var customOverlay = new kakao.maps.CustomOverlay({
-      map: map,
-      position: position,
-      content: content,
+    const customOverlay = new kakao.maps.CustomOverlay({
+      content,
+      position,
       yAnchor: 1,
     });
-  }, []);
+
+    overlayRef.current = customOverlay;
+    customOverlay.setMap(map);
+  };
+
+  const searchHandler = () => {
+    const keyword = document.getElementById('search-input').value;
+    const ps = new kakao.maps.services.Places();
+    ps.keywordSearch(keyword, (data, status) => {
+      if (status === kakao.maps.services.Status.OK) {
+        const bounds = new kakao.maps.LatLngBounds();
+
+        if (markerRef.current) {
+          markerRef.current.setMap(null);
+        }
+
+        if (overlayRef.current) {
+          overlayRef.current.setMap(null);
+          overlayRef.current = null;
+        }
+
+        data.forEach(place => {
+          const position = new kakao.maps.LatLng(place.y, place.x);
+          bounds.extend(position);
+          const marker = new kakao.maps.Marker({
+            position: position,
+          });
+          marker.setMap(map);
+          kakao.maps.event.addListener(marker, 'click', () => {
+            const address = place.address_name;
+            setMarkerInfo({ position, address });
+            showCustomOverlay(map, position, address);
+          });
+        });
+
+        map.setBounds(bounds);
+        setSearchError(false);
+      } else {
+        setSearchError(true);
+
+        if (markerRef.current) {
+          markerRef.current.setMap(null);
+        }
+
+        if (overlayRef.current) {
+          overlayRef.current.setMap(null);
+          overlayRef.current = null;
+        }
+      }
+    });
+  };
+  const handleOnKeyPress = e => {
+    e.preventDefault();
+    if (e.key === 'Enter') {
+      searchHandler(); // Enter 입력이 되면 클릭 이벤트 실행
+    }
+  };
   return (
     <div>
-      <h1>this is practicing area for kakao map</h1>
-      <div id="map" style={{ width: '500px', height: '500px', backgroundColor: 'beige' }}></div>
-      <p>
-        <em>지도 클릭해봐여</em>
-      </p>
-      {/* 새로운 탭에 카카오 맵지도로 상세보기 (위치 더 정확하게 지정하고 싶으면 여기(https://apis.map.kakao.com/web/guide/#searchurl)들어가서 다른걸로 바꾸기) */}
-      <button
-        onClick={() => {
-          window.open(`https://map.kakao.com/link/map/${지도클릭시뜨는이름},${latitude},${longitude}`, '_black');
-        }}
-      >
-        큰 지도로 보기
-      </button>
-      {/* <div id="clickLatlng"></div> */}
-      <p>{mapMessage}</p>
+      <div>
+        <input id="search-input" type="text" placeholder="장소를 검색하세요" onKeyPress={handleOnKeyPress} />
+        <button type="button" onClick={searchHandler}>
+          검색
+        </button>
+      </div>
+      {searchError && <p>해당 장소를 찾을 수 없습니다.</p>}
+      {markerInfo && (
+        <div>
+          <p>
+            좌표: {markerInfo.position.getLat()}, {markerInfo.position.getLng()}
+          </p>
+          <p>주소: {markerInfo.address}</p>
+        </div>
+      )}
+      <div ref={mapRef} style={{ width: '500px', height: '500px' }} />
     </div>
   );
 };
-
 export default ReadMapInPost;

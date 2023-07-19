@@ -28,6 +28,30 @@
       },
       "address": "경북 경주시 북군동 194-15",
       "id": 2
+    },
+    {
+      "category": "서울",
+      "location": "ㅁㅁ",
+      "description": "ㅁㅁ",
+      "image": "ㅁㅁ",
+      "latLng": {
+        "latitude": 37.250094002685735,
+        "longitude": 127.17044763486773
+      },
+      "address": "경기 용인시 처인구 삼가동 산 20-6",
+      "id": 3
+    },
+    {
+      "category": "서울",
+      "location": "ㅁㅁㅁ",
+      "description": "ㅁㅁㅁ",
+      "image": "ㅁㅁㅁ",
+      "latLng": {
+        "latitude": 36.165865841771755,
+        "longitude": 127.9551903837639
+      },
+      "address": "충북 영동군 매곡면 강진리 산 21",
+      "id": 4
     }
   ],
   "comments": [

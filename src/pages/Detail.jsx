@@ -56,6 +56,7 @@ const Detail = () => {
         <div>
           <StDetailImage src={posts.image} />
         </div>
+        <div></div>
         <div>
           <StTitle>{posts.location}</StTitle>
           <div>
