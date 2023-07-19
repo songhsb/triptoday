@@ -29,5 +29,10 @@ const StInput = styled.input`
     box-shadow: rgba(18, 14, 250, 0.1) 2px 4px 10px;
   }
 `;
+const StPtag = styled.p`
+  color: #91ceee;
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+`;
 
-export { StLabel, StInput };
+export { StLabel, StInput, StPtag };

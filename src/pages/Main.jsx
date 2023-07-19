@@ -16,7 +16,6 @@ const Main = () => {
   // if (isError) {
   //   return <h1>오류가 발생했어요!</h1>;
   // }
-
   const seoulClick = () => {
     setCategory('서울');
   };
