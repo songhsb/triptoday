@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { getPosts } from '../api/posts';
 import { styled } from 'styled-components';
@@ -7,6 +7,7 @@ import { StButton } from '../components/common/Button';
 
 const Main = () => {
   const { isLoading, isError, data } = useQuery('postsData', getPosts);
+  const [category, setCategory] = useState('');
   const navigate = useNavigate();
   // if (isLoading) {
   //   return <h1>로딩중입니다.</h1>;
@@ -15,6 +16,19 @@ const Main = () => {
   // if (isError) {
   //   return <h1>오류가 발생했어요!</h1>;
   // }
+
+  const seoulClick = () => {
+    setCategory('서울');
+  };
+  const gyeonggiDoClick = () => {
+    setCategory('경기도');
+  };
+  const gawonDoClick = () => {
+    setCategory('강원도');
+  };
+  const busanClick = () => {
+    setCategory('부산');
+  };
 
   const handleDetailButtonClick = id => {
     navigate(`/detail/${id}`);
@@ -69,21 +83,31 @@ const Main = () => {
         {/* 셀렉트박스  */}
         <div>
           <StButton $fontColor={'black'}>전체</StButton>
-          <StButton $fontColor={'black'}>서울</StButton>
-          <StButton $fontColor={'black'}>경기도</StButton>
-          <StButton $fontColor={'black'}>강원도</StButton>
-          <StButton $fontColor={'black'}>부산</StButton>
+          <StButton $fontColor={'black'} onClick={seoulClick}>
+            서울
+          </StButton>
+          <StButton $fontColor={'black'} onClick={gyeonggiDoClick}>
+            경기도
+          </StButton>
+          <StButton $fontColor={'black'} onClick={gawonDoClick}>
+            강원도
+          </StButton>
+          <StButton $fontColor={'black'} onClick={busanClick}>
+            부산
+          </StButton>
         </div>
         <StUl>
-          {data?.data.map((item, index) => (
-            <StyledDiaryBox key={index} onClick={() => handleDetailButtonClick(item.id)}>
-              <div>
-                <StImage src={item.image} />
-                <StTitle>{item.location}</StTitle>
-                <StMpCategory>{item.category}</StMpCategory>
-              </div>
-            </StyledDiaryBox>
-          ))}
+          {data?.data
+            .filter(item => item || item.category === category)
+            .map((item, index) => (
+              <StyledDiaryBox key={index} onClick={() => handleDetailButtonClick(item.id)}>
+                <div>
+                  <StImage src={item.image} />
+                  <StTitle>{item.location}</StTitle>
+                  <StMpCategory>{item.category}</StMpCategory>
+                </div>
+              </StyledDiaryBox>
+            ))}
         </StUl>
       </div>
     </>

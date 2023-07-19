@@ -5,6 +5,7 @@ import { useMutation, useQuery, useQueryClient } from 'react-query';
 import { deletePosts, getPosts } from '../api/posts';
 import { getComments, addComment } from '../api/comments';
 import { StCategory, StTitle } from './Main';
+
 import { styled } from 'styled-components';
 import { StButton } from '../components/common/Button';
 import { StInput } from '../components/common/InputStyle';
@@ -51,20 +52,27 @@ const Detail = () => {
 
   return (
     <>
-      <StTitle>{posts.location}</StTitle>
-      <div>
-        <StDetailCategory>지역: {posts.category}</StDetailCategory>
-        <p>{posts.description}</p>
-      </div>
-      <StButton $fontColor={'black'}>버튼입니다</StButton>
-      <div>
-        <StButton $fontColor={'black'} onClick={() => handleUpdateButtonClick(posts.id)}>
-          수정
-        </StButton>
-        <StButton $fontColor={'black'} onClick={() => handleDeleteButtonClick(posts.id)}>
-          삭제
-        </StButton>
-      </div>
+      <StDetailMain>
+        <div>
+          <StDetailImage src={posts.image} />
+        </div>
+        <div>
+          <StTitle>{posts.location}</StTitle>
+          <div>
+            <StDetailCategory>지역: {posts.category}</StDetailCategory>
+            <p>{posts.description}</p>
+          </div>
+          <StButton $fontColor={'black'}>버튼입니다</StButton>
+          <div>
+            <StButton $fontColor={'black'} onClick={() => handleUpdateButtonClick(posts.id)}>
+              수정
+            </StButton>
+            <StButton $fontColor={'black'} onClick={() => handleDeleteButtonClick(posts.id)}>
+              삭제
+            </StButton>
+          </div>
+        </div>
+      </StDetailMain>
 
       {/* 코멘트 섹션입니다 */}
       <section>
@@ -102,4 +110,16 @@ const StDetailCategory = styled.p`
   font-size: 16px;
   font-weight: 800;
   margin: 10px 0px;
+`;
+
+const StDetailImage = styled.img`
+  width: 190px;
+  height: 206px;
+  margin-bottom: 5px;
+  margin-right: 20px;
+`;
+
+const StDetailMain = styled.main`
+  display: flex;
+  justify-content: space-between;
 `;
