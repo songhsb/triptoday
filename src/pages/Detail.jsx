@@ -80,7 +80,7 @@ const Detail = () => {
 
   // 다른 지역 구간 입니다.
   const handleDetailButtonClick = id => {
-    navigate(`/detail/${param.id}/${id}`);
+    navigate(`/detail/${id}`);
   };
 
   return (
