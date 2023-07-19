@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 const { kakao } = window;
-const Map = () => {
+const MapForWrite = ({ markerInfo, setMarkerInfo }) => {
   const mapRef = useRef(null);
   const markerRef = useRef(null);
   const [map, setMap] = useState(null);
-  const [markerInfo, setMarkerInfo] = useState(null);
+  // const [markerInfo, setMarkerInfo] = useState(null);
   const [searchError, setSearchError] = useState(false);
 
   useEffect(() => {
@@ -78,12 +78,19 @@ const Map = () => {
       }
     });
   };
-
+  const handleOnKeyPress = e => {
+    e.preventDefault();
+    if (e.key === 'Enter') {
+      searchHandler(); // Enter 입력이 되면 클릭 이벤트 실행
+    }
+  };
   return (
     <div>
       <div>
-        <input id="search-input" type="text" placeholder="장소를 검색하세요" />
-        <button onClick={searchHandler}>검색</button>
+        <input id="search-input" type="text" placeholder="장소를 검색하세요" onKeyPress={handleOnKeyPress} />
+        <button type="button" onClick={searchHandler}>
+          검색
+        </button>
       </div>
       {searchError && <p>해당 장소를 찾을 수 없습니다.</p>}
       {markerInfo && (
@@ -99,4 +106,4 @@ const Map = () => {
   );
 };
 
-export default Map;
+export default MapForWrite;

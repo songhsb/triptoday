@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StSearchText } from '../components/common/Header';
 import { styled } from 'styled-components';
 import useInput from '../hooks/useInput';
@@ -6,6 +6,7 @@ import { StButton } from '../components/common/Button';
 import { useMutation, useQueryClient } from 'react-query';
 import { addPosts } from '../api/posts';
 import { useNavigate } from 'react-router-dom';
+import MapForWrite from '../components/Map/MapForWrite';
 
 function Write() {
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ function Write() {
   const [location, setLocation] = useInput('');
   const [description, setDescription] = useInput('');
   const [image, setImage] = useInput('');
+  const [markerInfo, setMarkerInfo] = useState(null);
 
   const queryClient = useQueryClient();
 
@@ -22,14 +24,20 @@ function Write() {
       queryClient.invalidateQueries('postsData');
     },
   });
-
+  console.log('markerInfo', markerInfo);
   const handleWriteButtonClick = e => {
     e.preventDefault();
+    if (!markerInfo) {
+      alert('지도에 핀을 찍어주세요!');
+      return false;
+    }
     if (!location || !description) {
       alert('필수 입력값이 없습니다. 확인해주세요');
       return false;
     }
     postsMutation.mutate({
+      latLng: { latitude: markerInfo.position.getLat(), longitude: markerInfo.position.getLng() },
+      address: markerInfo.address,
       category,
       location,
       description,
@@ -65,6 +73,7 @@ function Write() {
           Image <br />
           <StSearchText value={image} onChange={setImage} />
         </div>
+        <MapForWrite markerInfo={markerInfo} setMarkerInfo={setMarkerInfo} />
         <StButton $fontColor={'black'}>등록</StButton>
       </form>
     </>

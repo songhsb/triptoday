@@ -1,12 +1,12 @@
 import React from 'react';
-import MapTestNormal from '../components/Map/MapTestNormal';
 import ReadMapInPost from '../components/Map/ReadMapInPost';
 import TestMap from '../components/Map/TestMap';
+import MapForWrite from '../components/Map/MapForWrite';
 
 const MapTest = () => {
   return (
     <>
-      <ReadMapInPost />
+      <MapForWrite />
     </>
   );
 };
