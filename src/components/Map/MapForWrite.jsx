@@ -32,6 +32,7 @@ const MapForWrite = ({ markerInfo, setMarkerInfo }) => {
       markerRef.current = new kakao.maps.Marker({
         position,
       });
+
       markerRef.current.setMap(newMap);
       // 주소-좌표 변환 객체를 생성
       const geocoder = new kakao.maps.services.Geocoder();

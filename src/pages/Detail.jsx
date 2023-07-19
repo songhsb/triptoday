@@ -11,6 +11,7 @@ import { StInput } from '../components/common/InputStyle';
 import { touristAttraction } from '../api/touristAttraction';
 import axios from 'axios';
 import { StCommentLi } from '../components/comment/commentStyle';
+import ReadMapInPost from '../components/Map/ReadMapInPost';
 
 const Detail = () => {
   const navigate = useNavigate();
@@ -64,7 +65,7 @@ const Detail = () => {
   }
 
   const posts = data.data.find(item => item.id == id);
-
+  console.log(posts);
   // 명소 관련 입니다
 
   const locationarea = posts.location.slice(5, 8);
@@ -110,7 +111,8 @@ const Detail = () => {
       </StDetailMain>
       {/* 메인 부분 */}
       {/* 추천 행사 구간 */}
-
+      <ReadMapInPost posts={posts} />
+      <h1>gg</h1>
       {/* 코멘트 섹션입니다 */}
       <section>
         <div>
