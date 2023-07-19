@@ -6,7 +6,7 @@ import MapForWrite from '../components/Map/MapForWrite';
 const MapTest = () => {
   return (
     <>
-      <MapForWrite />
+      <ReadMapInPost />
     </>
   );
 };

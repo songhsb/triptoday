@@ -23,11 +23,35 @@
       "description": "d",
       "image": "d",
       "latLng": {
-        "latitude": 35.85210507253965,
-        "longitude": 129.26207529902905
+        "latitude": 35.85501293925339,
+        "longitude": 129.26364105016387
       },
-      "address": "경북 경주시 북군동 194-15",
+      "address": "경북 경주시 북군동 281-4",
       "id": 2
+    },
+    {
+      "category": "서울",
+      "location": "얄랼",
+      "description": "구구국",
+      "image": "계이름",
+      "latLng": {
+        "latitude": 35.54380661980887,
+        "longitude": 129.25695258060483
+      },
+      "address": "울산 남구 무거동 665",
+      "id": 3
+    },
+    {
+      "category": "서울",
+      "location": "ㅇ",
+      "description": "ㅇ",
+      "image": "ㅇ",
+      "latLng": {
+        "latitude": 36.35299292247635,
+        "longitude": 127.38395566709588
+      },
+      "address": "대전 서구 둔산동 1295",
+      "id": 4
     }
   ],
   "comments": [

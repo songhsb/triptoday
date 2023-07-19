@@ -21,12 +21,7 @@ const MapForUpdate = ({ markerInfo, setMarkerInfo, posts }) => {
     };
     //지도 생성 및 객체 리턴
     const newMap = new kakao.maps.Map(container, options);
-    // [ ] test
-    // let marker = new kakao.maps.Marker({
-    //   map: newMap,
-    //   position: new kakao.maps.LatLng(posts.latLng.latitude, posts.latLng.longitude),
-    // });
-    // marker.setMap(newMap);
+
     const position = new kakao.maps.LatLng(posts.latLng.latitude, posts.latLng.longitude);
     markerRef.current = new kakao.maps.Marker({
       position,
