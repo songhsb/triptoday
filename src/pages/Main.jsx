@@ -4,10 +4,12 @@ import { getPosts } from '../api/posts';
 import { styled } from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { StButton } from '../components/common/Button';
+import { StyledMoodSelect } from './Write';
+import useInput from '../hooks/useInput';
 
 const Main = () => {
   const { isLoading, isError, data } = useQuery('postsData', getPosts);
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useInput(null);
   const navigate = useNavigate();
   // if (isLoading) {
   //   return <h1>로딩중입니다.</h1>;
@@ -16,19 +18,6 @@ const Main = () => {
   // if (isError) {
   //   return <h1>오류가 발생했어요!</h1>;
   // }
-
-  const seoulClick = () => {
-    setCategory('서울');
-  };
-  const gyeonggiDoClick = () => {
-    setCategory('경기도');
-  };
-  const gawonDoClick = () => {
-    setCategory('강원도');
-  };
-  const busanClick = () => {
-    setCategory('부산');
-  };
 
   const handleDetailButtonClick = id => {
     navigate(`/detail/${id}`);
@@ -81,32 +70,29 @@ const Main = () => {
 
       <div>
         {/* 셀렉트박스  */}
-        <div>
-          <StButton $fontColor={'black'}>전체</StButton>
-          <StButton $fontColor={'black'} onClick={seoulClick}>
-            서울
-          </StButton>
-          <StButton $fontColor={'black'} onClick={gyeonggiDoClick}>
-            경기도
-          </StButton>
-          <StButton $fontColor={'black'} onClick={gawonDoClick}>
-            강원도
-          </StButton>
-          <StButton $fontColor={'black'} onClick={busanClick}>
-            부산
-          </StButton>
-        </div>
+        <StyledMoodSelect onChange={setCategory}>
+          <option value="">전체</option>
+          <option value="서울">서울</option>
+          <option value="대구">대구</option>
+          <option value="부산">부산</option>
+          <option value="경기도">경기도</option>
+          <option value="강원도">강원도</option>
+          <option value="충청도">충청도</option>
+          <option value="경상도">경상도</option>
+          <option value="전라도">전라도</option>
+          <option value="제주도">제주도</option>
+        </StyledMoodSelect>
         <StUl>
           {data?.data
-            .filter(item => item || item.category === category)
+            .filter(item => !category || item.category === category)
             .map((item, index) => (
-              <StyledDiaryBox key={index} onClick={() => handleDetailButtonClick(item.id)}>
+              <StyledPostsyBox key={index} onClick={() => handleDetailButtonClick(item.id)}>
                 <div>
                   <StImage src={item.image} />
                   <StTitle>{item.location}</StTitle>
                   <StMpCategory>{item.category}</StMpCategory>
                 </div>
-              </StyledDiaryBox>
+              </StyledPostsyBox>
             ))}
         </StUl>
       </div>
@@ -124,7 +110,7 @@ const StUl = styled.ul`
   gap: 20px;
 `;
 
-const StyledDiaryBox = styled.li`
+export const StyledPostsyBox = styled.li`
   padding: 10px;
   background-color: #dbe9f6;
   border-radius: 5px;
@@ -150,7 +136,7 @@ export const StTitle = styled.h2`
   color: #293241;
 `;
 
-const StMpCategory = styled.p`
+export const StMpCategory = styled.p`
   color: #888;
   font-size: 14px;
   margin-top: 5px;

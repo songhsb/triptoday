@@ -38,8 +38,6 @@ function UpdateWrite() {
       image: updateimage,
       id,
     };
-    console.log(newPosts);
-    console.log(posts);
     postsMutation.mutate({ id, posts, newPosts });
     navigate('/');
   };

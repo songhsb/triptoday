@@ -73,7 +73,7 @@ function Write() {
 
 export default Write;
 
-const StyledMoodSelect = styled.select`
+export const StyledMoodSelect = styled.select`
   padding: 10px;
   font-size: 16px;
 `;
