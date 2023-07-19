@@ -16,7 +16,7 @@ function Write() {
   const [description, setDescription] = useInput('');
   const [image, setImage] = useInput('');
   const [markerInfo, setMarkerInfo] = useState(null);
-
+  console.log(markerInfo);
   const queryClient = useQueryClient();
 
   const postsMutation = useMutation(addPosts, {
@@ -36,12 +36,12 @@ function Write() {
       return false;
     }
     postsMutation.mutate({
-      latLng: { latitude: markerInfo.position.getLat(), longitude: markerInfo.position.getLng() },
-      address: markerInfo.address,
       category,
       location,
       description,
       image,
+      latLng: { latitude: markerInfo.position.getLat(), longitude: markerInfo.position.getLng() },
+      address: markerInfo.address,
     });
     navigate('/');
   };
