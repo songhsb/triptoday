@@ -18,11 +18,11 @@ function Login() {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       navigate('/');
-      console.log('login', userCredential.user);
+      // console.log('login', userCredential.user);
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log('error', errorCode, errorMessage);
+      // console.log('error', errorCode, errorMessage);
     }
   };
   return (

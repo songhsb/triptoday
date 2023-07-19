@@ -21,6 +21,7 @@ const Join = () => {
   const navigate = useNavigate('');
   const adminInput = useRef();
 
+  // 가입되어있는 유저정보 가져오기
   const [allUsers, setAllUsers] = useState([]);
 
   const initialUsers = [];
@@ -37,18 +38,33 @@ const Join = () => {
         initialUsers.push(data);
       });
       setAllUsers(initialUsers);
-      console.log('allUsers', initialUsers);
+      // console.log('allUsers', initialUsers);
     };
     fetchData();
   }, []);
-  console.log('+++++++++++++++++++++++++++++', allUsers);
+
+  // console.log('+++++++++++++++++++++++++++++', allUsers);
+  // 이미등록된 이메일 배열
+  const existsEmail = allUsers.map(item => item.email);
+  const existsNickName = allUsers.map(item => item.nickName);
+  // console.log(existsNickName);
 
   // 유효성 검사 정규식
   const reg_name5 = /^[가-힣a-zA-Z]+$/; // 한글 + 영문만
-  const reg_id1 = /^[a-z0-9_-]{4,20}$/; // 소문자 + 숫자 + 언더바/하이픈 허용 4~20자리
+  const reg_nick = /^[a-z0-9A-Z가-힣_-]{2,20}$/; // 소문자 + 숫자 + 언더바/하이픈 허용 2~20자리
   const reg_pw1 = /^[a-z0-9_-]{4,18}$/; // 단순 4~18자리
   const reg_email = /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/i;
 
+  const adminClick = () => {
+    // if (adminCode === '') {
+    //   alert('관리자 코드를 입력해 주세요');
+    //   adminInput.current.focus();
+    // } else if (adminCode === 'adminCode') {
+    //   setAdminCode(''); // 이렇게 해야하나? 말아야하나?
+    // }
+    setAdminCheck(!adminCheck);
+    // console.log('==========체크체크 =============', adminCheck);
+  };
   const joinHandler = async e => {
     e.preventDefault('');
     if (adminCode === 'adminCode') {
@@ -57,7 +73,7 @@ const Join = () => {
     try {
       // auth
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      console.log('-----------user', userCredential.user);
+      // console.log('-----------user', userCredential.user);
 
       // firebase
       const docRef = await addDoc(collection(db, 'users'), {
@@ -69,7 +85,7 @@ const Join = () => {
         isAdmin: adminCheck,
         profileImg: 'https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689',
       });
-      console.log('-----------Document isAdmin: ', docRef.isAdmin);
+      // console.log('-----------Document isAdmin: ', docRef.isAdmin);
       setAdminCheck(false);
       navigate('/');
 
@@ -87,7 +103,7 @@ const Join = () => {
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log('error', errorCode, errorMessage);
+      // console.log('error', errorCode, errorMessage);
     }
   };
 
@@ -105,10 +121,26 @@ const Join = () => {
         )}
         <StLabel>닉네임</StLabel>
         <StInput type="text" value={nickName} onChange={nickNameOnchange} />
-        {/* 정보불러와서 있는 닉네임인지 확인해야함 */}
+        {existsNickName.includes(nickName) === true ? (
+          <StPtag>중복된 닉네임 입니다</StPtag>
+        ) : !reg_nick.test(nickName) ? (
+          <StPtag>한글,영문,숫자,-_ 만 사용 가능합니다</StPtag>
+        ) : (
+          <StPtag>
+            <br />
+          </StPtag>
+        )}
         <StLabel>이메일</StLabel>
         <StInput type="text" value={email} onChange={emailOnchange} placeholder="example@example.kr" />
-        {/* 정보불러와서 있는 이메일인지 확인해야함 */}
+        {existsEmail.includes(email) === true ? (
+          <StPtag>중복된 이메일 입니다</StPtag>
+        ) : !reg_email.test(email) ? (
+          <StPtag>영문,숫자,_-만 포함된 이메일을 사용해 주세요</StPtag>
+        ) : (
+          <StPtag>
+            <br />
+          </StPtag>
+        )}
 
         <StLabel>비밀번호</StLabel>
         <StInput type="password" value={password} onChange={passwordOnchange} />
@@ -129,31 +161,26 @@ const Join = () => {
           <StPtag>비밀번호가 같은지 확인하세요</StPtag>
         )}
 
-        <StLabel
-          onClick={() => {
-            if (adminCode === '') {
-              alert('관리자 코드를 입력해 주세요');
-              adminInput.current.focus();
-            } else if (adminCode === 'adminCode') {
-              setAdminCode(''); // 이렇게 해야하나? 말아야하나?
-            }
-            // setAdminCheck(prev => !prev);
-          }}
-        >
-          <StCheckBox>{adminCode === 'adminCode' ? <StCheckSvg src="/checkIcon.svg" /> : <StUnCheckSvg src="/unCheckIcon.svg" />} 관리자로 회원가입</StCheckBox>
+        <StLabel onClick={adminClick}>
+          <StCheckBox>{adminCheck ? <StCheckSvg src="/checkIcon.svg" /> : <StUnCheckSvg src="/unCheckIcon.svg" />} 관리자로 회원가입</StCheckBox>
         </StLabel>
         <StInput type="text" value={adminCode} onChange={e => setAdminCode(e.target.value)} ref={adminInput} />
-        {adminCode === 'adminCode' ? (
-          <StPtag>관리자로 가입이 가능합니다</StPtag>
-        ) : adminCode !== '' ? (
-          <StPtag>관리자 코드를 확인해주세요</StPtag>
-        ) : (
-          <StPtag>
-            <br />
-          </StPtag>
-        )}
+        {adminCheck === true && (adminCode === 'adminCode' ? <StPtag>관리자로 가입이 가능합니다</StPtag> : adminCode !== '' ? <StPtag>관리자 코드를 확인해주세요</StPtag> : <StPtag>관리자 코드를 입력해주세요</StPtag>)}
 
-        <StButton type="submit" $btnSize="large">
+        <StButton
+          type="submit"
+          $btnSize="large"
+          disabled={
+            (name.length < 2 || reg_name5.test(name)) &&
+            (existsNickName.includes(nickName) === true || reg_nick.test(nickName)) &&
+            (existsEmail.includes(email) === true || reg_email.test(email)) &&
+            (password.length > 4 || reg_pw1.test(password)) &&
+            password == cfmPassword &&
+            ((adminCheck == true && adminCode == 'adminCode') || (adminCheck == false && adminCode == ''))
+              ? false
+              : true
+          }
+        >
           회원가입
         </StButton>
 

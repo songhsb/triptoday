@@ -16,7 +16,7 @@ const Header = () => {
   // 로그인된 사용자 정보
   useEffect(() => {
     onAuthStateChanged(auth, user => {
-      console.log('UseEffect1-유저모든정보', user);
+      // console.log('UseEffect1-유저모든정보', user);
       setUserEmail(user?.email);
     });
   }, []);
@@ -35,16 +35,16 @@ const Header = () => {
         initialUsers.push(data);
       });
       setAllUsers(initialUsers);
-      console.log('allUsers', initialUsers);
+      // console.log('allUsers', initialUsers);
     };
     fetchData();
   }, []);
-  console.log('allUsers-세팅! -------------------', allUsers);
+  // console.log('allUsers-세팅! -------------------', allUsers);
 
   const user = auth.currentUser;
-  console.log(user);
+  // console.log(user);
   //로그인 사용자의 이메일
-  console.log('userEmail', userEmail);
+  // console.log('userEmail', userEmail);
 
   const thisUser = allUsers?.find(item => item.email === userEmail);
   console.log(thisUser);
