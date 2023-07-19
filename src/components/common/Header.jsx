@@ -2,25 +2,60 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
 import { StButton } from './Button';
-import logoimg from '../../img/logoImg.png';
-import Search from '../../img/Search.png';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { auth } from '../../firebase';
-// import todayTrip from '../public/todayTrip.png';
+import { collection, getDocs, query } from 'firebase/firestore';
+import { auth, database, db } from '../../firebase';
+import logoimg from '../../assets/img/logo.svg';
+import Search from '../../assets/img/Search.png';
 
 const Header = () => {
-  // 로그인 유저를 state...?
-  // const [loginUser, setLoginUser] = useState();
-
   const navigate = useNavigate('');
+  const [userEmail, setUserEmail] = useState('');
+  const [allUsers, setAllUsers] = useState([]);
 
+  // 로그인된 사용자 정보
   useEffect(() => {
     onAuthStateChanged(auth, user => {
-      console.log('userUseEffect1', user);
+      // console.log('UseEffect1-유저모든정보', user);
+      setUserEmail(user?.email);
     });
   }, []);
 
+  const initialUsers = [];
+  useEffect(() => {
+    const fetchData = async () => {
+      const queryRef = query(collection(db, 'users'));
+      const querySnapshot = await getDocs(queryRef);
+
+      querySnapshot.forEach(doc => {
+        const data = {
+          id: doc.id,
+          ...doc.data(),
+        };
+        initialUsers.push(data);
+      });
+      setAllUsers(initialUsers);
+      // console.log('allUsers', initialUsers);
+    };
+    fetchData();
+  }, []);
+  // console.log('allUsers-세팅! -------------------', allUsers);
+
   const user = auth.currentUser;
+  // console.log(user);
+  //로그인 사용자의 이메일
+  // console.log('userEmail', userEmail);
+
+  const thisUser = allUsers?.find(item => item.email === userEmail);
+  console.log(thisUser);
+
+  // const matchName = query(collection(db, 'users'));
+  // const querySnapshot = await getDocs(matchName);
+  // console.log('matchName', matchName);
+  // // const initialUsers = [];
+
+  // const uid = user.id;
+  // console.log(uid);
 
   const logoutHandler = async () => {
     await signOut(auth);
@@ -30,7 +65,9 @@ const Header = () => {
   return (
     <StHeader>
       <StLogo onClick={() => navigate('/')}>
-        <StTravelimg src={logoimg} alt="오늘의 여행 로고" />
+        <StTravelImg>
+          <img src={logoimg} alt="로고" />
+        </StTravelImg>
       </StLogo>
       {/* 검색창 */}
       <StContener>
@@ -40,30 +77,31 @@ const Header = () => {
         </StSearchBtn>
         &nbsp;
         {/* 로그인버튼 */}
-        <StButton $fontColor={'black'} onClick={() => navigate('/write')}>
-          글쓰기
-        </StButton>
-        <StButton $fontColor={'black'}>회원가입</StButton>
+        {thisUser?.isAdmin && (
+          <>
+            <StButton $fontColor={'black'} onClick={() => navigate('/write')}>
+              글쓰기
+            </StButton>
+          </>
+        )}
         {user ? (
-          <StButton onClick={logoutHandler} $btnSize="small">
-            로그아웃
-          </StButton>
+          <StButton onClick={logoutHandler}>로그아웃</StButton>
         ) : (
           <>
-            <button
+            <StButton
               onClick={() => {
                 navigate('/login');
               }}
             >
               로그인
-            </button>
-            <button
+            </StButton>
+            <StButton
               onClick={() => {
                 navigate('/join');
               }}
             >
               회원가입
-            </button>
+            </StButton>
           </>
         )}
       </StContener>
@@ -77,6 +115,7 @@ const StHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 `;
 
 const StLogo = styled.div`
@@ -98,7 +137,7 @@ export const StSearchText = styled.input`
   font-size: 18px;
   margin-bottom: 10px;
 `;
-const StTravelimg = styled.img`
+const StTravelImg = styled.div`
   width: 200px;
 `;
 

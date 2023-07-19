@@ -7,6 +7,7 @@ import { useMutation, useQuery, useQueryClient } from 'react-query';
 import { getPosts, updatePosts } from '../api/posts';
 import { useNavigate, useParams } from 'react-router-dom';
 import MapForUpdate from '../components/Map/MapForUpdate';
+import { StRequiredFieldsText } from './Write';
 
 function UpdateWrite() {
   const navigate = useNavigate();
@@ -88,15 +89,15 @@ function UpdateWrite() {
         </StyledMoodSelect>
         <div>
           location <br />
-          <StSearchText value={updatelocation} onChange={setLocation} />
+          <StRequiredFieldsText value={updatelocation} onChange={setLocation} />
         </div>
         <div>
           description <br />
-          <StSearchText value={updatedescription} onChange={setDescription} />
+          <StRequiredFieldsText value={updatedescription} onChange={setDescription} />
         </div>
         <div>
           Image <br />
-          <StSearchText value={updateimage} onChange={setImage} />
+          <StRequiredFieldsText value={updateimage} onChange={setImage} />
         </div>
         <MapForUpdate markerInfo={markerInfo} setMarkerInfo={setMarkerInfo} posts={posts} />
         <StButton $fontColor={'black'}>수정</StButton>

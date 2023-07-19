@@ -63,15 +63,15 @@ function Write() {
         </StyledMoodSelect>
         <div>
           location <br />
-          <StSearchText value={location} onChange={setLocation} />
+          <StRequiredFieldsText value={location} onChange={setLocation} />
         </div>
         <div>
           description <br />
-          <StSearchText value={description} onChange={setDescription} />
+          <StRequiredFieldsText value={description} onChange={setDescription} />
         </div>
         <div>
           Image <br />
-          <StSearchText value={image} onChange={setImage} />
+          <StRequiredFieldsText value={image} onChange={setImage} />
         </div>
         <MapForWrite markerInfo={markerInfo} setMarkerInfo={setMarkerInfo} />
         <StButton $fontColor={'black'}>등록</StButton>
@@ -82,7 +82,17 @@ function Write() {
 
 export default Write;
 
-const StyledMoodSelect = styled.select`
+export const StyledMoodSelect = styled.select`
   padding: 10px;
   font-size: 16px;
+`;
+export const StRequiredFieldsText = styled.input`
+  width: 800px;
+  height: 60px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  margin-right: 10px;
+  margin-top: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
 `;

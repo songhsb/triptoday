@@ -1,5 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import footlogo from '../../assets/img/logo-footer.svg';
+import github from '../../assets/img/github.svg';
+import notion from '../../assets/img/notion.svg';
+import figma from '../../assets/img/figma.svg';
 
 const Footer = () => {
   return (
@@ -8,7 +12,7 @@ const Footer = () => {
         <div>
           <FooterLogo>
             <a href="#">
-              <img src="" alt="logologo" />
+              <img src={footlogo} alt="logo" />
             </a>
           </FooterLogo>
         </div>
@@ -18,24 +22,24 @@ const Footer = () => {
             <a href="https://github.com/songhsb">Hyunseop</a> | <a href="https://github.com/Rimsunwoo">Sunwoo</a> | <a href="https://github.com/seungbeom1999">Seungbeom</a> | <a href="https://github.com/JellyBear97">Jieun</a> |{' '}
             <a href="https://github.com/heejung-newheee">Heejung</a>
           </TeamLink>
-          <p> &copy; 2023 NBC Team 4 All rights reserved</p>
+          <p> &copy; 2023 NBC Team 4 'TripToday' All rights reserved</p>
         </div>
 
         <div>
           <FooterSpan>
             <span className="svgIcon">
               <a href="https://github.com/songhsb/triptoday">
-                <img src="github.svg" alt="github" />
+                <img src={github} alt="github" />
               </a>
             </span>
             <span className="svgIcon">
               <a href="https://teamsparta.notion.site/4-53504b2ef97846c39cfc3b0a8bf5e258">
-                <img src="notion.svg" alt="notion" />
+                <img src={notion} alt="notion" />
               </a>
             </span>
             <span>
               <a href="https://www.figma.com/file/IdxcptJfRnW9ugz0N6emSR/trip-today?type=design&mode=design&t=w2Fh8kdrDIfcG8Qi-0">
-                <img src="figma.svg" alt="figma" />
+                <img src={figma} alt="figma" />
               </a>
             </span>
           </FooterSpan>
@@ -70,7 +74,7 @@ const FooterLogo = styled.h1`
   margin-bottom: 15px;
   a {
     img {
-      width: 100%;
+      height: 70px;
     }
   }
 `;
