@@ -3,7 +3,9 @@ import useInput from '../hooks/useInput';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 import { deletePosts, getPosts } from '../api/posts';
-import { StTitle } from './Main';
+import { getComments, addComment } from '../api/comments';
+import { StCategory, StTitle } from './Main';
+
 import { styled } from 'styled-components';
 import { StButton } from '../components/common/Button';
 import { StInput } from '../components/common/InputStyle';
@@ -32,7 +34,20 @@ const Detail = () => {
   };
 
   // 코멘트 관련 입니다
-  const [body, onChangeBodyHandler] = useInput();
+  const { data: comments } = useQuery(['comments'], getComments);
+  const commentsMutation = useMutation(addComment, {
+    onSuccess: () => {
+      queryClient.invalidateQueries(['comments']);
+    },
+  });
+  const [body, onChangeBodyHandler, reset] = useInput();
+  const handleCommentSubmit = e => {
+    if (e) {
+      e.preventDefault();
+      commentsMutation.mutate({ email: '작성자 아이디', body, postId: id });
+      reset();
+    }
+  };
   // 코멘트 관련 입니다
 
   return (
@@ -62,15 +77,19 @@ const Detail = () => {
       {/* 코멘트 섹션입니다 */}
       <section>
         <div>
-          <StCommentForm onSubmit={e => e.preventDefault()}>
+          <StCommentForm onSubmit={handleCommentSubmit}>
             <StInput type="text" placeholder="오늘의 여행은 어떠셨나요?" value={body} onChange={onChangeBodyHandler}></StInput>
-            <StButton type="onSubmit">추가</StButton>
+            <StButton type="onSubmit" disabled={!body}>
+              추가
+            </StButton>
           </StCommentForm>
         </div>
         <ul>
-          {/* {data?.map(item => {
-            return <li>{item.body}</li>;
-          })} */}
+          {comments
+            ?.filter(comment => parseInt(comment.postId) === parseInt(id))
+            .map((comment, index) => (
+              <li key={index}>{comment.body}</li>
+            ))}
         </ul>
       </section>
       {/* 코멘트 섹션입니다 */}
