@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 const { kakao } = window;
 
-const Map = () => {
+const MapForUpdate = () => {
   const mapRef = useRef(null);
   const markerRef = useRef(null);
   const overlayRef = useRef(null);
@@ -134,4 +134,4 @@ const Map = () => {
   );
 };
 
-export default Map;
+export default MapForUpdate;
