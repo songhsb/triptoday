@@ -15,7 +15,7 @@ const MapForWrite = ({ markerInfo, setMarkerInfo }) => {
       center: new kakao.maps.LatLng(36.469287, 128.0803538),
       level: 13, // 확대/축소 레벨
     };
-
+    //
     //지도 생성 및 객체 리턴
     const newMap = new kakao.maps.Map(container, options);
     // 지도를 클릭했을 때 이벤트 핸들러(핀생성)
