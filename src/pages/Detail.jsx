@@ -17,6 +17,7 @@ const Detail = () => {
   const param = useParams();
   const id = param.id;
   const [list, setList] = useState([]);
+  const [seeMore, setSeeMore] = useState(false);
 
   const { isLoading, isError, data } = useQuery('postsData', getPosts);
 
@@ -27,6 +28,11 @@ const Detail = () => {
       queryClient.invalidateQueries('postsData');
     },
   });
+  // 더보기 관련 구간입니다.
+
+  const handleSeeMoreButtonClick = () => {
+    setSeeMore(prev => !prev);
+  };
 
   const handleUpdateButtonClick = async id => {
     navigate(`/update/${id}`);
@@ -91,20 +97,26 @@ const Detail = () => {
         <div>
           <StDetailImage src={posts.image} />
         </div>
-        <div></div>
         <div>
-          <StTitle>{posts.location}</StTitle>
+          <StTitleDetail>
+            <StTitle>{posts.location}</StTitle>
+            <div>
+              <StDetailSeeMore onClick={handleSeeMoreButtonClick} />
+              {seeMore && (
+                <ul>
+                  <StyledListItem onClick={() => handleUpdateButtonClick(posts.id)}>
+                    <StyledButton>수정</StyledButton>
+                  </StyledListItem>
+                  <StyledListItem onClick={() => handleDeleteButtonClick(posts.id)}>
+                    <StyledButton>삭제</StyledButton>
+                  </StyledListItem>
+                </ul>
+              )}
+            </div>
+          </StTitleDetail>
           <div>
             <StDetailCategory>지역: {posts.category}</StDetailCategory>
             <p>{posts.description}</p>
-          </div>
-          <div>
-            <StButton $fontColor={'black'} onClick={() => handleUpdateButtonClick(posts.id)}>
-              수정
-            </StButton>
-            <StButton $fontColor={'black'} onClick={() => handleDeleteButtonClick(posts.id)}>
-              삭제
-            </StButton>
           </div>
         </div>
       </StDetailMain>
@@ -175,11 +187,9 @@ const StCommentForm = styled.form`
   gap: 10px;
 `;
 
-const StDetailCategory = styled.p`
-  color: black;
-  font-size: 16px;
-  font-weight: 800;
-  margin: 10px 0px;
+const StDetailMain = styled.main`
+  display: flex;
+  justify-content: space-between;
 `;
 
 const StDetailImage = styled.img`
@@ -189,10 +199,53 @@ const StDetailImage = styled.img`
   margin-right: 20px;
 `;
 
-const StDetailMain = styled.main`
+const StTitleDetail = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
+const StyledListItem = styled.li`
+  height: 40px;
+  padding: 5px 8px;
+  box-sizing: border-box;
+`;
+
+const StyledButton = styled.button`
+  width: 100%;
+  padding: 7px 10px;
+  border: none;
+  background-color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  &:hover,
+  &:focus {
+    background-color: #f8e4ff;
+  }
+`;
+
+const StDetailSeeMore = styled.button`
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-image: url(https://t1.daumcdn.net/tistory_admin/static/mobile/tt_img_area_reply.svg);
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+`;
+
+const StDetailCategory = styled.p`
+  color: black;
+  font-size: 16px;
+  font-weight: 800;
+  margin: 10px 0px;
+`;
+
 export const StRecommendTitle = styled.p`
   margin: 10px;
   padding-left: 5px;
