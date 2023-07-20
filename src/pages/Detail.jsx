@@ -14,18 +14,17 @@ import { StButton } from '../components/common/Button';
 import { StInput } from '../components/common/InputStyle';
 import { touristAttraction } from '../api/touristAttraction';
 import axios from 'axios';
-
 import { StCommentLi } from '../components/comment/commentStyle';
+import LoadingSpinner from '../components/common/LoadingSpinner';
 import Layout from '../components/common/Layout';
-
 import ReadMapInPost from '../components/Map/ReadMapInPost';
-
 
 const Detail = () => {
   const navigate = useNavigate();
   const param = useParams();
   const id = param.id;
   const [list, setList] = useState([]);
+  const [seeMore, setSeeMore] = useState(false);
 
   const { isLoading, isError, data } = useQuery('postsData', getPosts);
 
@@ -36,6 +35,11 @@ const Detail = () => {
       queryClient.invalidateQueries('postsData');
     },
   });
+  // 더보기 관련 구간입니다.
+
+  const handleSeeMoreButtonClick = () => {
+    setSeeMore(prev => !prev);
+  };
 
   const handleUpdateButtonClick = async id => {
     navigate(`/update/${id}`);
@@ -134,24 +138,31 @@ const Detail = () => {
   return (
     <Layout>
       {/* 메인 부분 */}
+      <LoadingSpinner />
       <StDetailMain>
         <div>
           <StDetailImage src={posts.image} />
         </div>
-        <div></div>
         <div>
-          <StTitle>{posts.location}</StTitle>
+          <StTitleDetail>
+            <StTitle>{posts.location}</StTitle>
+            <div>
+              <StDetailSeeMore onClick={handleSeeMoreButtonClick} />
+              {seeMore && (
+                <StDetaiSeeMorelUl>
+                  <StDetailListItem onClick={() => handleUpdateButtonClick(posts.id)}>
+                    <StDetailButton>수정</StDetailButton>
+                  </StDetailListItem>
+                  <StDetailListItem onClick={() => handleDeleteButtonClick(posts.id)}>
+                    <StDetailButton>삭제</StDetailButton>
+                  </StDetailListItem>
+                </StDetaiSeeMorelUl>
+              )}
+            </div>
+          </StTitleDetail>
           <div>
             <StDetailCategory>지역: {posts.category}</StDetailCategory>
             <p>{posts.description}</p>
-          </div>
-          <div>
-            <StButton $fontColor={'black'} onClick={() => handleUpdateButtonClick(posts.id)}>
-              수정
-            </StButton>
-            <StButton $fontColor={'black'} onClick={() => handleDeleteButtonClick(posts.id)}>
-              삭제
-            </StButton>
           </div>
         </div>
       </StDetailMain>
@@ -234,6 +245,11 @@ const StCommentForm = styled.form`
   gap: 10px;
 `;
 
+const StDetailMain = styled.main`
+  display: flex;
+  justify-content: space-between;
+`;
+
 const StComment = styled.li`
   display: flex;
   margin-bottom: 28px;
@@ -274,10 +290,50 @@ const StDetailImage = styled.img`
   margin-right: 20px;
 `;
 
-const StDetailMain = styled.main`
+const StTitleDetail = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
+const StDetaiSeeMorelUl = styled.ul`
+  position: fixed;
+`;
+
+const StDetailListItem = styled.li`
+  height: 40px;
+  padding: 5px 8px;
+  box-sizing: border-box;
+`;
+
+const StDetailButton = styled.button`
+  width: 100%;
+  padding: 7px 10px;
+  border: none;
+  background-color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  &:hover,
+  &:focus {
+    background-color: #f8e4ff;
+  }
+`;
+
+const StDetailSeeMore = styled.button`
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-image: url(https://t1.daumcdn.net/tistory_admin/static/mobile/tt_img_area_reply.svg);
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+`;
+
 export const StRecommendTitle = styled.p`
   margin: 10px;
   padding-left: 5px;

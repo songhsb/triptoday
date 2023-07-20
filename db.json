@@ -38,18 +38,6 @@
     },
     {
       "category": "서울",
-      "location": "ㅁㅁㅁ",
-      "description": "ㅁㅁㅁ",
-      "image": "ㅁㅁㅁ",
-      "latLng": {
-        "latitude": 36.165865841771755,
-        "longitude": 127.9551903837639
-      },
-      "address": "충북 영동군 매곡면 강진리 산 21",
-      "id": 4
-    },
-    {
-      "category": "서울",
       "location": "경주",
       "description": "굿",
       "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
@@ -101,27 +89,8 @@
     {
       "id": 1,
       "email": "작성자 아이디",
-      "body": "ㄹㄹㄹ",
-      "postId": "1",
-    },
-    {
-      "email": "작성자 아이디",
-      "body": "ㅇㄹㄴㅇㄹㄴㅇㄹ",
-      "postId": "2",
-      "id": 6
-    },
-    {
-      "email": "작성자 아이디",
-      "body": "안녕하세요",
-      "postId": "1",
-      "id": 7
-    },
-    {
-      "email": "작성자 아이디",
-      "body": "ㅇㄴㅇㄹㄴㅇㄹ",
-      "postId": "1",
-      "id": 8
-
+      "body": "some comment",
+      "postId": "1"
     }
   ]
 }

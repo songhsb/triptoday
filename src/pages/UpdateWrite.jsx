@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StSearchText } from '../components/common/Header';
 import { styled } from 'styled-components';
 import useInput from '../hooks/useInput';
@@ -8,6 +8,7 @@ import { getPosts, updatePosts } from '../api/posts';
 import { useNavigate, useParams } from 'react-router-dom';
 import MapForUpdate from '../components/Map/MapForUpdate';
 import { StRequiredFieldsText } from './Write';
+import LoadingSpinner from '../components/common/LoadingSpinner';
 import Layout from '../components/common/Layout';
 
 function UpdateWrite() {
@@ -15,14 +16,12 @@ function UpdateWrite() {
   const param = useParams();
   const id = param.id;
 
-  const { data } = useQuery('postsData', getPosts);
+  const { isLoading, isError, data } = useQuery('postsData', getPosts);
 
-  const posts = data.data.find(item => item.id == id);
-
-  const [updatecategory, setCategory] = useInput(posts.category);
-  const [updatelocation, setLocation] = useInput(posts.location);
-  const [updatedescription, setDescription] = useInput(posts.description);
-  const [updateimage, setImage] = useInput(posts.image);
+  const [updatecategory, setCategory, setUpdateCategory] = useInput(null);
+  const [updatelocation, setUpdateLocation, setLocation] = useInput(null);
+  const [updatedescription, setUpdateDescription, setDescription] = useInput(null);
+  const [updateimage, setUpdateImage, setImage] = useInput(null);
   const [markerInfo, setMarkerInfo] = useState(null);
 
   const queryClient = useQueryClient();
@@ -32,6 +31,23 @@ function UpdateWrite() {
       queryClient.invalidateQueries('postsData');
     },
   });
+
+  useEffect(() => {
+    if (!data) {
+      return;
+    }
+    const posts = data.data.find(item => item.id == id);
+    setUpdateCategory(posts.category);
+    setLocation(posts.location);
+    setDescription(posts.description);
+    setImage(posts.image);
+  }, [data]);
+
+  if (isLoading) {
+    return <div>로딩중 입니다..</div>;
+  }
+
+  const posts = data.data.find(item => item.id == id);
 
   const handleWriteButtonClick = e => {
     e.preventDefault();
@@ -73,40 +89,48 @@ function UpdateWrite() {
     navigate(`/detail/${id}`);
   };
 
+  if (isError) {
+    return <h1>에러가 발생하였습니다.</h1>;
+  }
+
   return (
-    <Layout>
-      <form onSubmit={handleWriteButtonClick}>
-        지역:
-        <StyledMoodSelect onChange={setCategory}>
-          <option value="서울">서울</option>
-          <option value="대구">대구</option>
-          <option value="부산">부산</option>
-          <option value="경기도">경기도</option>
-          <option value="강원도">강원도</option>
-          <option value="충청도">충청도</option>
-          <option value="경상도">경상도</option>
-          <option value="전라도">전라도</option>
-          <option value="제주도">제주도</option>
-        </StyledMoodSelect>
-        <div>
-          location <br />
-          <StRequiredFieldsText value={updatelocation} onChange={setLocation} />
-        </div>
-        <div>
-          description <br />
-          <StRequiredFieldsText value={updatedescription} onChange={setDescription} />
-        </div>
-        <div>
-          Image <br />
-          <StRequiredFieldsText value={updateimage} onChange={setImage} />
-        </div>
-        <MapForUpdate markerInfo={markerInfo} setMarkerInfo={setMarkerInfo} posts={posts} />
-        <StButton $fontColor={'black'}>수정</StButton>
-        <StButton type="button" onClick={handleCancelButtonClick} $fontColor={'black'}>
-          취소{' '}
-        </StButton>
-      </form>
-    </Layout>
+    <>
+      <LoadingSpinner />
+
+      <Layout>
+        <form onSubmit={handleWriteButtonClick}>
+          지역:
+          <StyledMoodSelect onChange={setCategory}>
+            <option value="서울">서울</option>
+            <option value="대구">대구</option>
+            <option value="부산">부산</option>
+            <option value="경기도">경기도</option>
+            <option value="강원도">강원도</option>
+            <option value="충청도">충청도</option>
+            <option value="경상도">경상도</option>
+            <option value="전라도">전라도</option>
+            <option value="제주도">제주도</option>
+          </StyledMoodSelect>
+          <div>
+            location <br />
+            <StRequiredFieldsText value={updatelocation} onChange={setUpdateLocation} />
+          </div>
+          <div>
+            description <br />
+            <StRequiredFieldsText value={updatedescription} onChange={setUpdateDescription} />
+          </div>
+          <div>
+            Image <br />
+            <StRequiredFieldsText value={updateimage} onChange={setUpdateImage} />
+          </div>
+          <MapForUpdate markerInfo={markerInfo} setMarkerInfo={setMarkerInfo} posts={posts} />
+          <StButton $fontColor={'black'}>수정</StButton>
+          <StButton type="button" onClick={handleCancelButtonClick} $fontColor={'black'}>
+            취소{' '}
+          </StButton>
+        </form>
+      </Layout>
+    </>
   );
 }
 
