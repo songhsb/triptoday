@@ -47,38 +47,50 @@
       },
       "address": "충북 영동군 매곡면 강진리 산 21",
       "id": 4
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.84030296862244,
+        "longitude": 129.22825436726347
+      },
+      "address": "경북 경주시 인왕동 3-2",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "ㅁㅁ",
+      "description": "ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ",
+      "image": "ㅁㅁ",
+      "latLng": {
+        "latitude": 37.5424441981301,
+        "longitude": 127.58912072792951
+      },
+      "address": "경기 양평군 용문면 신점리 산 48",
+      "id": 6
+    },
+    {
+      "latLng": {
+        "latitude": 37.508854685026165,
+        "longitude": 127.04883786455058
+      },
+      "address": "서울 강남구 삼성동 135-4",
+      "category": "서울",
+      "location": "ㅁㅁㅁ",
+      "description": "ㅁㅁㅁㅁ",
+      "image": "ㅁㅁㅁㅁㅁ",
+      "id": 7
     }
   ],
   "comments": [
     {
       "id": 1,
       "email": "작성자 아이디",
-      "body": "some comment",
-      "postId": 1
-    },
-    {
-      "email": "작성자 아이디",
-      "body": "테스트",
-      "postId": "1",
-      "id": 2
-    },
-    {
-      "email": "작성자 아이디",
-      "body": "테스트입니다.",
-      "postId": "1",
-      "id": 3
-    },
-    {
-      "email": "작성자 아이디",
-      "body": "호호",
-      "postId": "1",
-      "id": 4
-    },
-    {
-      "email": "작성자 아이디",
       "body": "ㄹㄹㄹ",
       "postId": "1",
-      "id": 5
     },
     {
       "email": "작성자 아이디",
@@ -97,6 +109,7 @@
       "body": "ㅇㄴㅇㄹㄴㅇㄹ",
       "postId": "1",
       "id": 8
+
     }
   ]
 }

@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import useInput from '../hooks/useInput';
 import { Route, Routes, useNavigate, useParams } from 'react-router-dom';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
+import { auth, db } from '../firebase';
+import { onAuthStateChanged } from 'firebase/auth';
+import { collection, getDocs, query } from 'firebase/firestore';
+import { nanoid } from 'nanoid';
 import { deletePosts, getPosts } from '../api/posts';
 import { getComments, addComment } from '../api/comments';
 import { StCategory, StImage, StMpCategory, StTitle, StyledPostsyBox } from './Main';
@@ -10,8 +14,12 @@ import { StButton } from '../components/common/Button';
 import { StInput } from '../components/common/InputStyle';
 import { touristAttraction } from '../api/touristAttraction';
 import axios from 'axios';
+
 import { StCommentLi } from '../components/comment/commentStyle';
 import Layout from '../components/common/Layout';
+
+import ReadMapInPost from '../components/Map/ReadMapInPost';
+
 
 const Detail = () => {
   const navigate = useNavigate();
@@ -39,6 +47,34 @@ const Detail = () => {
   };
 
   // 코멘트 관련 입니다
+  const [userEmail, setUserEmail] = useState('');
+  const [allUsers, setAllUsers] = useState([]);
+
+  useEffect(() => {
+    console.log('나냐 ???????????');
+    onAuthStateChanged(auth, user => {
+      setUserEmail(user?.email);
+    });
+  }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      const q = query(collection(db, 'users'));
+      const querySnapshot = await getDocs(q);
+
+      const initialTodos = [];
+
+      querySnapshot.forEach(doc => {
+        initialTodos.push({ id: doc.id, ...doc.data() });
+      });
+
+      setAllUsers(initialTodos);
+    };
+    fetchData();
+  }, []);
+
+  const user = auth.currentUser;
+  const thisUser = allUsers?.find(item => item.email === userEmail);
+
   const { data: comments } = useQuery(['comments'], getComments);
   const commentsMutation = useMutation(addComment, {
     onSuccess: () => {
@@ -49,10 +85,20 @@ const Detail = () => {
   const handleCommentSubmit = e => {
     if (e) {
       e.preventDefault();
-      commentsMutation.mutate({ email: '작성자 아이디', body, postId: id });
+      commentsMutation.mutate({
+        id: nanoid(),
+        nickName: thisUser.nickName,
+        profileImg: thisUser.profileImg,
+        email: thisUser.email,
+        isAdmin: thisUser.isAdmin,
+        body,
+        uid: user.uid,
+        postId: id,
+      });
       reset();
     }
   };
+  // 코멘드 관련 입니다
 
   useEffect(() => {
     if (!isLoading && !isError) {
@@ -65,7 +111,7 @@ const Detail = () => {
   }
 
   const posts = data.data.find(item => item.id == id);
-
+  console.log(posts);
   // 명소 관련 입니다
 
   const locationarea = posts.location.slice(5, 8);
@@ -111,7 +157,8 @@ const Detail = () => {
       </StDetailMain>
       {/* 메인 부분 */}
       {/* 추천 행사 구간 */}
-
+      <ReadMapInPost posts={posts} />
+      <h1>gg</h1>
       {/* 코멘트 섹션입니다 */}
       <section>
         <div>
@@ -122,13 +169,24 @@ const Detail = () => {
             </StButton>
           </StCommentForm>
         </div>
-        <ul>
+        <StCommentsContainer>
           {comments
             ?.filter(comment => parseInt(comment.postId) === parseInt(id))
             .map((comment, index) => (
-              <StCommentLi key={index}>{comment.body}</StCommentLi>
+              <StComment key={index}>
+                <StImageContainer>
+                  <StProfileImage src={comment.profileImg} alt="프로필 이미지" />
+                </StImageContainer>
+                <StCommentRightPart>
+                  <p>{comment.nickName}</p>
+                  <p>{comment.email}</p>
+                  <p>{comment.body}</p>
+                </StCommentRightPart>
+                <StButton>수정</StButton>
+                <StButton>삭제</StButton>
+              </StComment>
             ))}
-        </ul>
+        </StCommentsContainer>
       </section>
       {/* 코멘트 섹션입니다 */}
 
@@ -174,6 +232,32 @@ const StCommentForm = styled.form`
   display: flex;
   align-items: baseline;
   gap: 10px;
+`;
+
+const StComment = styled.li`
+  display: flex;
+  margin-bottom: 28px;
+`;
+
+const StImageContainer = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 70%;
+  overflow: hidden;
+`;
+
+const StProfileImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+const StCommentRightPart = styled.div`
+  width: 100%;
+`;
+
+const StCommentsContainer = styled.ol`
+  margin-top: 40px;
 `;
 
 const StDetailCategory = styled.p`
