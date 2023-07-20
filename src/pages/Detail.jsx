@@ -105,14 +105,14 @@ const Detail = () => {
             <div>
               <StDetailSeeMore onClick={handleSeeMoreButtonClick} />
               {seeMore && (
-                <ul>
-                  <StyledListItem onClick={() => handleUpdateButtonClick(posts.id)}>
-                    <StyledButton>수정</StyledButton>
-                  </StyledListItem>
-                  <StyledListItem onClick={() => handleDeleteButtonClick(posts.id)}>
-                    <StyledButton>삭제</StyledButton>
-                  </StyledListItem>
-                </ul>
+                <StDetaiSeeMorelUl>
+                  <StDetailListItem onClick={() => handleUpdateButtonClick(posts.id)}>
+                    <StDetailButton>수정</StDetailButton>
+                  </StDetailListItem>
+                  <StDetailListItem onClick={() => handleDeleteButtonClick(posts.id)}>
+                    <StDetailButton>삭제</StDetailButton>
+                  </StDetailListItem>
+                </StDetaiSeeMorelUl>
               )}
             </div>
           </StTitleDetail>
@@ -206,13 +206,17 @@ const StTitleDetail = styled.div`
   justify-content: space-between;
 `;
 
-const StyledListItem = styled.li`
+const StDetaiSeeMorelUl = styled.ul`
+  position: fixed;
+`;
+
+const StDetailListItem = styled.li`
   height: 40px;
   padding: 5px 8px;
   box-sizing: border-box;
 `;
 
-const StyledButton = styled.button`
+const StDetailButton = styled.button`
   width: 100%;
   padding: 7px 10px;
   border: none;
