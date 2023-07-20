@@ -11,6 +11,7 @@ import { StInput } from '../components/common/InputStyle';
 import { touristAttraction } from '../api/touristAttraction';
 import axios from 'axios';
 import { StCommentLi } from '../components/comment/commentStyle';
+import LoadingSpinner from '../components/common/LoadingSpinner';
 
 const Detail = () => {
   const navigate = useNavigate();
@@ -93,6 +94,7 @@ const Detail = () => {
   return (
     <>
       {/* 메인 부분 */}
+      <LoadingSpinner />
       <StDetailMain>
         <div>
           <StDetailImage src={posts.image} />

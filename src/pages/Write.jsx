@@ -7,6 +7,7 @@ import { useMutation, useQueryClient } from 'react-query';
 import { addPosts } from '../api/posts';
 import { useNavigate } from 'react-router-dom';
 import MapForWrite from '../components/Map/MapForWrite';
+import LoadingSpinner from '../components/common/LoadingSpinner';
 
 function Write() {
   const navigate = useNavigate();
@@ -48,6 +49,7 @@ function Write() {
 
   return (
     <>
+      <LoadingSpinner />
       <form onSubmit={handleWriteButtonClick}>
         지역:
         <StyledMoodSelect onChange={setCategory}>

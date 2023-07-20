@@ -7,6 +7,7 @@ import { StButton } from '../components/common/Button';
 import { StyledMoodSelect } from './Write';
 import useInput from '../hooks/useInput';
 import { getComments } from '../api/comments';
+import LoadingSpinner from '../components/common/LoadingSpinner';
 
 const Main = () => {
   const { isLoading, isError, data: posts } = useQuery('postsData', getPosts);
@@ -29,7 +30,7 @@ const Main = () => {
   }, [isLoading, isError, posts, comments]);
 
   if (isLoading) {
-    return <h1>로딩중입니다.</h1>;
+    return <LoadingSpinner />;
   }
 
   if (isError) {
@@ -37,16 +38,16 @@ const Main = () => {
   }
 
   let postIdCount = {};
-  commentList.forEach(item => {
-    const postId = item.postId;
-    if (!postIdCount.hasOwnProperty(postId)) {
-      postIdCount[postId] = 1; // 해당 게시물에 첫 댓글이므로 1로 초기화
-    } else {
-      postIdCount[postId] += 1; // 해당 게시물의 댓글 수가 이미 기록되어 있으므로 1 증가
-    }
-  });
-
-  console.log(postIdCount);
+  if (commentList) {
+    commentList.forEach(item => {
+      const postId = item.postId;
+      if (!postIdCount.hasOwnProperty(postId)) {
+        postIdCount[postId] = 1; // 해당 게시물에 첫 댓글이므로 1로 초기화
+      } else {
+        postIdCount[postId] += 1; // 해당 게시물의 댓글 수가 이미 기록되어 있으므로 1 증가
+      }
+    });
+  }
 
   const sortedCounts = Object.entries(postIdCount)
     .sort((a, b) => b[1] - a[1])
@@ -66,6 +67,7 @@ const Main = () => {
 
   return (
     <>
+      <LoadingSpinner />
       {/* // 메인배너  */}
       <div>
         <ul>

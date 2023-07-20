@@ -8,6 +8,7 @@ import { getPosts, updatePosts } from '../api/posts';
 import { useNavigate, useParams } from 'react-router-dom';
 import MapForUpdate from '../components/Map/MapForUpdate';
 import { StRequiredFieldsText } from './Write';
+import LoadingSpinner from '../components/common/LoadingSpinner';
 
 function UpdateWrite() {
   const navigate = useNavigate();
@@ -93,6 +94,7 @@ function UpdateWrite() {
 
   return (
     <>
+      <LoadingSpinner />
       <form onSubmit={handleWriteButtonClick}>
         지역:
         <StyledMoodSelect onChange={setCategory}>
