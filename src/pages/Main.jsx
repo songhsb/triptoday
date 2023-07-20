@@ -8,6 +8,8 @@ import { StyledMoodSelect } from './Write';
 import useInput from '../hooks/useInput';
 import { getComments } from '../api/comments';
 import LoadingSpinner from '../components/common/LoadingSpinner';
+import Slider from '../components/Main/Slider';
+import Layout from '../components/common/Layout';
 
 const Main = () => {
   const { isLoading, isError, data: posts } = useQuery('postsData', getPosts);
@@ -69,88 +71,105 @@ const Main = () => {
     <>
       <LoadingSpinner />
       {/* // 메인배너  */}
-      <div>
-        <ul>
-          <li>
-            <img src="" alt="slide1" /> Main banner 1
-          </li>
-          <li>
-            <img src="" alt="slide1" /> Main banner 2
-          </li>
-          <li>
-            <img src="" alt="slide1" /> Main banner 3
-          </li>
-        </ul>
-      </div>
+      <Slider />
+      <Layout>
+        {/* 베스트 여행지  */}
+        <div>
+          <div>
+            1위
+            {/* 호버 */}
+            <div>
+              <div>타이틀</div>
+              <div>소개</div>
+            </div>
+          </div>
+          <div>
+            2위
+            {/* 호버 */}
+            <div>
+              <div>타이틀</div>
+              <div>소개</div>
+            </div>
+          </div>
+          <div>
+            3위
+            {/* 호버 */}
+            <div>
+              <div>타이틀</div>
+              <div>소개</div>
+            </div>
+          </div>
+        </div>
 
-      {/* 베스트 여행지  */}
-      <StLankingDiv>
-        <div>
-          1위
-          <StUl>
-            <StyledPostsyBox key={firstPostData?.id} onClick={() => handleDetailButtonClick(firstPostData?.id)}>
-              <div>
-                <StImage src={firstPostData?.image} />
-                <StTitle>{firstPostData?.location}</StTitle>
-                <StMpCategory>{firstPostData?.category}</StMpCategory>
-              </div>
-            </StyledPostsyBox>
-          </StUl>
-        </div>
-        <div>
-          2위
-          <StUl>
-            <StyledPostsyBox key={SecondPostData?.id} onClick={() => handleDetailButtonClick(SecondPostData?.id)}>
-              <div>
-                <StImage src={SecondPostData?.image} />
-                <StTitle>{SecondPostData?.location}</StTitle>
-                <StMpCategory>{SecondPostData?.category}</StMpCategory>
-              </div>
-            </StyledPostsyBox>
-          </StUl>
-        </div>
-        <div>
-          3위
-          <StUl>
-            <StyledPostsyBox key={ThreePostData?.id} onClick={() => handleDetailButtonClick(ThreePostData?.id)}>
-              <div>
-                <StImage src={ThreePostData?.image} />
-                <StTitle>{ThreePostData?.location}</StTitle>
-                <StMpCategory>{ThreePostData?.category}</StMpCategory>
-              </div>
-            </StyledPostsyBox>
-          </StUl>
-        </div>
-      </StLankingDiv>
-
-      <div>
-        {/* 셀렉트박스  */}
-        <StyledMoodSelect onChange={setCategory}>
-          <option value="">전체</option>
-          <option value="서울">서울</option>
-          <option value="대구">대구</option>
-          <option value="부산">부산</option>
-          <option value="경기도">경기도</option>
-          <option value="강원도">강원도</option>
-          <option value="충청도">충청도</option>
-          <option value="경상도">경상도</option>
-          <option value="전라도">전라도</option>
-          <option value="제주도">제주도</option>
-        </StyledMoodSelect>
-        <StUl>
-          {posts.data
-            ?.filter(item => !category || item.category === category)
-            .map((item, index) => (
-              <StyledPostsyBox key={index} onClick={() => handleDetailButtonClick(item.id)}>
+        {/* 베스트 여행지  */}
+        <StLankingDiv>
+          <div>
+            1위
+            <StUl>
+              <StyledPostsyBox key={firstPostData?.id} onClick={() => handleDetailButtonClick(firstPostData?.id)}>
                 <div>
-                  <StImage src={item.image} />
-                  <StTitle>{item.location}</StTitle>
-                  <StMpCategory>{item.category}</StMpCategory>
+                  <StImage src={firstPostData?.image} />
+                  <StTitle>{firstPostData?.location}</StTitle>
+                  <StMpCategory>{firstPostData?.category}</StMpCategory>
                 </div>
               </StyledPostsyBox>
-            ))}
-        </StUl>
-      </div>
+            </StUl>
+          </div>
+          <div>
+            2위
+            <StUl>
+              <StyledPostsyBox key={SecondPostData?.id} onClick={() => handleDetailButtonClick(SecondPostData?.id)}>
+                <div>
+                  <StImage src={SecondPostData?.image} />
+                  <StTitle>{SecondPostData?.location}</StTitle>
+                  <StMpCategory>{SecondPostData?.category}</StMpCategory>
+                </div>
+              </StyledPostsyBox>
+            </StUl>
+          </div>
+          <div>
+            3위
+            <StUl>
+              <StyledPostsyBox key={ThreePostData?.id} onClick={() => handleDetailButtonClick(ThreePostData?.id)}>
+                <div>
+                  <StImage src={ThreePostData?.image} />
+                  <StTitle>{ThreePostData?.location}</StTitle>
+                  <StMpCategory>{ThreePostData?.category}</StMpCategory>
+                </div>
+              </StyledPostsyBox>
+            </StUl>
+          </div>
+        </StLankingDiv>
+
+        <div>
+          {/* 셀렉트박스  */}
+          <StyledMoodSelect onChange={setCategory}>
+            <option value="">전체</option>
+            <option value="서울">서울</option>
+            <option value="대구">대구</option>
+            <option value="부산">부산</option>
+            <option value="경기도">경기도</option>
+            <option value="강원도">강원도</option>
+            <option value="충청도">충청도</option>
+            <option value="경상도">경상도</option>
+            <option value="전라도">전라도</option>
+            <option value="제주도">제주도</option>
+          </StyledMoodSelect>
+          <StUl>
+            {posts.data
+              ?.filter(item => !category || item.category === category)
+              .map((item, index) => (
+                <StyledPostsyBox key={index} onClick={() => handleDetailButtonClick(item.id)}>
+                  <div>
+                    <StImage src={item.image} />
+                    <StTitle>{item.location}</StTitle>
+                    <StMpCategory>{item.category}</StMpCategory>
+                  </div>
+                </StyledPostsyBox>
+              ))}
+          </StUl>
+        </div>
+      </Layout>
     </>
   );
 };

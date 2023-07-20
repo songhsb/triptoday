@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
+import useInput from '../../hooks/useInput';
+import { styled } from 'styled-components';
 const { kakao } = window;
 const MapForWrite = ({ markerInfo, setMarkerInfo }) => {
   const mapRef = useRef(null);
@@ -7,6 +9,10 @@ const MapForWrite = ({ markerInfo, setMarkerInfo }) => {
   const overlayRef = useRef(null);
   // const [markerInfo, setMarkerInfo] = useState(null);
   const [searchError, setSearchError] = useState(false);
+<<<<<<< HEAD
+=======
+  const [mapInputValue, mapInputChangeHandler, mapInputReset] = useInput();
+>>>>>>> fe4661eb61e355101c60a974c77529b1798c9eaa
   useEffect(() => {
     //맵을 보여줄 html요소에 Ref를 부여해 DOM 요소를 가져온다.
     const container = mapRef.current;
@@ -30,6 +36,7 @@ const MapForWrite = ({ markerInfo, setMarkerInfo }) => {
       markerRef.current = new kakao.maps.Marker({
         position,
       });
+
       markerRef.current.setMap(newMap);
       // 주소-좌표 변환 객체를 생성
       const geocoder = new kakao.maps.services.Geocoder();
@@ -70,8 +77,8 @@ const MapForWrite = ({ markerInfo, setMarkerInfo }) => {
   };
   // 검색 이벤트 핸들러
   const searchHandler = () => {
-    //입력한 값 가져옴 // state로 변경 필요
-    const keyword = document.getElementById('search-input').value;
+    const keyword = mapInputValue;
+    mapInputReset();
     const ps = new kakao.maps.services.Places();
     ps.keywordSearch(keyword, (data, status) => {
       if (status === kakao.maps.services.Status.OK) {
@@ -102,28 +109,37 @@ const MapForWrite = ({ markerInfo, setMarkerInfo }) => {
   const handleOnKeyPress = e => {
     e.preventDefault();
     if (e.key === 'Enter') {
-      searchHandler(); // Enter 입력이 되면 클릭 이벤트 실행
+      searchHandler();
     }
   };
   return (
     <div>
-      <div>
-        <input id="search-input" type="text" placeholder="장소를 검색하세요" onKeyPress={handleOnKeyPress} />
-        <button type="button" onClick={searchHandler}>
-          검색
-        </button>
-      </div>
       {searchError && <p>해당 장소를 찾을 수 없습니다.</p>}
       {markerInfo && (
         <div>
-          <p>
-            좌표: {markerInfo.position.getLat()}, {markerInfo.position.getLng()}
-          </p>
           <p>주소: {markerInfo.address}</p>
         </div>
       )}
-      <div ref={mapRef} style={{ width: '500px', height: '500px' }} />
+      <MapBox ref={mapRef}>
+        <MapSearchInput className="" value={mapInputValue} onChange={mapInputChangeHandler} type="text" placeholder="장소를 검색하세요" onKeyPress={handleOnKeyPress} />
+      </MapBox>
     </div>
   );
 };
 export default MapForWrite;
+
+const MapBox = styled.div`
+  width: 900px;
+  height: 500px;
+`;
+
+const MapSearchInput = styled.input`
+  width: 400px;
+  height: 50px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index: 2;
+  font-size: 20px;
+  border-radius: 10px;
+`;
