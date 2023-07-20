@@ -1,36 +1,28 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { StButton, StButtonWrap } from '../components/common/Button';
-import { StInput, StLabel, StPtag } from '../components/common/InputStyle';
+import React, { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
-import useInput from '../hooks/useInput';
+import { StButton, StButtonWrap } from '../components/common/Button';
+import { StInput, StLabel } from '../components/common/InputStyle';
 import { useNavigate } from 'react-router-dom';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import useInput from '../hooks/useInput';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../firebase';
-import { nanoid } from 'nanoid';
-import { addDoc, collection, getDocs, query } from 'firebase/firestore';
+import logoImg from '../assets/img/logo-footer.svg';
+import { collection, getDocs, query } from 'firebase/firestore';
+import GoogleLogin from '../components/Login/GoogleLogin';
+import GithubLogin from '../components/Login/GithubLogin';
+import FacebookLogin from '../components/Login/FacebookLogin';
 import Layout from '../components/common/Layout';
-
-const Join = () => {
-  const [adminCheck, setAdminCheck] = useState(false);
-  const [adminCode, setAdminCode] = useState('');
-  const [name, nameOnchange] = useInput('');
-  const [nickName, nickNameOnchange] = useInput('');
+function Login() {
   const [email, emailOnchange] = useInput('');
   const [password, passwordOnchange] = useInput('');
-  const [cfmPassword, cfmPasswordOnchange] = useInput('');
-  const navigate = useNavigate('');
-  const adminInput = useRef();
-
+  const navigate = useNavigate();
   // 가입되어있는 유저정보 가져오기
   const [allUsers, setAllUsers] = useState([]);
-
   useEffect(() => {
-    console.log('나냐 ???????????');
     const initialUsers = [];
     const fetchData = async () => {
       const queryRef = query(collection(db, 'users'));
       const querySnapshot = await getDocs(queryRef);
-
       querySnapshot.forEach(doc => {
         const data = {
           id: doc.id,
@@ -39,145 +31,68 @@ const Join = () => {
         initialUsers.push(data);
       });
       setAllUsers(initialUsers);
+      // console.log('allUsers', initialUsers);
     };
     fetchData();
-    console.log('나냐 ???????????');
   }, []);
-  // console.log('+++++++++++++++++++++++++++++', allUsers);
-
   // 이미등록된 이메일,닉네임 배열
+  console.log('allUsers', allUsers);
   const existsEmail = allUsers.map(item => item.email);
-  const existsNickName = allUsers.map(item => item.nickName);
-
   // 유효성 검사 정규식
-  const reg_name5 = /^[가-힣a-zA-Z]+$/;
-  const reg_nick = /^[a-z0-9A-Z가-힣_-]{2,20}$/;
   const reg_email = /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/i;
-  const reg_pw1 = /^[a-z0-9_-]{4,18}$/;
-
-  // 관리자로 가입하기
-  const adminClick = () => {
-    setAdminCheck(!adminCheck);
-  };
-
-  // 회원가입
-  const joinHandler = async e => {
-    e.preventDefault('');
-    if (adminCode === 'adminCode') {
-      setAdminCheck(true);
-    }
-    try {
-      // auth
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      console.log('-----------user', userCredential.user);
-
-      // firebase 등록
-      const docUserRef = await addDoc(collection(db, 'users'), {
-        id: nanoid(),
-        name,
-        nickName,
-        email,
-        password,
-        isAdmin: adminCheck,
-        profileImg: 'https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689',
-      });
-      console.log('-----------Document isAdmin: ', docUserRef.isAdmin);
-      setAdminCheck(false);
-      window.location.reload();
-      navigate('/'); // 메인으로 왜안감?
-    } catch (error) {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log('error', errorCode, errorMessage);
+  const reg_pw1 = /^[a-z0-9_-]{6,18}$/;
+  const loginHandler = async e => {
+    const thisUser = allUsers.find(item => item.email === email);
+    console.log('thisUser', thisUser);
+    e.preventDefault();
+    if (email === '' || !reg_email.test(email) || !existsEmail.includes(email)) {
+      alert('이메일을 확인해 주세요');
+    } else if (password === '' || password !== thisUser.password) {
+      alert('비밀번호를 확인해 주세요');
+    } else {
+      try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        navigate('/');
+        console.log('login', userCredential.user);
+      } catch (error) {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log('error', errorCode, errorMessage);
+      }
     }
   };
-
   return (
     <Layout>
-      <StJoinForm onSubmit={joinHandler}>
-        <StLabel>이름</StLabel>
-        <StInput type="text" value={name} onChange={nameOnchange} placeholder="이름을 입력하세요" />
-        {name.length < 2 || !reg_name5.test(name) ? (
-          <StPtag>2자 이상 한글,영문만 입력해주세요</StPtag>
-        ) : (
-          <StPtag>
-            <br />
-          </StPtag>
-        )}
-        <StLabel>닉네임</StLabel>
-        <StInput type="text" value={nickName} onChange={nickNameOnchange} />
-        {existsNickName.includes(nickName) === true ? (
-          <StPtag>중복된 닉네임 입니다</StPtag>
-        ) : !reg_nick.test(nickName) ? (
-          <StPtag>한글,영문,숫자,-_ 만 사용 가능합니다</StPtag>
-        ) : (
-          <StPtag>
-            <br />
-          </StPtag>
-        )}
+      <StLoginLogo>
+        <img src={logoImg} alt="logo" />
+      </StLoginLogo>
+      <StLoginForm onSubmit={loginHandler}>
         <StLabel>이메일</StLabel>
-        <StInput type="text" value={email} onChange={emailOnchange} placeholder="example@example.kr" />
-        {existsEmail.includes(email) === true ? (
-          <StPtag>중복된 이메일 입니다</StPtag>
-        ) : !reg_email.test(email) ? (
-          <StPtag>영문,숫자,_-만 포함된 이메일을 사용해 주세요</StPtag>
-        ) : (
-          <StPtag>
-            <br />
-          </StPtag>
-        )}
-
+        <StInput type="text" value={email} onChange={emailOnchange} />
         <StLabel>비밀번호</StLabel>
         <StInput type="password" value={password} onChange={passwordOnchange} />
-        {password.length < 6 || !reg_pw1.test(password) ? (
-          <StPtag>6자 이상 입력해주세요</StPtag>
-        ) : (
-          <StPtag>
-            <br />
-          </StPtag>
-        )}
-        <StLabel>비밀번호 확인</StLabel>
-        <StInput type="password" value={cfmPassword} onChange={cfmPasswordOnchange} />
-        {password === cfmPassword ? (
-          <StPtag>
-            <br />
-          </StPtag>
-        ) : (
-          <StPtag>비밀번호가 같은지 확인하세요</StPtag>
-        )}
-
-        <StLabel onClick={adminClick}>
-          <StCheckBox>{adminCheck ? <StCheckSvg src="/checkIcon.svg" /> : <StUnCheckSvg src="/unCheckIcon.svg" />} 관리자로 회원가입</StCheckBox>
-        </StLabel>
-        <StInput type="text" value={adminCode} onChange={e => setAdminCode(e.target.value)} ref={adminInput} />
-        {adminCheck === true && (adminCode === 'adminCode' ? <StPtag>관리자로 가입이 가능합니다</StPtag> : adminCode !== '' ? <StPtag>관리자 코드를 확인해주세요</StPtag> : <StPtag>관리자 코드를 입력해주세요</StPtag>)}
-
-        <StButton
-          type="submit"
-          $btnSize="large"
-          disabled={
-            (name.length < 2 || reg_name5.test(name)) &&
-            (existsNickName.includes(nickName) === true || reg_nick.test(nickName)) &&
-            (existsEmail.includes(email) === true || reg_email.test(email)) &&
-            (password.length >= 6 || reg_pw1.test(password)) &&
-            password === cfmPassword &&
-            ((adminCheck === true && adminCode === 'adminCode') || (adminCheck === false && adminCode === ''))
-              ? false
-              : true
-          }
-        >
-          회원가입
+        <StButton type="submit" $btnSize="large">
+          로그인
         </StButton>
-
+        <StSnsTit>
+          <span></span>
+          <span>SNS LOGIN</span>
+          <span></span>
+        </StSnsTit>
+        <StSnsIconWrap>
+          <GoogleLogin />
+          <GithubLogin />
+          <FacebookLogin />
+        </StSnsIconWrap>
         <StButtonWrap>
           <StButton
             type="button"
             onClick={() => {
-              navigate('/login');
+              navigate('/join');
             }}
             $btnSize="half"
           >
-            로그인
+            회원가입
           </StButton>
           <StButton
             type="button"
@@ -189,32 +104,47 @@ const Join = () => {
             홈으로 돌아가기
           </StButton>
         </StButtonWrap>
-      </StJoinForm>
+      </StLoginForm>
     </Layout>
   );
-};
-
-export default Join;
-
-const StJoinForm = styled.form`
+}
+export default Login;
+const StLoginLogo = styled.div`
+  width: 20%;
+  max-width: 230px;
+  margin: 0 auto;
+  padding: 20px 0 40px;
+  img {
+    width: 100%;
+    filter: invert(75%) sepia(68%) saturate(606%) hue-rotate(182deg) brightness(150%) contrast(130%);
+  }
+`;
+const StLoginForm = styled.form`
   max-width: 500px;
   margin: 0 auto;
 `;
-const StCheckBox = styled.div`
-  cursor: pointer;
+const StSnsTit = styled.div`
+  display: flex;
+  margin: 25px 0 15px;
+  span {
+    display: block;
+    width: 33.3333%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #a1a1a1;
+  }
+  span:not(:nth-child(2))::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #e0e0e0;
+    position: relative;
+    top: 8px;
+  }
 `;
-const StCheckSvg = styled.img`
-  width: 20px;
-  position: relative;
-  bottom: -3px;
-  vertical-align: bottom;
-  filter: invert(75%) sepia(27%) saturate(663%) hue-rotate(175deg) brightness(103%) contrast(103%);
-`;
-const StUnCheckSvg = styled.img`
-  width: 20px;
-  position: relative;
-  bottom: -3px;
-  vertical-align: bottom;
-  filter: invert(95%) sepia(60%) saturate(2074%) hue-rotate(168deg) brightness(110%) contrast(80%);
-  opacity: 0.5;
+const StSnsIconWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 0 0 30px;
 `;

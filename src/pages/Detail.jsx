@@ -7,17 +7,17 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { collection, getDocs, query } from 'firebase/firestore';
 import { nanoid } from 'nanoid';
 import { deletePosts, getPosts } from '../api/posts';
-import { getComments, addComment } from '../api/comments';
+import { getComments, addComments, deleteComments } from '../api/comments';
 import { StCategory, StImage, StMpCategory, StTitle, StyledPostsyBox } from './Main';
 import { styled } from 'styled-components';
 import { StButton } from '../components/common/Button';
 import { StInput } from '../components/common/InputStyle';
 import { touristAttraction } from '../api/touristAttraction';
 import axios from 'axios';
-import { StCommentLi } from '../components/comment/commentStyle';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import Layout from '../components/common/Layout';
 import ReadMapInPost from '../components/Map/ReadMapInPost';
+import FormDialog from '../components/comment/UpdateComment';
 
 const Detail = () => {
   const navigate = useNavigate();
@@ -80,12 +80,17 @@ const Detail = () => {
   const thisUser = allUsers?.find(item => item.email === userEmail);
 
   const { data: comments } = useQuery(['comments'], getComments);
-  const commentsMutation = useMutation(addComment, {
+  const commentsMutation = useMutation(addComments, {
     onSuccess: () => {
       queryClient.invalidateQueries(['comments']);
     },
   });
-  const [body, onChangeBodyHandler, reset] = useInput();
+  const deleteMutation = useMutation(deleteComments, {
+    onSuccess: () => {
+      queryClient.invalidateQueries('comments');
+    },
+  });
+  const [body, onChangeBodyHandler, setter] = useInput();
   const handleCommentSubmit = e => {
     if (e) {
       e.preventDefault();
@@ -99,8 +104,11 @@ const Detail = () => {
         uid: user.uid,
         postId: id,
       });
-      reset();
+      setter('');
     }
+  };
+  const handleCommentDelete = async id => {
+    deleteMutation.mutate(id);
   };
   // 코멘드 관련 입니다
 
@@ -185,16 +193,22 @@ const Detail = () => {
             ?.filter(comment => parseInt(comment.postId) === parseInt(id))
             .map((comment, index) => (
               <StComment key={index}>
-                <StImageContainer>
-                  <StProfileImage src={comment.profileImg} alt="프로필 이미지" />
-                </StImageContainer>
-                <StCommentRightPart>
-                  <p>{comment.nickName}</p>
-                  <p>{comment.email}</p>
-                  <p>{comment.body}</p>
-                </StCommentRightPart>
-                <StButton>수정</StButton>
-                <StButton>삭제</StButton>
+                <StUserInfo>
+                  <StImageContainer>
+                    <StProfileImage src={comment.profileImg} alt="프로필 이미지" />
+                  </StImageContainer>
+                  <StCommentRightPart>
+                    <p>{comment.nickName}</p>
+                    <p>{comment.email}</p>
+                  </StCommentRightPart>
+                </StUserInfo>
+                <p>{comment.body}</p>
+                <StCommentBtnDiv>
+                  <FormDialog comment={comment} />
+                  <StButton $btnSize={'small'} onClick={() => handleCommentDelete(comment.id)}>
+                    삭제
+                  </StButton>
+                </StCommentBtnDiv>
               </StComment>
             ))}
         </StCommentsContainer>
@@ -251,14 +265,19 @@ const StDetailMain = styled.main`
 `;
 
 const StComment = styled.li`
+  padding: 10px;
+  border-bottom: solid 3px #9adcff;
+`;
+
+const StUserInfo = styled.div`
   display: flex;
-  margin-bottom: 28px;
+  gap: 8px;
 `;
 
 const StImageContainer = styled.div`
   width: 40px;
   height: 40px;
-  border-radius: 70%;
+  border-radius: 50%;
   overflow: hidden;
 `;
 
@@ -274,6 +293,12 @@ const StCommentRightPart = styled.div`
 
 const StCommentsContainer = styled.ol`
   margin-top: 40px;
+`;
+
+const StCommentBtnDiv = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 5px;
 `;
 
 const StDetailCategory = styled.p`
