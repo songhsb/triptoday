@@ -7,6 +7,7 @@ import { useMutation, useQueryClient } from 'react-query';
 import { addPosts } from '../api/posts';
 import { useNavigate } from 'react-router-dom';
 import MapForWrite from '../components/Map/MapForWrite';
+import Layout from '../components/common/Layout';
 
 function Write() {
   const navigate = useNavigate();
@@ -48,7 +49,7 @@ function Write() {
   };
 
   return (
-    <>
+    <Layout>
       <form onSubmit={handleWriteButtonClick}>
         지역:
         <StyledMoodSelect onChange={setCategory}>
@@ -77,7 +78,7 @@ function Write() {
         <MapForWrite markerInfo={markerInfo} setMarkerInfo={setMarkerInfo} />
         <StButton $fontColor={'black'}>등록</StButton>
       </form>
-    </>
+    </Layout>
   );
 }
 
