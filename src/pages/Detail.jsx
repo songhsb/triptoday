@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import useInput from '../hooks/useInput';
 import { Route, Routes, useNavigate, useParams } from 'react-router-dom';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
+import { auth } from '../firebase';
+import { onAuthStateChanged } from 'firebase/auth';
 import { deletePosts, getPosts } from '../api/posts';
 import { getComments, addComment } from '../api/comments';
 import { StCategory, StImage, StMpCategory, StTitle, StyledPostsyBox } from './Main';
@@ -38,6 +40,16 @@ const Detail = () => {
   };
 
   // 코멘트 관련 입니다
+  const [userEmail, setUserEmail] = useState('');
+
+  // 로그인된 사용자 정보
+  useEffect(() => {
+    console.log('나냐 ???????????');
+    onAuthStateChanged(auth, user => {
+      // console.log('UseEffect1-유저모든정보', user);
+      setUserEmail(user?.email);
+    });
+  }, []);
   const { data: comments } = useQuery(['comments'], getComments);
   const commentsMutation = useMutation(addComment, {
     onSuccess: () => {
