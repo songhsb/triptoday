@@ -89,8 +89,27 @@
     {
       "id": 1,
       "email": "작성자 아이디",
-      "body": "some comment",
-      "postId": 1
+      "body": "ㄹㄹㄹ",
+      "postId": "1",
+    },
+    {
+      "email": "작성자 아이디",
+      "body": "ㅇㄹㄴㅇㄹㄴㅇㄹ",
+      "postId": "2",
+      "id": 6
+    },
+    {
+      "email": "작성자 아이디",
+      "body": "안녕하세요",
+      "postId": "1",
+      "id": 7
+    },
+    {
+      "email": "작성자 아이디",
+      "body": "ㅇㄴㅇㄹㄴㅇㄹ",
+      "postId": "1",
+      "id": 8
+
     }
   ]
 }

@@ -8,6 +8,7 @@ import { getPosts, updatePosts } from '../api/posts';
 import { useNavigate, useParams } from 'react-router-dom';
 import MapForUpdate from '../components/Map/MapForUpdate';
 import { StRequiredFieldsText } from './Write';
+import Layout from '../components/common/Layout';
 
 function UpdateWrite() {
   const navigate = useNavigate();
@@ -73,7 +74,7 @@ function UpdateWrite() {
   };
 
   return (
-    <>
+    <Layout>
       <form onSubmit={handleWriteButtonClick}>
         지역:
         <StyledMoodSelect onChange={setCategory}>
@@ -105,7 +106,7 @@ function UpdateWrite() {
           취소{' '}
         </StButton>
       </form>
-    </>
+    </Layout>
   );
 }
 
