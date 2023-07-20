@@ -11,6 +11,7 @@ import { StInput } from '../components/common/InputStyle';
 import { touristAttraction } from '../api/touristAttraction';
 import axios from 'axios';
 import { StCommentLi } from '../components/comment/commentStyle';
+import Layout from '../components/common/Layout';
 
 const Detail = () => {
   const navigate = useNavigate();
@@ -85,7 +86,7 @@ const Detail = () => {
   };
 
   return (
-    <>
+    <Layout>
       {/* 메인 부분 */}
       <StDetailMain>
         <div>
@@ -163,7 +164,7 @@ const Detail = () => {
             ))}
         </StDetailUl>
       </div>
-    </>
+    </Layout>
   );
 };
 

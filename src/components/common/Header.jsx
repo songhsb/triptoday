@@ -4,7 +4,7 @@ import { styled } from 'styled-components';
 import { StButton } from './Button';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { collection, getDocs, query } from 'firebase/firestore';
-import { auth, database, db } from '../../firebase';
+import { auth, db } from '../../firebase';
 import logoimg from '../../assets/img/logo.svg';
 import Search from '../../assets/img/Search.png';
 
@@ -18,11 +18,13 @@ const Header = () => {
     onAuthStateChanged(auth, user => {
       // console.log('UseEffect1-유저모든정보', user);
       setUserEmail(user?.email);
+      //로그인 사용자의 이메일
+      console.log('user', user);
     });
   }, []);
 
-  const initialUsers = [];
   useEffect(() => {
+    const initialUsers = [];
     const fetchData = async () => {
       const queryRef = query(collection(db, 'users'));
       const querySnapshot = await getDocs(queryRef);
@@ -43,20 +45,11 @@ const Header = () => {
 
   const user = auth.currentUser;
   // console.log(user);
-  //로그인 사용자의 이메일
-  // console.log('userEmail', userEmail);
 
   const thisUser = allUsers?.find(item => item.email === userEmail);
-  console.log(thisUser);
+  // console.log(thisUser);
 
-  // const matchName = query(collection(db, 'users'));
-  // const querySnapshot = await getDocs(matchName);
-  // console.log('matchName', matchName);
-  // // const initialUsers = [];
-
-  // const uid = user.id;
-  // console.log(uid);
-
+  // 로그아웃
   const logoutHandler = async () => {
     await signOut(auth);
     navigate('/');
@@ -119,6 +112,7 @@ const StHeader = styled.div`
 `;
 
 const StLogo = styled.div`
+  cursor: pointer;
   font-size: 22px;
   font-weight: 800;
 `;
@@ -129,10 +123,9 @@ const StContener = styled.div`
 `;
 export const StSearchText = styled.input`
   width: 279px;
-  height: 60px;
+  height: 45px;
   border: 1px solid #ccc;
-  border-radius: 12px;
-  margin-right: 10px;
+  border-radius: 8px;
   margin-top: 10px;
   font-size: 18px;
   margin-bottom: 10px;
