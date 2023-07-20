@@ -25,8 +25,9 @@ function Write() {
       queryClient.invalidateQueries('postsData');
     },
   });
-  console.log('markerInfo', markerInfo);
+
   const handleWriteButtonClick = e => {
+    alert('111111111111111111111111');
     e.preventDefault();
     if (!markerInfo) {
       alert('지도에 핀을 찍어주세요!');
