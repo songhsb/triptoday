@@ -12,6 +12,7 @@ import { touristAttraction } from '../api/touristAttraction';
 import axios from 'axios';
 import { StCommentLi } from '../components/comment/commentStyle';
 import ReadMapInPost from '../components/Map/ReadMapInPost';
+import LikesPosts from '../components/Detail/LikesPosts';
 
 const Detail = () => {
   const navigate = useNavigate();
@@ -94,6 +95,7 @@ const Detail = () => {
         </div>
         <div></div>
         <div>
+          <LikesPosts postId={posts.id} />
           <StTitle>{posts.location}</StTitle>
           <div>
             <StDetailCategory>지역: {posts.category}</StDetailCategory>
