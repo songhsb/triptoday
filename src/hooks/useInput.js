@@ -7,11 +7,11 @@ const useInput = event => {
     setValue(e.target.value);
   };
 
-  const reset = () => {
-    setValue('');
+  const setter = e => {
+    setValue(e);
   };
 
-  return [value, handler, reset];
+  return [value, handler, setter];
 };
 
 export default useInput;

@@ -1,4 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { styled } from 'styled-components';
+import './Overlay.css';
+import { hover } from '@testing-library/user-event/dist/hover';
 const { kakao } = window;
 
 const ReadMapInPost = ({ posts }) => {
@@ -32,9 +35,11 @@ const ReadMapInPost = ({ posts }) => {
     }
 
     const content = `
-      <div style="position: absolute; padding: 5px; background-color: #fff; font-size: 12px;">
-        ${text}
-      </div>
+    
+    <a class="overLayLink" target="_blank" href=https://map.kakao.com/link/map/${posts.location},${posts.latLng.latitude},${posts.latLng.longitude}>
+    ${posts.address}
+  </a>
+  
     `;
 
     const customOverlay = new kakao.maps.CustomOverlay({
@@ -50,7 +55,7 @@ const ReadMapInPost = ({ posts }) => {
   // useEffect 여기에 위치
   return (
     <div>
-      <div ref={mapRef} style={{ width: '500px', height: '500px' }} />
+      <div ref={mapRef} style={{ width: '1200px', height: '300px' }}></div>
     </div>
   );
 };

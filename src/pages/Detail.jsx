@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import useInput from '../hooks/useInput';
 import { Route, Routes, useNavigate, useParams } from 'react-router-dom';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
+import { auth, db } from '../firebase';
+import { onAuthStateChanged } from 'firebase/auth';
+import { collection, getDocs, query } from 'firebase/firestore';
+import { nanoid } from 'nanoid';
 import { deletePosts, getPosts } from '../api/posts';
 import { getComments, addComment } from '../api/comments';
 import { StCategory, StImage, StMpCategory, StTitle, StyledPostsyBox } from './Main';
@@ -11,6 +15,8 @@ import { StInput } from '../components/common/InputStyle';
 import { touristAttraction } from '../api/touristAttraction';
 import axios from 'axios';
 import { StCommentLi } from '../components/comment/commentStyle';
+import LoadingSpinner from '../components/common/LoadingSpinner';
+import Layout from '../components/common/Layout';
 import ReadMapInPost from '../components/Map/ReadMapInPost';
 import LikesPosts from '../components/Detail/LikesPosts';
 
@@ -19,6 +25,7 @@ const Detail = () => {
   const param = useParams();
   const id = param.id;
   const [list, setList] = useState([]);
+  const [seeMore, setSeeMore] = useState(false);
 
   const { isLoading, isError, data } = useQuery('postsData', getPosts);
 
@@ -29,6 +36,11 @@ const Detail = () => {
       queryClient.invalidateQueries('postsData');
     },
   });
+  // 더보기 관련 구간입니다.
+
+  const handleSeeMoreButtonClick = () => {
+    setSeeMore(prev => !prev);
+  };
 
   const handleUpdateButtonClick = async id => {
     navigate(`/update/${id}`);
@@ -40,6 +52,34 @@ const Detail = () => {
   };
 
   // 코멘트 관련 입니다
+  const [userEmail, setUserEmail] = useState('');
+  const [allUsers, setAllUsers] = useState([]);
+
+  useEffect(() => {
+    console.log('나냐 ???????????');
+    onAuthStateChanged(auth, user => {
+      setUserEmail(user?.email);
+    });
+  }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      const q = query(collection(db, 'users'));
+      const querySnapshot = await getDocs(q);
+
+      const initialTodos = [];
+
+      querySnapshot.forEach(doc => {
+        initialTodos.push({ id: doc.id, ...doc.data() });
+      });
+
+      setAllUsers(initialTodos);
+    };
+    fetchData();
+  }, []);
+
+  const user = auth.currentUser;
+  const thisUser = allUsers?.find(item => item.email === userEmail);
+
   const { data: comments } = useQuery(['comments'], getComments);
   const commentsMutation = useMutation(addComment, {
     onSuccess: () => {
@@ -50,10 +90,20 @@ const Detail = () => {
   const handleCommentSubmit = e => {
     if (e) {
       e.preventDefault();
-      commentsMutation.mutate({ email: '작성자 아이디', body, postId: id });
+      commentsMutation.mutate({
+        id: nanoid(),
+        nickName: thisUser.nickName,
+        profileImg: thisUser.profileImg,
+        email: thisUser.email,
+        isAdmin: thisUser.isAdmin,
+        body,
+        uid: user.uid,
+        postId: id,
+      });
       reset();
     }
   };
+  // 코멘드 관련 입니다
 
   useEffect(() => {
     if (!isLoading && !isError) {
@@ -87,27 +137,34 @@ const Detail = () => {
   };
 
   return (
-    <>
+    <Layout>
       {/* 메인 부분 */}
+      <LoadingSpinner />
       <StDetailMain>
         <div>
           <StDetailImage src={posts.image} />
         </div>
-        <div></div>
         <div>
-          <LikesPosts postId={posts.id} />
-          <StTitle>{posts.location}</StTitle>
+          <StTitleDetail>
+            <LikesPosts postId={posts.id} />
+            <StTitle>{posts.location}</StTitle>
+            <div>
+              <StDetailSeeMore onClick={handleSeeMoreButtonClick} />
+              {seeMore && (
+                <StDetaiSeeMorelUl>
+                  <StDetailListItem onClick={() => handleUpdateButtonClick(posts.id)}>
+                    <StDetailButton>수정</StDetailButton>
+                  </StDetailListItem>
+                  <StDetailListItem onClick={() => handleDeleteButtonClick(posts.id)}>
+                    <StDetailButton>삭제</StDetailButton>
+                  </StDetailListItem>
+                </StDetaiSeeMorelUl>
+              )}
+            </div>
+          </StTitleDetail>
           <div>
             <StDetailCategory>지역: {posts.category}</StDetailCategory>
             <p>{posts.description}</p>
-          </div>
-          <div>
-            <StButton $fontColor={'black'} onClick={() => handleUpdateButtonClick(posts.id)}>
-              수정
-            </StButton>
-            <StButton $fontColor={'black'} onClick={() => handleDeleteButtonClick(posts.id)}>
-              삭제
-            </StButton>
           </div>
         </div>
       </StDetailMain>
@@ -125,13 +182,24 @@ const Detail = () => {
             </StButton>
           </StCommentForm>
         </div>
-        <ul>
+        <StCommentsContainer>
           {comments
             ?.filter(comment => parseInt(comment.postId) === parseInt(id))
             .map((comment, index) => (
-              <StCommentLi key={index}>{comment.body}</StCommentLi>
+              <StComment key={index}>
+                <StImageContainer>
+                  <StProfileImage src={comment.profileImg} alt="프로필 이미지" />
+                </StImageContainer>
+                <StCommentRightPart>
+                  <p>{comment.nickName}</p>
+                  <p>{comment.email}</p>
+                  <p>{comment.body}</p>
+                </StCommentRightPart>
+                <StButton>수정</StButton>
+                <StButton>삭제</StButton>
+              </StComment>
             ))}
-        </ul>
+        </StCommentsContainer>
       </section>
       {/* 코멘트 섹션입니다 */}
 
@@ -167,7 +235,7 @@ const Detail = () => {
             ))}
         </StDetailUl>
       </div>
-    </>
+    </Layout>
   );
 };
 
@@ -177,6 +245,37 @@ const StCommentForm = styled.form`
   display: flex;
   align-items: baseline;
   gap: 10px;
+`;
+
+const StDetailMain = styled.main`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const StComment = styled.li`
+  display: flex;
+  margin-bottom: 28px;
+`;
+
+const StImageContainer = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 70%;
+  overflow: hidden;
+`;
+
+const StProfileImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+const StCommentRightPart = styled.div`
+  width: 100%;
+`;
+
+const StCommentsContainer = styled.ol`
+  margin-top: 40px;
 `;
 
 const StDetailCategory = styled.p`
@@ -193,10 +292,50 @@ const StDetailImage = styled.img`
   margin-right: 20px;
 `;
 
-const StDetailMain = styled.main`
+const StTitleDetail = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
+const StDetaiSeeMorelUl = styled.ul`
+  position: fixed;
+`;
+
+const StDetailListItem = styled.li`
+  height: 40px;
+  padding: 5px 8px;
+  box-sizing: border-box;
+`;
+
+const StDetailButton = styled.button`
+  width: 100%;
+  padding: 7px 10px;
+  border: none;
+  background-color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  &:hover,
+  &:focus {
+    background-color: #f8e4ff;
+  }
+`;
+
+const StDetailSeeMore = styled.button`
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-image: url(https://t1.daumcdn.net/tistory_admin/static/mobile/tt_img_area_reply.svg);
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+`;
+
 export const StRecommendTitle = styled.p`
   margin: 10px;
   padding-left: 5px;

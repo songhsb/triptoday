@@ -68,9 +68,9 @@ const MapForUpdate = ({ markerInfo, setMarkerInfo, posts }) => {
     }
 
     const content = `
-      <div style="position: absolute; padding: 5px; background-color: #fff; font-size: 12px;">
-        ${text}
-      </div>
+    <div style="position: absolute; left: 50%; bottom: 40px; transform: translateX(-50%); background-color: #fff; padding: 5px; font-size: 12px; font-weight:800; border:2px solid">
+    주소: ${posts.address}
+  </div>
     `;
 
     const customOverlay = new kakao.maps.CustomOverlay({
