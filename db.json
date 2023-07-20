@@ -83,9 +83,40 @@
       },
       "address": "서울 송파구 가락동 600",
       "id": 8
+    },
+    {
+      "category": "서울",
+      "location": "ㅅㄷㄴㅅ",
+      "description": "test",
+      "image": "test",
+      "latLng": {
+        "latitude": 35.83976440668592,
+        "longitude": 129.25709917649604
+      },
+      "address": "경북 경주시 보문동 산 12",
+      "id": 9
     }
   ],
-  "likes": [],
+  "likes": [
+    {
+      "id": 5,
+      "userList": [
+        "olxloh@naver.com",
+        "jieun2563@naver.com"
+      ]
+    },
+    {
+      "id": 2,
+      "userList": []
+    },
+    {
+      "id": 9,
+      "userList": [
+        "jieun2563@naver.com",
+        "olxloh@naver.com"
+      ]
+    }
+  ],
   "comments": [
     {
       "id": 1,

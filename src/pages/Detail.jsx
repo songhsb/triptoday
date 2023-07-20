@@ -56,7 +56,6 @@ const Detail = () => {
   const [allUsers, setAllUsers] = useState([]);
 
   useEffect(() => {
-    console.log('나냐 ???????????');
     onAuthStateChanged(auth, user => {
       setUserEmail(user?.email);
     });
@@ -145,8 +144,8 @@ const Detail = () => {
           <StDetailImage src={posts.image} />
         </div>
         <div>
+          <LikesPosts postId={posts.id} />
           <StTitleDetail>
-            <LikesPosts postId={posts.id} />
             <StTitle>{posts.location}</StTitle>
             <div>
               <StDetailSeeMore onClick={handleSeeMoreButtonClick} />
