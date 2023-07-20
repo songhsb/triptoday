@@ -9,10 +9,7 @@ const MapForWrite = ({ markerInfo, setMarkerInfo }) => {
   const overlayRef = useRef(null);
   // const [markerInfo, setMarkerInfo] = useState(null);
   const [searchError, setSearchError] = useState(false);
-<<<<<<< HEAD
-=======
   const [mapInputValue, mapInputChangeHandler, mapInputReset] = useInput();
->>>>>>> fe4661eb61e355101c60a974c77529b1798c9eaa
   useEffect(() => {
     //맵을 보여줄 html요소에 Ref를 부여해 DOM 요소를 가져온다.
     const container = mapRef.current;

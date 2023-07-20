@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { styled } from 'styled-components';
-import { BsArrowsFullscreen } from 'react-icons/bs';
 import './Overlay.css';
 import { hover } from '@testing-library/user-event/dist/hover';
 const { kakao } = window;
