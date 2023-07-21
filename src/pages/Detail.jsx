@@ -17,7 +17,11 @@ import axios from 'axios';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import Layout from '../components/common/Layout';
 import ReadMapInPost from '../components/Map/ReadMapInPost';
+<<<<<<< HEAD
 import FormDialog from '../components/comment/UpdateComment';
+=======
+import LikesPosts from '../components/Detail/LikesPosts';
+>>>>>>> 6a81586828de85baf0dbf9b0b046d5e6c81b5f15
 
 const Detail = () => {
   const navigate = useNavigate();
@@ -55,7 +59,6 @@ const Detail = () => {
   const [allUsers, setAllUsers] = useState([]);
 
   useEffect(() => {
-    console.log('나냐 ???????????');
     onAuthStateChanged(auth, user => {
       setUserEmail(user?.email);
     });
@@ -152,6 +155,7 @@ const Detail = () => {
           <StDetailImage src={posts.image} />
         </div>
         <div>
+          <LikesPosts postId={posts.id} />
           <StTitleDetail>
             <StTitle>{posts.location}</StTitle>
             <div>

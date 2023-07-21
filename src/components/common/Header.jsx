@@ -7,6 +7,7 @@ import { collection, getDocs, query } from 'firebase/firestore';
 import { auth, db } from '../../firebase';
 import logoimg from '../../assets/img/logo.svg';
 import Search from '../../assets/img/Search.png';
+import ModalForAlert from './ModalForAlert';
 
 const Header = () => {
   const navigate = useNavigate('');
@@ -57,6 +58,7 @@ const Header = () => {
 
   return (
     <StHeader>
+      {/* <ModalForAlert /> */}
       <StLogo onClick={() => navigate('/')}>
         <StTravelImg>
           <img src={logoimg} alt="로고" />
