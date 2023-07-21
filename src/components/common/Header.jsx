@@ -7,17 +7,32 @@ import { collection, getDocs, query } from 'firebase/firestore';
 import { auth, db } from '../../firebase';
 import logoimg from '../../assets/img/logo.svg';
 import Search from '../../assets/img/Search.png';
+import { useQuery } from 'react-query';
+import { getPosts } from '../../api/posts';
+import LoadingSpinner from './LoadingSpinner';
+import useInput from '../../hooks/useInput';
+import { EmailAtom, SearchAtom } from '../../recoil/SearchAtom';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 
 const Header = () => {
   const navigate = useNavigate('');
   const [userEmail, setUserEmail] = useState('');
   const [allUsers, setAllUsers] = useState([]);
+  const { isLoading, isError, data: posts } = useQuery('postsData', getPosts);
+  const [post, setHandlePost, setPost] = useInput();
+  const [searchValue, setSearchValue, setSearch] = useInput();
 
-  // 로그인된 사용자 정보
+  // 전역 변수 사용
+  const searchList = useRecoilValue(SearchAtom);
+  const setSearchList = useSetRecoilState(SearchAtom);
+  const EmailDisCharge = useRecoilValue(EmailAtom);
+  const setEmailDischarge = useSetRecoilState(EmailAtom);
+
   useEffect(() => {
     onAuthStateChanged(auth, user => {
       // console.log('UseEffect1-유저모든정보', user);
       setUserEmail(user?.email);
+      setEmailDischarge(user?.email);
       //로그인 사용자의 이메일
       console.log('user', user);
     });
@@ -55,6 +70,37 @@ const Header = () => {
     navigate('/');
   };
 
+  // post.data 정보 가지고 오기
+  const locationData = async () => {
+    try {
+      if (posts?.data) {
+        const data = posts.data;
+        setPost(data);
+      } else {
+        setPost([]);
+      }
+    } catch (error) {
+      return;
+    }
+  };
+  // 새로고침 후 검색창 초기화
+  useEffect(() => {
+    locationData();
+    setSearch('');
+    setSearchList([]);
+  }, [isLoading, posts]);
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
+  // include 값 구하기
+
+  const searchData = e => {
+    e.preventDefault();
+    const main = post.filter(item => item.location.includes(searchValue));
+    setSearchList(main);
+  };
+
   return (
     <StHeader>
       <StLogo onClick={() => navigate('/')}>
@@ -64,10 +110,12 @@ const Header = () => {
       </StLogo>
       {/* 검색창 */}
       <StContener>
-        <StSearchText type="text" />
-        <StSearchBtn>
-          <StSearchimg src={Search} />
-        </StSearchBtn>
+        <form>
+          <StSearchText type="text" value={searchValue} onChange={setSearchValue} />
+          <StSearchBtn onClick={searchData}>
+            <StSearchimg src={Search} />
+          </StSearchBtn>
+        </form>
         &nbsp;
         {/* 로그인버튼 */}
         {thisUser?.isAdmin && (
