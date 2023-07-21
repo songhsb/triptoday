@@ -30,6 +30,7 @@ const MapForWrite = ({ markerInfo, setMarkerInfo }) => {
     newMap.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
     setMap(newMap);
   }, []);
+
   const mapClickHandler = (mouseEvent, newMap) => {
     // 클릭한 위도, 경도 정보를 가져옵니다
     const position = mouseEvent.latLng;

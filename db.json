@@ -64,10 +64,10 @@
       "description": "ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ",
       "image": "ㅁㅁ",
       "latLng": {
-        "latitude": 37.5424441981301,
-        "longitude": 127.58912072792951
+        "latitude": 37.47032010721047,
+        "longitude": 127.40741289254014
       },
-      "address": "경기 양평군 용문면 신점리 산 48",
+      "address": "경기 양평군 강하면 성덕리 894-2",
       "id": 6
     },
     {
@@ -110,19 +110,33 @@
   "likes": [
     {
       "id": 5,
-      "userList": ["olxloh@naver.com", "jieun2563@naver.com"]
+      "userList": [
+        "olxloh@naver.com",
+        "jieun2563@naver.com"
+      ]
     },
     {
       "id": 2,
-      "userList": ["jieun2563@naver.com"]
+      "userList": [
+        "jieun2563@naver.com"
+      ]
     },
     {
       "id": 9,
-      "userList": ["jieun2563@naver.com", "olxloh@naver.com"]
+      "userList": [
+        "jieun2563@naver.com",
+        "olxloh@naver.com"
+      ]
     },
     {
       "id": 1,
-      "userList": ["jieun2563@naver.com"]
+      "userList": [
+        "jieun2563@naver.com"
+      ]
+    },
+    {
+      "id": 6,
+      "userList": []
     }
   ],
   "comments": [

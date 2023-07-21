@@ -8,10 +8,9 @@ import { useEffect, useRef, useState } from 'react';
 
 // Post와 Update에만 있는 부분 => 마커변경함수, 오버레이변경
 const { kakao } = window;
-
-const useMap = latlng => {
+//mapRef를 받아 변경, 실행순서
+const useMap = (latlng, mapRef, address = null) => {
   const { latitude, longitude } = latlng;
-  const mapRef = useRef(null);
   const markerRef = useRef(null);
   const overlayRef = useRef(null);
   const [map, setMap] = useState(null);
@@ -21,17 +20,18 @@ const useMap = latlng => {
     const options = {
       center: new kakao.maps.LatLng(latitude, longitude),
       level: 9, // 확대/축소 레벨
-      draggable: false, // 지도 이동 막음
-      disableDoubleClickZoom: true,
     };
     //지도 생성 및 객체 리턴
     const newMap = new kakao.maps.Map(container, options);
-    const position = new kakao.maps.LatLng(posts.latLng.latitude, posts.latLng.longitude);
-    markerRef.current = new kakao.maps.Marker({
-      position,
-    });
-    markerRef.current.setMap(newMap);
-    showCustomOverlay(newMap, position, posts.address);
+    //address가 들어온경우(Read, Update)
+    if (address) {
+      const position = new kakao.maps.LatLng(latitude, longitude);
+      markerRef.current = new kakao.maps.Marker({
+        position,
+      });
+      markerRef.current.setMap(newMap);
+      showCustomOverlay(newMap, position, address);
+    }
     setMap(newMap);
   }, []);
 
@@ -64,21 +64,21 @@ const useMap = latlng => {
       overlayRef.current.setMap(null);
       overlayRef.current = null;
     }
-  };
-  const content = `
+    const content = `
     <a class="overLayLink" target="_blank" href=https://map.kakao.com/link/map/${posts.location},${posts.latLng.latitude},${posts.latLng.longitude}>
-
+    주소: ${address}
   </a>`;
 
-  const customOverlay = new kakao.maps.CustomOverlay({
-    content,
-    position,
-    yAnchor: 1,
-  });
+    const customOverlay = new kakao.maps.CustomOverlay({
+      content,
+      position,
+      yAnchor: 1,
+    });
+  };
 
   overlayRef.current = customOverlay;
   customOverlay.setMap(map);
 
   return [mapRef];
-  // mapRef, clickEventHandler, submitHandler
+  // mapRef,   , submitHandler
 };
