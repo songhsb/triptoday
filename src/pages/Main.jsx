@@ -3,33 +3,35 @@ import { useQuery } from 'react-query';
 import { getPosts } from '../api/posts';
 import { styled } from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import { StButton } from '../components/common/Button';
 import { StyledMoodSelect } from './Write';
 import useInput from '../hooks/useInput';
-import { getComments } from '../api/comments';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import Slider from '../components/Main/Slider';
 import Layout from '../components/common/Layout';
+import { useRecoilValue } from 'recoil';
+import { SearchAtom } from '../recoil/SearchAtom';
+import { getLikes } from '../api/likes';
+import Select from '../components/Main/Select';
+import PostBox from '../components/Main/PostBox';
 
 const Main = () => {
   const { isLoading, isError, data: posts } = useQuery('postsData', getPosts);
-  const { data: comments } = useQuery('comments', getComments);
+  const { data: likes } = useQuery('likes', getLikes);
   const [category, setCategory] = useInput(null);
   const [postList, setPostList] = useState([]);
-  const [commentList, setCommentList] = useState([]);
+  const [likeList, setLikeList] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
     const post = posts?.data;
-    const comment = comments;
-    if (!isLoading && !isError) {
+    if ((!isLoading && !isError) || !likeList) {
       setPostList(post);
-      setCommentList(comment);
+      setLikeList(likes);
     } else {
       setPostList(post);
-      setCommentList([]);
+      setLikeList([]);
     }
-  }, [isLoading, isError, posts, comments]);
+  }, [isLoading, isError, posts, likes]);
 
   if (isLoading) {
     return <LoadingSpinner />;
@@ -40,14 +42,10 @@ const Main = () => {
   }
 
   let postIdCount = {};
-  if (commentList) {
-    commentList.forEach(item => {
-      const postId = item.postId;
-      if (!postIdCount.hasOwnProperty(postId)) {
-        postIdCount[postId] = 1; // 해당 게시물에 첫 댓글이므로 1로 초기화
-      } else {
-        postIdCount[postId] += 1; // 해당 게시물의 댓글 수가 이미 기록되어 있으므로 1 증가
-      }
+  if (likeList?.length > 0) {
+    likeList.forEach(item => {
+      const postId = item.id;
+      postIdCount[postId] = item.userList?.length;
     });
   }
 
@@ -73,34 +71,6 @@ const Main = () => {
       {/* // 메인배너  */}
       <Slider />
       <Layout>
-        {/* 베스트 여행지  */}
-        <div>
-          <div>
-            1위
-            {/* 호버 */}
-            <div>
-              <div>타이틀</div>
-              <div>소개</div>
-            </div>
-          </div>
-          <div>
-            2위
-            {/* 호버 */}
-            <div>
-              <div>타이틀</div>
-              <div>소개</div>
-            </div>
-          </div>
-          <div>
-            3위
-            {/* 호버 */}
-            <div>
-              <div>타이틀</div>
-              <div>소개</div>
-            </div>
-          </div>
-        </div>
-
         {/* 베스트 여행지  */}
         <StLankingDiv>
           <div>
@@ -143,31 +113,8 @@ const Main = () => {
 
         <div>
           {/* 셀렉트박스  */}
-          <StyledMoodSelect onChange={setCategory}>
-            <option value="">전체</option>
-            <option value="서울">서울</option>
-            <option value="대구">대구</option>
-            <option value="부산">부산</option>
-            <option value="경기도">경기도</option>
-            <option value="강원도">강원도</option>
-            <option value="충청도">충청도</option>
-            <option value="경상도">경상도</option>
-            <option value="전라도">전라도</option>
-            <option value="제주도">제주도</option>
-          </StyledMoodSelect>
-          <StUl>
-            {posts.data
-              ?.filter(item => !category || item.category === category)
-              .map((item, index) => (
-                <StyledPostsyBox key={index} onClick={() => handleDetailButtonClick(item.id)}>
-                  <div>
-                    <StImage src={item.image} />
-                    <StTitle>{item.location}</StTitle>
-                    <StMpCategory>{item.category}</StMpCategory>
-                  </div>
-                </StyledPostsyBox>
-              ))}
-          </StUl>
+          <Select setCategory={setCategory} />
+          <PostBox posts={posts} category={category} handleDetailButtonClick={handleDetailButtonClick} />
         </div>
       </Layout>
     </>
