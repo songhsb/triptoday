@@ -83,8 +83,8 @@ const Join = () => {
       });
       console.log('-----------Document isAdmin: ', docUserRef.isAdmin);
       setAdminCheck(false);
-      window.location.reload();
       navigate('/'); // 메인으로 왜안감?
+      window.location.reload();
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
