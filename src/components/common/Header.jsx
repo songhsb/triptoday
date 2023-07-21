@@ -14,6 +14,7 @@ import useInput from '../../hooks/useInput';
 import Main from '../../pages/Main';
 import { EmailAtom, SearchAtom } from '../../recoil/SearchAtom';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
+import ModalForAlert from './ModalForAlert';
 
 const Header = () => {
   const navigate = useNavigate('');
@@ -104,6 +105,7 @@ const Header = () => {
 
   return (
     <StHeader>
+      {/* <ModalForAlert /> */}
       <StLogo onClick={() => navigate('/')}>
         <StTravelImg>
           <img src={logoimg} alt="로고" />
