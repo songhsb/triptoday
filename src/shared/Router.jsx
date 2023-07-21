@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Main from '../pages/Main';
 import Detail from '../pages/Detail';
 import Join from '../pages/Join';

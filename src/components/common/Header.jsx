@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
 import { StButton } from './Button';
@@ -11,10 +11,8 @@ import { useQuery } from 'react-query';
 import { getPosts } from '../../api/posts';
 import LoadingSpinner from './LoadingSpinner';
 import useInput from '../../hooks/useInput';
-import Main from '../../pages/Main';
 import { EmailAtom, SearchAtom } from '../../recoil/SearchAtom';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import ModalForAlert from './ModalForAlert';
 
 const Header = () => {
   const navigate = useNavigate('');
