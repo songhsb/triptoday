@@ -1,7 +1,9 @@
+// 이건 아마 사용 안함
+
 import React from 'react';
 import { styled } from 'styled-components';
 
-const ModalForAlert = () => {
+const Modal = () => {
   return (
     <StOuter>
       <StInner></StInner>
@@ -9,15 +11,13 @@ const ModalForAlert = () => {
   );
 };
 
-export default ModalForAlert;
+export default Modal;
 
 const StOuter = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
-  overflow-x: hidden;
-  /* overflow-y: scroll; */
-
   width: 100%;
-  position: fixed;
+  height: 100%;
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
