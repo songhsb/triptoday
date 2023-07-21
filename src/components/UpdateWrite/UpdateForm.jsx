@@ -1,9 +1,9 @@
-import { Select } from '@mui/material';
 import React from 'react';
 import MapForUpdate from '../Map/MapForUpdate';
 import { StButton } from '../common/Button';
 import { useNavigate } from 'react-router-dom';
 import { StRequiredFieldsText } from '../Write/WriteForm';
+import Select from '../Main/Select';
 
 function UpdateForm({ handleWriteButtonClick, setCategory, updatelocation, setUpdateLocation, updatedescription, setUpdateDescription, updateimage, setUpdateImage, markerInfo, setMarkerInfo, posts, id }) {
   const navigate = useNavigate();

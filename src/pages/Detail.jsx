@@ -100,7 +100,9 @@ const Detail = () => {
     }
   };
   const handleCommentDelete = async id => {
-    deleteMutation.mutate(id);
+    if (window.confirm('삭제 하시겠습니까?')) {
+      deleteMutation.mutate(id);
+    }
   };
   // 코멘드 관련 입니다
 
