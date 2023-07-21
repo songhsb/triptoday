@@ -12,21 +12,17 @@ import GoogleLogin from '../components/Login/GoogleLogin';
 import GithubLogin from '../components/Login/GithubLogin';
 import FacebookLogin from '../components/Login/FacebookLogin';
 import Layout from '../components/common/Layout';
-
 function Login() {
   const [email, emailOnchange] = useInput('');
   const [password, passwordOnchange] = useInput('');
   const navigate = useNavigate();
-
   // 가입되어있는 유저정보 가져오기
   const [allUsers, setAllUsers] = useState([]);
-
   useEffect(() => {
     const initialUsers = [];
     const fetchData = async () => {
       const queryRef = query(collection(db, 'users'));
       const querySnapshot = await getDocs(queryRef);
-
       querySnapshot.forEach(doc => {
         const data = {
           id: doc.id,
@@ -43,11 +39,9 @@ function Login() {
   // 이미등록된 이메일,닉네임 배열
   console.log('allUsers', allUsers);
   const existsEmail = allUsers.map(item => item.email);
-
   // 유효성 검사 정규식
   const reg_email = /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/i;
   const reg_pw1 = /^[a-z0-9_-]{6,18}$/;
-
   const loginHandler = async e => {
     const thisUser = allUsers.find(item => item.email === email);
     console.log('thisUser', thisUser);
@@ -81,7 +75,6 @@ function Login() {
         <StButton type="submit" $btnSize="large">
           로그인
         </StButton>
-
         <StSnsTit>
           <span></span>
           <span>SNS LOGIN</span>
@@ -92,7 +85,6 @@ function Login() {
           <GithubLogin />
           <FacebookLogin />
         </StSnsIconWrap>
-
         <StButtonWrap>
           <StButton
             type="button"
@@ -117,7 +109,6 @@ function Login() {
     </Layout>
   );
 }
-
 export default Login;
 const StLoginLogo = styled.div`
   width: 20%;
