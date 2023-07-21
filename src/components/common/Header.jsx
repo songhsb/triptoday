@@ -12,7 +12,7 @@ import { getPosts } from '../../api/posts';
 import LoadingSpinner from './LoadingSpinner';
 import useInput from '../../hooks/useInput';
 import Main from '../../pages/Main';
-import { SearchAtom } from '../../recoil/SearchAtom';
+import { EmailAtom, SearchAtom } from '../../recoil/SearchAtom';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 
 const Header = () => {
@@ -26,12 +26,14 @@ const Header = () => {
   // 전역 변수 사용
   const searchList = useRecoilValue(SearchAtom);
   const setSearchList = useSetRecoilState(SearchAtom);
-  // 로그인된 사용자 정보
+  const EmailDisCharge = useRecoilValue(EmailAtom);
+  const setEmailDischarge = useSetRecoilState(EmailAtom);
 
   useEffect(() => {
     onAuthStateChanged(auth, user => {
       // console.log('UseEffect1-유저모든정보', user);
       setUserEmail(user?.email);
+      setEmailDischarge(user?.email);
       //로그인 사용자의 이메일
       console.log('user', user);
     });
@@ -82,9 +84,10 @@ const Header = () => {
       return;
     }
   };
-
+  // 새로고침 후 검색창 초기화
   useEffect(() => {
     locationData();
+    setSearch('');
     setSearchList([]);
   }, [isLoading, posts]);
 

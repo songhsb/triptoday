@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StSearchText } from '../components/common/Header';
 import { styled } from 'styled-components';
 import useInput from '../hooks/useInput';
@@ -9,6 +9,8 @@ import { useNavigate } from 'react-router-dom';
 import MapForWrite from '../components/Map/MapForWrite';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import Layout from '../components/common/Layout';
+import { useRecoilValue } from 'recoil';
+import { EmailAtom } from '../recoil/SearchAtom';
 
 function Write() {
   const navigate = useNavigate();
@@ -26,7 +28,11 @@ function Write() {
       queryClient.invalidateQueries('postsData');
     },
   });
+  const emailDischarge = useRecoilValue(EmailAtom);
 
+  useEffect(() => {
+    console.log(emailDischarge);
+  }, []);
   const handleWriteButtonClick = e => {
     alert('111111111111111111111111');
     e.preventDefault();
@@ -39,6 +45,7 @@ function Write() {
       return false;
     }
     postsMutation.mutate({
+      email: emailDischarge,
       category,
       location,
       description,

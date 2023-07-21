@@ -18,6 +18,8 @@ import { StCommentLi } from '../components/comment/commentStyle';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import Layout from '../components/common/Layout';
 import ReadMapInPost from '../components/Map/ReadMapInPost';
+import { useRecoilValue } from 'recoil';
+import { EmailAtom } from '../recoil/SearchAtom';
 
 const Detail = () => {
   const navigate = useNavigate();
@@ -36,7 +38,7 @@ const Detail = () => {
     },
   });
   // 더보기 관련 구간입니다.
-
+  const emailDisCharge = useRecoilValue(EmailAtom);
   const handleSeeMoreButtonClick = () => {
     setSeeMore(prev => !prev);
   };
@@ -149,19 +151,21 @@ const Detail = () => {
         <div>
           <StTitleDetail>
             <StTitle>{posts.location}</StTitle>
-            <div>
-              <StDetailSeeMore onClick={handleSeeMoreButtonClick} />
-              {seeMore && (
-                <StDetaiSeeMorelUl>
-                  <StDetailListItem onClick={() => handleUpdateButtonClick(posts.id)}>
-                    <StDetailButton>수정</StDetailButton>
-                  </StDetailListItem>
-                  <StDetailListItem onClick={() => handleDeleteButtonClick(posts.id)}>
-                    <StDetailButton>삭제</StDetailButton>
-                  </StDetailListItem>
-                </StDetaiSeeMorelUl>
-              )}
-            </div>
+            {emailDisCharge == posts.email ? (
+              <div>
+                <StDetailSeeMore onClick={handleSeeMoreButtonClick} />
+                {seeMore && (
+                  <StDetaiSeeMorelUl>
+                    <StDetailListItem onClick={() => handleUpdateButtonClick(posts.id)}>
+                      <StDetailButton>수정</StDetailButton>
+                    </StDetailListItem>
+                    <StDetailListItem onClick={() => handleDeleteButtonClick(posts.id)}>
+                      <StDetailButton>삭제</StDetailButton>
+                    </StDetailListItem>
+                  </StDetaiSeeMorelUl>
+                )}
+              </div>
+            ) : null}
           </StTitleDetail>
           <div>
             <StDetailCategory>지역: {posts.category}</StDetailCategory>
