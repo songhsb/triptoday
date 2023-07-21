@@ -7,12 +7,13 @@ import axios from 'axios';
 import { GoHeartFill } from 'react-icons/go';
 import { GoHeart } from 'react-icons/go';
 import './LikesPosts.css';
+import LoadingSpinner from '../common/LoadingSpinner';
 
 const LikesPosts = ({ postId }) => {
   const queryClient = useQueryClient();
   /** NOTE [임시 code] useEffect에 있는 auth 불러오는 logic은 임시 code로 추후 삭제 예정
    * (이 loginUserId는 지금은 auth불러서 가져오는데 -> 나중에 승범님이 Detail 조회에서 ?가져오실 auth정보를 props로 내려받아 내려올 예정임) */
-  const [loginUserEmail, setLoginUserEmail] = useState(null);
+  const [loginUserEmail, setLoginUserEmail] = useState('');
   const { data, isLoading, isError } = useQuery(['likes'], async () => {
     const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/likes/${postId}`);
     return response;
@@ -44,23 +45,30 @@ const LikesPosts = ({ postId }) => {
 
   useEffect(() => {
     onAuthStateChanged(auth, user => {
-      !!user.email && setLoginUserEmail(user.email);
+      setLoginUserEmail(user?.email || '');
+      // !!user.email && setLoginUserEmail(user.email);
     });
-  }, []);
+    if ((!isLoading && !isError) || !data) {
+      return;
+    }
+  }, [data]);
 
   if (isLoading) {
-    return <div>로딩중임</div>;
+    return <LoadingSpinner />;
   }
 
   if (isError) {
     return <div>에러남</div>;
   }
+  if (!data.data) {
+    return <LoadingSpinner />;
+  }
 
   const likes = data.data;
-  const fullheart = likes.userList.includes(loginUserEmail);
+  const fullheart = likes.userList?.includes(loginUserEmail);
   const onClickHeartHandler = (loginUserEmail, fullheart) => {
     if (!loginUserEmail) {
-      alert('로그인 해야 누를 수 있음');
+      alert('로그인 해야 누를 수 있습니다.');
       return false;
     }
     let switchedLikes;

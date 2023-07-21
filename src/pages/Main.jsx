@@ -6,19 +6,19 @@ import { useNavigate } from 'react-router-dom';
 import { StButton } from '../components/common/Button';
 import { StyledMoodSelect } from './Write';
 import useInput from '../hooks/useInput';
-import { getComments } from '../api/comments';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import Slider from '../components/Main/Slider';
 import Layout from '../components/common/Layout';
 import { useRecoilValue } from 'recoil';
 import { SearchAtom } from '../recoil/SearchAtom';
+import { getLikes } from '../api/likes';
 
 const Main = () => {
   const { isLoading, isError, data: posts } = useQuery('postsData', getPosts);
-  const { data: comments } = useQuery('comments', getComments);
+  const { data: likes } = useQuery('likes', getLikes);
   const [category, setCategory] = useInput(null);
   const [postList, setPostList] = useState([]);
-  const [commentList, setCommentList] = useState([]);
+  const [likeList, setLikeList] = useState([]);
   const navigate = useNavigate();
 
   // 전역 변수 사용
@@ -26,15 +26,14 @@ const Main = () => {
 
   useEffect(() => {
     const post = posts?.data;
-    const comment = comments;
-    if (!isLoading && !isError) {
+    if ((!isLoading && !isError) || !likeList) {
       setPostList(post);
-      setCommentList(comment);
+      setLikeList(likes);
     } else {
       setPostList(post);
-      setCommentList([]);
+      setLikeList([]);
     }
-  }, [isLoading, isError, posts, comments]);
+  }, [isLoading, isError, posts, likes]);
 
   if (isLoading) {
     return <LoadingSpinner />;
@@ -45,14 +44,10 @@ const Main = () => {
   }
 
   let postIdCount = {};
-  if (commentList) {
-    commentList.forEach(item => {
-      const postId = item.postId;
-      if (!postIdCount.hasOwnProperty(postId)) {
-        postIdCount[postId] = 1; // 해당 게시물에 첫 댓글이므로 1로 초기화
-      } else {
-        postIdCount[postId] += 1; // 해당 게시물의 댓글 수가 이미 기록되어 있으므로 1 증가
-      }
+  if (likeList?.length > 0) {
+    likeList.forEach(item => {
+      const postId = item.id;
+      postIdCount[postId] = item.userList?.length;
     });
   }
 

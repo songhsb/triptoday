@@ -120,7 +120,6 @@ const Detail = () => {
   }
 
   const posts = data.data.find(item => item.id == id);
-  console.log(posts);
   // 명소 관련 입니다
 
   const locationarea = posts.location.slice(5, 8);
