@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-
+import { styled } from 'styled-components';
 import './Overlay.css';
 
 const { kakao } = window;

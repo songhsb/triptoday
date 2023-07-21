@@ -7,6 +7,7 @@ import { useMutation, useQueryClient } from 'react-query';
 import { addPosts } from '../api/posts';
 import { useNavigate } from 'react-router-dom';
 import MapForWrite from '../components/Map/MapForWrite';
+import LoadingSpinner from '../components/common/LoadingSpinner';
 import Layout from '../components/common/Layout';
 
 function Write() {
@@ -48,36 +49,39 @@ function Write() {
   };
 
   return (
-    <Layout>
-      <form onSubmit={handleWriteButtonClick}>
-        지역:
-        <StyledMoodSelect onChange={setCategory}>
-          <option value="서울">서울</option>
-          <option value="대구">대구</option>
-          <option value="부산">부산</option>
-          <option value="경기도">경기도</option>
-          <option value="강원도">강원도</option>
-          <option value="충청도">충청도</option>
-          <option value="경상도">경상도</option>
-          <option value="전라도">전라도</option>
-          <option value="제주도">제주도</option>
-        </StyledMoodSelect>
-        <div>
-          location <br />
-          <StRequiredFieldsText value={location} onChange={setLocation} />
-        </div>
-        <div>
-          description <br />
-          <StRequiredFieldsText value={description} onChange={setDescription} />
-        </div>
-        <div>
-          Image <br />
-          <StRequiredFieldsText value={image} onChange={setImage} />
-        </div>
-        <MapForWrite markerInfo={markerInfo} setMarkerInfo={setMarkerInfo} />
-        <StButton $fontColor={'black'}>등록</StButton>
-      </form>
-    </Layout>
+    <>
+      <LoadingSpinner />
+      <Layout>
+        <form onSubmit={handleWriteButtonClick}>
+          지역:
+          <StyledMoodSelect onChange={setCategory}>
+            <option value="서울">서울</option>
+            <option value="대구">대구</option>
+            <option value="부산">부산</option>
+            <option value="경기도">경기도</option>
+            <option value="강원도">강원도</option>
+            <option value="충청도">충청도</option>
+            <option value="경상도">경상도</option>
+            <option value="전라도">전라도</option>
+            <option value="제주도">제주도</option>
+          </StyledMoodSelect>
+          <div>
+            location <br />
+            <StRequiredFieldsText value={location} onChange={setLocation} />
+          </div>
+          <div>
+            description <br />
+            <StRequiredFieldsText value={description} onChange={setDescription} />
+          </div>
+          <div>
+            Image <br />
+            <StRequiredFieldsText value={image} onChange={setImage} />
+          </div>
+          <MapForWrite markerInfo={markerInfo} setMarkerInfo={setMarkerInfo} />
+          <StButton $fontColor={'black'}>등록</StButton>
+        </form>
+      </Layout>
+    </>
   );
 }
 

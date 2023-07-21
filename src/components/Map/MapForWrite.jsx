@@ -21,13 +21,11 @@ const MapForWrite = ({ markerInfo, setMarkerInfo }) => {
     //
     //지도 생성 및 객체 리턴
     const newMap = new kakao.maps.Map(container, options);
-
     // 지도를 클릭했을 때 이벤트 핸들러(핀생성)
 
     kakao.maps.event.addListener(newMap, 'click', e => mapClickHandler(e, newMap));
     const zoomControl = new kakao.maps.ZoomControl();
     newMap.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-
     const mapTypeControl = new kakao.maps.MapTypeControl();
     newMap.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
     setMap(newMap);
@@ -56,30 +54,25 @@ const MapForWrite = ({ markerInfo, setMarkerInfo }) => {
     });
   };
   //커스텀 오버레이 핸들러
-
   const showCustomOverlay = (map, position, address) => {
     //오버레이 초기화(지도에서 없애고 초기화)
     if (overlayRef.current) {
       overlayRef.current.setMap(null);
       overlayRef.current = null;
     }
-
     const content = `
     <div style="position: absolute; left: 50%; bottom: 40px; transform: translateX(-50%); background-color: #fff; padding: 5px; font-size: 12px; font-weight:800; border:2px solid">
     주소: ${address}
   </div>
     `;
-
     const customOverlay = new kakao.maps.CustomOverlay({
       content,
       position,
       yAnchor: 1,
     });
-
     overlayRef.current = customOverlay;
     customOverlay.setMap(map);
   };
-
   // 검색 이벤트 핸들러
   const searchHandler = () => {
     const keyword = mapInputValue;
@@ -90,7 +83,6 @@ const MapForWrite = ({ markerInfo, setMarkerInfo }) => {
         if (markerRef.current) {
           markerRef.current.setMap(null);
         }
-
         if (overlayRef.current) {
           overlayRef.current.setMap(null);
           overlayRef.current = null;
@@ -133,7 +125,6 @@ const MapForWrite = ({ markerInfo, setMarkerInfo }) => {
     </div>
   );
 };
-
 export default MapForWrite;
 
 const MapBox = styled.div`
