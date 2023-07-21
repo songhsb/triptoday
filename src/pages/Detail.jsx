@@ -105,6 +105,9 @@ const Detail = () => {
   // 코멘드 관련 입니다
 
   useEffect(() => {
+    if (!data) {
+      return;
+    }
     if (!isLoading && !isError) {
       locationData();
     }

@@ -10,6 +10,8 @@ import { getComments } from '../api/comments';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import Slider from '../components/Main/Slider';
 import Layout from '../components/common/Layout';
+import { useRecoilValue } from 'recoil';
+import { SearchAtom } from '../recoil/SearchAtom';
 
 const Main = () => {
   const { isLoading, isError, data: posts } = useQuery('postsData', getPosts);
@@ -18,6 +20,9 @@ const Main = () => {
   const [postList, setPostList] = useState([]);
   const [commentList, setCommentList] = useState([]);
   const navigate = useNavigate();
+
+  // 전역 변수 사용
+  const searchList = useRecoilValue(SearchAtom);
 
   useEffect(() => {
     const post = posts?.data;
@@ -74,34 +79,6 @@ const Main = () => {
       <Slider />
       <Layout>
         {/* 베스트 여행지  */}
-        <div>
-          <div>
-            1위
-            {/* 호버 */}
-            <div>
-              <div>타이틀</div>
-              <div>소개</div>
-            </div>
-          </div>
-          <div>
-            2위
-            {/* 호버 */}
-            <div>
-              <div>타이틀</div>
-              <div>소개</div>
-            </div>
-          </div>
-          <div>
-            3위
-            {/* 호버 */}
-            <div>
-              <div>타이틀</div>
-              <div>소개</div>
-            </div>
-          </div>
-        </div>
-
-        {/* 베스트 여행지  */}
         <StLankingDiv>
           <div>
             1위
@@ -156,17 +133,27 @@ const Main = () => {
             <option value="제주도">제주도</option>
           </StyledMoodSelect>
           <StUl>
-            {posts.data
-              ?.filter(item => !category || item.category === category)
-              .map((item, index) => (
-                <StyledPostsyBox key={index} onClick={() => handleDetailButtonClick(item.id)}>
-                  <div>
-                    <StImage src={item.image} />
-                    <StTitle>{item.location}</StTitle>
-                    <StMpCategory>{item.category}</StMpCategory>
-                  </div>
-                </StyledPostsyBox>
-              ))}
+            {searchList.length > 0
+              ? searchList.map((item, index) => (
+                  <StyledPostsyBox key={index} onClick={() => handleDetailButtonClick(item.id)}>
+                    <div>
+                      <StImage src={item.image} />
+                      <StTitle>{item.location}</StTitle>
+                      <StMpCategory>{item.category}</StMpCategory>
+                    </div>
+                  </StyledPostsyBox>
+                ))
+              : posts.data
+                  ?.filter(item => !category || item.category === category)
+                  .map((item, index) => (
+                    <StyledPostsyBox key={index} onClick={() => handleDetailButtonClick(item.id)}>
+                      <div>
+                        <StImage src={item.image} />
+                        <StTitle>{item.location}</StTitle>
+                        <StMpCategory>{item.category}</StMpCategory>
+                      </div>
+                    </StyledPostsyBox>
+                  ))}
           </StUl>
         </div>
       </Layout>
