@@ -11,7 +11,7 @@ function LoadingSpinner() {
   }, []);
   return loading ? (
     <StLoadingSpinner>
-      <MoonLoader color={'#9ADCFF'} loading={loading} size={150} aria-label="Loading Spinner" data-testid="loader" />{' '}
+      <MoonLoader color={'#9ADCFF'} loading={loading} size={50} aria-label="Loading Spinner" data-testid="loader" />{' '}
     </StLoadingSpinner>
   ) : null;
 }
@@ -29,5 +29,5 @@ const StLoadingSpinner = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  z-index: 3;
 `;

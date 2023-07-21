@@ -74,34 +74,6 @@ const Main = () => {
       <Slider />
       <Layout>
         {/* 베스트 여행지  */}
-        <div>
-          <div>
-            1위
-            {/* 호버 */}
-            <div>
-              <div>타이틀</div>
-              <div>소개</div>
-            </div>
-          </div>
-          <div>
-            2위
-            {/* 호버 */}
-            <div>
-              <div>타이틀</div>
-              <div>소개</div>
-            </div>
-          </div>
-          <div>
-            3위
-            {/* 호버 */}
-            <div>
-              <div>타이틀</div>
-              <div>소개</div>
-            </div>
-          </div>
-        </div>
-
-        {/* 베스트 여행지  */}
         <StLankingDiv>
           <div>
             1위

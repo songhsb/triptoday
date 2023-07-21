@@ -10,6 +10,198 @@
   },
   "posts": [
     {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
       "id": 1,
       "email": "작성자 아이디",
       "category": "강원도",
@@ -83,6 +275,78 @@
       },
       "address": "서울 송파구 가락동 600",
       "id": 8
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
     }
   ],
   "comments": [

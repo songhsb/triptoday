@@ -36,9 +36,6 @@ const Slider = () => {
         <SwiperSlide className="banner">
           <img style={bannerImg} src="/banner-03.jpg" alt="" />
         </SwiperSlide>
-        <SwiperSlide className="banner">
-          <img style={bannerImg} src="/banner-04.jpg" alt="" />
-        </SwiperSlide>
       </Swiper>
     </>
   );

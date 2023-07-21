@@ -159,7 +159,7 @@ const Join = () => {
             (name.length < 2 || reg_name5.test(name)) &&
             (existsNickName.includes(nickName) === true || reg_nick.test(nickName)) &&
             (existsEmail.includes(email) === true || reg_email.test(email)) &&
-            (password.length >= 6 || reg_pw1.test(password)) &&
+            (password.length > 6 || reg_pw1.test(password)) &&
             password === cfmPassword &&
             ((adminCheck === true && adminCode === 'adminCode') || (adminCheck === false && adminCode === ''))
               ? false
