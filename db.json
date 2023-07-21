@@ -110,29 +110,27 @@
   "likes": [
     {
       "id": 5,
-      "userList": [
-        "olxloh@naver.com",
-        "jieun2563@naver.com"
-      ]
+      "userList": ["olxloh@naver.com", "jieun2563@naver.com"]
     },
     {
       "id": 2,
-      "userList": [
-        "jieun2563@naver.com"
-      ]
+      "userList": ["jieun2563@naver.com"]
     },
     {
       "id": 9,
-      "userList": [
-        "jieun2563@naver.com",
-        "olxloh@naver.com"
-      ]
+      "userList": ["jieun2563@naver.com", "olxloh@naver.com"]
     },
     {
       "id": 1,
-      "userList": [
-        "jieun2563@naver.com"
-      ]
+      "userList": ["jieun2563@naver.com"]
+    },
+    {
+      "id": 3,
+      "userList": []
+    },
+    {
+      "id": 6,
+      "userList": []
     }
   ],
   "comments": [

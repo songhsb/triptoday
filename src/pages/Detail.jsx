@@ -17,11 +17,8 @@ import axios from 'axios';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import Layout from '../components/common/Layout';
 import ReadMapInPost from '../components/Map/ReadMapInPost';
-<<<<<<< HEAD
 import FormDialog from '../components/comment/UpdateComment';
-=======
 import LikesPosts from '../components/Detail/LikesPosts';
->>>>>>> 6a81586828de85baf0dbf9b0b046d5e6c81b5f15
 
 const Detail = () => {
   const navigate = useNavigate();
@@ -82,6 +79,8 @@ const Detail = () => {
   const user = auth.currentUser;
   const thisUser = allUsers?.find(item => item.email === userEmail);
 
+  console.log(user);
+
   const { data: comments } = useQuery(['comments'], getComments);
   const commentsMutation = useMutation(addComments, {
     onSuccess: () => {
@@ -99,10 +98,11 @@ const Detail = () => {
       e.preventDefault();
       commentsMutation.mutate({
         id: nanoid(),
-        nickName: thisUser.nickName,
-        profileImg: thisUser.profileImg,
-        email: thisUser.email,
-        isAdmin: thisUser.isAdmin,
+        ...(thisUser?.nickName && { nickName: thisUser.nickName }),
+        ...(user?.displayName && { nickName: user.displayName }),
+        ...(thisUser?.profileImg && { profileImg: thisUser.profileImg }),
+        ...(user?.photoURL && { profileImg: user.photoURL }),
+        ...(thisUser?.email && { email: thisUser.email }),
         body,
         uid: user.uid,
         postId: id,
@@ -184,14 +184,24 @@ const Detail = () => {
       <h1>gg</h1>
       {/* 코멘트 섹션입니다 */}
       <section>
-        <div>
+        {/* <div>
           <StCommentForm onSubmit={handleCommentSubmit}>
             <StInput type="text" placeholder="오늘의 여행은 어떠셨나요?" value={body} onChange={onChangeBodyHandler}></StInput>
             <StButton type="onSubmit" disabled={!body}>
               추가
             </StButton>
           </StCommentForm>
-        </div>
+        </div> */}
+        {user && (
+          <div>
+            <StCommentForm onSubmit={handleCommentSubmit}>
+              <StInput type="text" placeholder="오늘의 여행은 어떠셨나요?" value={body} onChange={onChangeBodyHandler}></StInput>
+              <StButton type="onSubmit" disabled={!body}>
+                추가
+              </StButton>
+            </StCommentForm>
+          </div>
+        )}
         <StCommentsContainer>
           {comments
             ?.filter(comment => parseInt(comment.postId) === parseInt(id))
@@ -207,12 +217,14 @@ const Detail = () => {
                   </StCommentRightPart>
                 </StUserInfo>
                 <p>{comment.body}</p>
-                <StCommentBtnDiv>
-                  <FormDialog comment={comment} />
-                  <StButton $btnSize={'small'} onClick={() => handleCommentDelete(comment.id)}>
-                    삭제
-                  </StButton>
-                </StCommentBtnDiv>
+                {(user?.uid === comment.uid || thisUser?.isAdmin) && (
+                  <StCommentBtnDiv>
+                    {!thisUser?.isAdmin && <FormDialog comment={comment} />}
+                    <StButton $btnSize={'small'} onClick={() => handleCommentDelete(comment.id)}>
+                      삭제
+                    </StButton>
+                  </StCommentBtnDiv>
+                )}
               </StComment>
             ))}
         </StCommentsContainer>
