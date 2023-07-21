@@ -36,8 +36,6 @@ function UpdateWrite() {
   const handleWriteButtonClick = e => {
     e.preventDefault();
     let newPosts = {};
-    console.log('posts.latLng', posts.latLng);
-    console.log('posts.address', posts.address);
     if (markerInfo === null) {
       if (window.confirm('위치가 재설정되지 않았습니다. 수정전의 위치를 유지하겠습니까?')) {
         newPosts = {
@@ -64,8 +62,6 @@ function UpdateWrite() {
         address: markerInfo.address,
       };
     }
-    console.log(newPosts);
-    console.log(posts);
     postsMutation.mutate({ id, posts, newPosts });
     navigate('/');
   };

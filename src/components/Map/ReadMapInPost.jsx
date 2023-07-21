@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { styled } from 'styled-components';
-import { BsArrowsFullscreen } from 'react-icons/bs';
+
 import './Overlay.css';
-import { hover } from '@testing-library/user-event/dist/hover';
+
 const { kakao } = window;
 
 const ReadMapInPost = ({ posts }) => {
@@ -14,7 +13,7 @@ const ReadMapInPost = ({ posts }) => {
     const container = mapRef.current;
     const options = {
       center: new kakao.maps.LatLng(posts.latLng.latitude, posts.latLng.longitude),
-      level: 4, // 확대/축소 레벨
+      level: 9, // 확대/축소 레벨
       draggable: false, // 지도 이동 막음
       disableDoubleClickZoom: true,
     };

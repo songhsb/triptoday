@@ -7,7 +7,7 @@ const MapForWrite = ({ markerInfo, setMarkerInfo }) => {
   const markerRef = useRef(null);
   const [map, setMap] = useState(null);
   const overlayRef = useRef(null);
-  // const [markerInfo, setMarkerInfo] = useState(null);
+
   const [searchError, setSearchError] = useState(false);
   const [mapInputValue, mapInputChangeHandler, mapInputReset] = useInput();
   useEffect(() => {
@@ -23,31 +23,8 @@ const MapForWrite = ({ markerInfo, setMarkerInfo }) => {
     const newMap = new kakao.maps.Map(container, options);
 
     // 지도를 클릭했을 때 이벤트 핸들러(핀생성)
-    const mapClickHandler = mouseEvent => {
-      // 클릭한 위도, 경도 정보를 가져옵니다
-      const position = mouseEvent.latLng;
-      // 이미 마커가 있는 경우 초기화
-      if (markerRef.current) {
-        markerRef.current.setMap(null);
-      }
-      //마커 위치 최신화
-      markerRef.current = new kakao.maps.Marker({
-        position,
-      });
 
-      markerRef.current.setMap(newMap);
-      // 주소-좌표 변환 객체를 생성
-      const geocoder = new kakao.maps.services.Geocoder();
-      geocoder.coord2Address(position.getLng(), position.getLat(), (result, status) => {
-        if (status === kakao.maps.services.Status.OK) {
-          const address = result[0].address.address_name;
-          setMarkerInfo({ position, address });
-          showCustomOverlay(newMap, position, address);
-        }
-      });
-    };
-
-    kakao.maps.event.addListener(newMap, 'click', mapClickHandler);
+    kakao.maps.event.addListener(newMap, 'click', e => mapClickHandler(e, newMap));
     const zoomControl = new kakao.maps.ZoomControl();
     newMap.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
@@ -55,7 +32,29 @@ const MapForWrite = ({ markerInfo, setMarkerInfo }) => {
     newMap.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
     setMap(newMap);
   }, []);
+  const mapClickHandler = (mouseEvent, newMap) => {
+    // 클릭한 위도, 경도 정보를 가져옵니다
+    const position = mouseEvent.latLng;
+    // 이미 마커가 있는 경우 초기화
+    if (markerRef.current) {
+      markerRef.current.setMap(null);
+    }
+    //마커 위치 최신화
+    markerRef.current = new kakao.maps.Marker({
+      position,
+    });
 
+    markerRef.current.setMap(newMap);
+    // 주소-좌표 변환 객체를 생성
+    const geocoder = new kakao.maps.services.Geocoder();
+    geocoder.coord2Address(position.getLng(), position.getLat(), (result, status) => {
+      if (status === kakao.maps.services.Status.OK) {
+        const address = result[0].address.address_name;
+        setMarkerInfo({ position, address });
+        showCustomOverlay(newMap, position, address);
+      }
+    });
+  };
   //커스텀 오버레이 핸들러
 
   const showCustomOverlay = (map, position, address) => {
@@ -113,6 +112,7 @@ const MapForWrite = ({ markerInfo, setMarkerInfo }) => {
       }
     });
   };
+
   const handleOnKeyPress = e => {
     e.preventDefault();
     if (e.key === 'Enter') {
