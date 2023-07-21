@@ -23,93 +23,35 @@
       "address": "강원특별자치도 영월군 영월읍 방절리 139"
     },
     {
+      "email": "khhds00@naver.com",
+      "category": "경기도",
+      "location": "대한민국 가평 ",
+      "description": "자연의 정취에 젖어들게 만드는 가평 아침고요수목원. 어디를 둘러봐도 풍경이 가득해 지루할 틈이 없다. 그중에도 가평하면 빼놓을 수 없는 쁘띠프랑스는 프랑스를 떠올리게 하는 이국적인 풍경으로 빨간 지붕이 매력적이다. 또한 매년 가을에 열리는 자라섬 국제재즈페스티벌은 석양과 음악이 어우러질 때까지 재즈의 매력에 흠뻑 취해볼 수 있다.",
+      "image": "https://myro.co.kr/myro_image/city/gapyeong.jpg",
+      "latLng": {
+        "latitude": 37.83198883327494,
+        "longitude": 127.50962847275386
+      },
+      "address": "경기 가평군 가평읍 읍내리 1010",
+      "id": 2
+    },
+    {
+      "email": "khhds00@naver.com",
       "category": "강원도",
       "location": "대한민국 강릉",
       "description": "은은한 커피향이 남다른 강원도 강릉시. 그중에도 카페거리로 유명한 안목해변은 발이 닿는 어디든 향긋한 커피 한 잔에 지평선 끝까지 펼쳐지는 바다 풍경은 덤으로 얻을 수 있다. 일출 명소로 유명한 정동진과 야경이 아름다운 경포대는 대표 여행 코스! 구름도 머물다 간다는 해발 1,100m에 위치한 강릉 안반데기 마을은 전망대에 올라 드넓게 펼쳐진 배추밭이 붉게 물드는 일출 전경이 일품이다.",
       "image": "https://myro.co.kr/myro_image/city/gangneung.jpg",
-      "id": 2,
       "latLng": {
-        "latitude": 37.752373590036896,
-        "longitude": 128.8746194375201
+        "latitude": 37.752114428948964,
+        "longitude": 128.8759034687553
       },
-      "address": "강원특별자치도 강릉시 홍제동 1001"
-    },
-    {
-      "category": "서울",
-      "location": "ㅁㅁ",
-      "description": "ㅁㅁ",
-      "image": "ㅁㅁ",
-      "latLng": {
-        "latitude": 37.250094002685735,
-        "longitude": 127.17044763486773
-      },
-      "address": "경기 용인시 처인구 삼가동 산 20-6",
+      "address": "강원특별자치도 강릉시 홍제동 1001",
       "id": 3
-    },
-    {
-      "category": "서울",
-      "location": "경주",
-      "description": "굿",
-      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
-      "latLng": {
-        "latitude": 35.83991036264332,
-        "longitude": 129.22901799908698
-      },
-      "address": "경북 경주시 인왕동 5-5",
-      "id": 5
-    },
-    {
-      "category": "서울",
-      "location": "ㅁㅁ",
-      "description": "ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ",
-      "image": "ㅁㅁ",
-      "latLng": {
-        "latitude": 37.5424441981301,
-        "longitude": 127.58912072792951
-      },
-      "address": "경기 양평군 용문면 신점리 산 48",
-      "id": 6
-    },
-    {
-      "latLng": {
-        "latitude": 37.508854685026165,
-        "longitude": 127.04883786455058
-      },
-      "address": "서울 강남구 삼성동 135-4",
-      "category": "서울",
-      "location": "ㅁㅁㅁ",
-      "description": "ㅁㅁㅁㅁ",
-      "image": "ㅁㅁㅁㅁㅁ",
-      "id": 7
-    },
-    {
-      "category": "서울",
-      "location": "aa",
-      "description": "aa",
-      "image": "aa",
-      "latLng": {
-        "latitude": 37.493946249947626,
-        "longitude": 127.11077363273755
-      },
-      "address": "서울 송파구 가락동 600",
-      "id": 8
-    },
-    {
-      "category": "서울",
-      "location": "ㅅㄷㄴㅅ",
-      "description": "test",
-      "image": "test",
-      "latLng": {
-        "latitude": 35.83976440668592,
-        "longitude": 129.25709917649604
-      },
-      "address": "경북 경주시 보문동 산 12",
-      "id": 9
     }
   ],
   "likes": [
     {
-      "id": 5,
+      "id": 1,
       "userList": [
         "olxloh@naver.com",
         "jieun2563@naver.com"
@@ -118,21 +60,52 @@
     {
       "id": 2,
       "userList": [
-        "jieun2563@naver.com"
+        "khhds00@naver.com"
       ]
     },
     {
-      "id": 9,
+      "id": 3,
       "userList": [
+        "olxloh@naver.com",
         "jieun2563@naver.com",
-        "olxloh@naver.com"
+        "khhds00@naver.com"
       ]
     },
     {
-      "id": 1,
-      "userList": [
-        "jieun2563@naver.com"
-      ]
+      "userList": [],
+      "id": 4
+    },
+    {
+      "userList": [],
+      "id": 5
+    },
+    {
+      "userList": [],
+      "id": 6
+    },
+    {
+      "userList": [],
+      "id": 7
+    },
+    {
+      "userList": [],
+      "id": 8
+    },
+    {
+      "userList": [],
+      "id": 9
+    },
+    {
+      "userList": [],
+      "id": 10
+    },
+    {
+      "userList": [],
+      "id": 11
+    },
+    {
+      "userList": [],
+      "id": 12
     }
   ],
   "comments": [
