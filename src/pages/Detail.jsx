@@ -7,11 +7,15 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { collection, getDocs, query } from 'firebase/firestore';
 import { nanoid } from 'nanoid';
 import { deletePosts, getPosts } from '../api/posts';
-import { getComments, addComment } from '../api/comments';
+import { getComments, addComments, deleteComments } from '../api/comments';
+import { StCategory, StImage, StMpCategory, StTitle, StyledPostsyBox } from './Main';
 import { styled } from 'styled-components';
 import { StButton } from '../components/common/Button';
 import { StInput } from '../components/common/InputStyle';
 import { touristAttraction } from '../api/touristAttraction';
+import axios from 'axios';
+import FormDialog from '../components/comment/UpdateComment';
+import LikesPosts from '../components/Detail/LikesPosts';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import Layout from '../components/common/Layout';
 import ReadMapInPost from '../components/Map/ReadMapInPost';
@@ -64,30 +68,41 @@ const Detail = () => {
   const user = auth.currentUser;
   const thisUser = allUsers?.find(item => item.email === userEmail);
 
+  console.log(user);
+
   const { data: comments } = useQuery(['comments'], getComments);
-  const commentsMutation = useMutation(addComment, {
+  const commentsMutation = useMutation(addComments, {
     onSuccess: () => {
       queryClient.invalidateQueries(['comments']);
     },
   });
-  const [body, onChangeBodyHandler, reset] = useInput();
+  const deleteMutation = useMutation(deleteComments, {
+    onSuccess: () => {
+      queryClient.invalidateQueries('comments');
+    },
+  });
+  const [body, onChangeBodyHandler, setter] = useInput();
   const handleCommentSubmit = e => {
     if (e) {
       e.preventDefault();
       commentsMutation.mutate({
         id: nanoid(),
-        nickName: thisUser.nickName,
-        profileImg: thisUser.profileImg,
-        email: thisUser.email,
-        isAdmin: thisUser.isAdmin,
+        ...(thisUser?.nickName && { nickName: thisUser.nickName }),
+        ...(user?.displayName && { nickName: user.displayName }),
+        ...(thisUser?.profileImg && { profileImg: thisUser.profileImg }),
+        ...(user?.photoURL && { profileImg: user.photoURL }),
+        ...(thisUser?.email && { email: thisUser.email }),
         body,
         uid: user.uid,
         postId: id,
       });
-      reset();
+      setter('');
     }
   };
-  // 새로고침 관련 입니다
+  const handleCommentDelete = async id => {
+    deleteMutation.mutate(id);
+  };
+  // 코멘드 관련 입니다
 
   useEffect(() => {
     if (!data) {
@@ -127,29 +142,47 @@ const Detail = () => {
       <ReadMapInPost posts={posts} />
       {/* 코멘트 섹션입니다 */}
       <section>
-        <div>
+        {/* <div>
           <StCommentForm onSubmit={handleCommentSubmit}>
             <StInput type="text" placeholder="오늘의 여행은 어떠셨나요?" value={body} onChange={onChangeBodyHandler}></StInput>
             <StButton type="onSubmit" disabled={!body}>
               추가
             </StButton>
           </StCommentForm>
-        </div>
+        </div> */}
+        {user && (
+          <div>
+            <StCommentForm onSubmit={handleCommentSubmit}>
+              <StInput type="text" placeholder="오늘의 여행은 어떠셨나요?" value={body} onChange={onChangeBodyHandler}></StInput>
+              <StButton type="onSubmit" disabled={!body}>
+                추가
+              </StButton>
+            </StCommentForm>
+          </div>
+        )}
         <StCommentsContainer>
           {comments
             ?.filter(comment => parseInt(comment.postId) === parseInt(id))
             .map((comment, index) => (
               <StComment key={index}>
-                <StImageContainer>
-                  <StProfileImage src={comment.profileImg} alt="프로필 이미지" />
-                </StImageContainer>
-                <StCommentRightPart>
-                  <p>{comment.nickName}</p>
-                  <p>{comment.email}</p>
-                  <p>{comment.body}</p>
-                </StCommentRightPart>
-                <StButton>수정</StButton>
-                <StButton>삭제</StButton>
+                <StUserInfo>
+                  <StImageContainer>
+                    <StProfileImage src={comment.profileImg} alt="프로필 이미지" />
+                  </StImageContainer>
+                  <StCommentRightPart>
+                    <p>{comment.nickName}</p>
+                    <p>{comment.email}</p>
+                  </StCommentRightPart>
+                </StUserInfo>
+                <p>{comment.body}</p>
+                {(user?.uid === comment.uid || thisUser?.isAdmin) && (
+                  <StCommentBtnDiv>
+                    {!thisUser?.isAdmin && <FormDialog comment={comment} />}
+                    <StButton $btnSize={'small'} onClick={() => handleCommentDelete(comment.id)}>
+                      삭제
+                    </StButton>
+                  </StCommentBtnDiv>
+                )}
               </StComment>
             ))}
         </StCommentsContainer>
@@ -174,14 +207,19 @@ const StCommentForm = styled.form`
 `;
 
 const StComment = styled.li`
+  padding: 10px;
+  border-bottom: solid 3px #9adcff;
+`;
+
+const StUserInfo = styled.div`
   display: flex;
-  margin-bottom: 28px;
+  gap: 8px;
 `;
 
 const StImageContainer = styled.div`
   width: 40px;
   height: 40px;
-  border-radius: 70%;
+  border-radius: 50%;
   overflow: hidden;
 `;
 
@@ -197,6 +235,12 @@ const StCommentRightPart = styled.div`
 
 const StCommentsContainer = styled.ol`
   margin-top: 40px;
+`;
+
+const StCommentBtnDiv = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 5px;
 `;
 
 export const StRecommendTitle = styled.p`

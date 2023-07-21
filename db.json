@@ -52,24 +52,15 @@
   "likes": [
     {
       "id": 1,
-      "userList": [
-        "olxloh@naver.com",
-        "jieun2563@naver.com"
-      ]
+      "userList": ["olxloh@naver.com", "jieun2563@naver.com"]
     },
     {
       "id": 2,
-      "userList": [
-        "khhds00@naver.com"
-      ]
+      "userList": ["khhds00@naver.com"]
     },
     {
       "id": 3,
-      "userList": [
-        "olxloh@naver.com",
-        "jieun2563@naver.com",
-        "khhds00@naver.com"
-      ]
+      "userList": ["olxloh@naver.com", "jieun2563@naver.com", "khhds00@naver.com"]
     },
     {
       "userList": [],

@@ -5,8 +5,14 @@ const getComments = async () => {
   return response.data;
 };
 
-export const addComment = comment => {
-  return axios.post(`${process.env.REACT_APP_SERVER_URL}/comments`, comment);
+const addComments = async comments => {
+  return axios.post(`${process.env.REACT_APP_SERVER_URL}/comments`, comments);
+};
+const updateComments = async ({ id, newComment }) => {
+  await axios.put(`${process.env.REACT_APP_SERVER_URL}/comments/${id}`, newComment);
+};
+const deleteComments = async id => {
+  await axios.delete(`${process.env.REACT_APP_SERVER_URL}/comments/${id}`);
 };
 
-export { getComments };
+export { getComments, addComments, updateComments, deleteComments };
