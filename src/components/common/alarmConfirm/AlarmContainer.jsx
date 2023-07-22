@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ModalPortal from './ModalPortal';
 import { useDispatch, useSelector } from 'react-redux';
-import { closeAlarm, openAlarm } from '../../../redux/modules/confirm';
+import { closeAlarm } from '../../../redux/modules/confirm';
 
 const AlarmContainer = () => {
   const { message, isOpenAlarm, buttonActions, alarmType } = useSelector(state => state.confirm);

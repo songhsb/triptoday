@@ -9,8 +9,8 @@ import MapForUpdate from '../components/Map/MapForUpdate';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import Layout from '../components/common/Layout';
 import { StRequiredFieldsText } from '../components/Write/WriteForm';
-import { useDispatch, useSelector } from 'react-redux';
-import { openAlarm, closeAlarm } from '../redux/modules/confirm';
+import { useDispatch } from 'react-redux';
+import { closeAlarm } from '../redux/modules/confirm';
 import useConfirm from '../hooks/useConfirm';
 import useAlert from '../hooks/useAlert';
 

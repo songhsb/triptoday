@@ -1,6 +1,6 @@
 // useConfirm.js
 import { useDispatch } from 'react-redux';
-import { closeAlarm, openConfirmAlarm } from '../redux/modules/confirm';
+import { openConfirmAlarm } from '../redux/modules/confirm';
 
 const useConfirm = () => {
   const dispatch = useDispatch();

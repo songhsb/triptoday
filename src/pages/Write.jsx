@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { styled } from 'styled-components';
 import useInput from '../hooks/useInput';
 import { useMutation, useQueryClient } from 'react-query';
 import { addPosts } from '../api/posts';
@@ -9,13 +8,10 @@ import Layout from '../components/common/Layout';
 import { useRecoilValue } from 'recoil';
 import { EmailAtom } from '../recoil/SearchAtom';
 import WriteForm from '../components/Write/WriteForm';
-import { useDispatch } from 'react-redux';
-import { openAlarm } from '../redux/modules/confirm';
 import useAlert from '../hooks/useAlert';
 
 function Write() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const [category, setCategory] = useInput('서울');
   const [location, setLocation] = useInput('');
   const [description, setDescription] = useInput('');

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useInput from '../hooks/useInput';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 import { auth, db } from '../firebase';
 import { onAuthStateChanged } from 'firebase/auth';
@@ -8,14 +8,11 @@ import { collection, getDocs, query } from 'firebase/firestore';
 import { nanoid } from 'nanoid';
 import { deletePosts, getPosts } from '../api/posts';
 import { getComments, addComments, deleteComments } from '../api/comments';
-import { StCategory, StImage, StMpCategory, StTitle, StyledPostsyBox } from './Main';
 import { styled } from 'styled-components';
 import { StButton } from '../components/common/Button';
 import { StInput } from '../components/common/InputStyle';
 import { touristAttraction } from '../api/touristAttraction';
-import axios from 'axios';
 import FormDialog from '../components/comment/UpdateComment';
-import LikesPosts from '../components/Detail/LikesPosts';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import Layout from '../components/common/Layout';
 import ReadMapInPost from '../components/Map/ReadMapInPost';
@@ -27,7 +24,6 @@ import { useDispatch } from 'react-redux';
 import { closeAlarm } from '../redux/modules/confirm';
 
 const Detail = () => {
-  const navigate = useNavigate();
   const param = useParams();
   const id = param.id;
   const [list, setList] = useState([]);
