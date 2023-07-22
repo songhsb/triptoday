@@ -42,6 +42,7 @@ function Login() {
   // 유효성 검사 정규식
   const reg_email = /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/i;
   const reg_pw1 = /^[a-z0-9_-]{6,18}$/;
+
   const loginHandler = async e => {
     const thisUser = allUsers.find(item => item.email === email);
     console.log('thisUser', thisUser);
