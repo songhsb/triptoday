@@ -22,6 +22,9 @@ import ReadMapInPost from '../components/Map/ReadMapInPost';
 import DetailMain from '../components/Detail/DetailMain';
 import DetailOtherArea from '../components/Detail/DetailOtherArea';
 import DetailRecommendArea from '../components/Detail/DetailRecommendArea';
+import useConfirm from '../hooks/useConfirm';
+import { useDispatch } from 'react-redux';
+import { closeAlarm } from '../redux/modules/confirm';
 
 const Detail = () => {
   const navigate = useNavigate();
@@ -29,6 +32,8 @@ const Detail = () => {
   const id = param.id;
   const [list, setList] = useState([]);
   const [seeMore, setSeeMore] = useState(false);
+  const { confirm } = useConfirm();
+  const dispatch = useDispatch();
 
   const { isLoading, isError, data } = useQuery('postsData', getPosts);
 
@@ -99,8 +104,20 @@ const Detail = () => {
       setter('');
     }
   };
+  // const handleCommentDelete = async id => {
+  //   if (window.confirm('삭제 하시겠습니까?')) {
+  //     deleteMutation.mutate(id);
+  //   }
+  // };
   const handleCommentDelete = async id => {
-    deleteMutation.mutate(id);
+    try {
+      await confirm('삭제하시겠습니까?');
+      deleteMutation.mutate(id);
+      dispatch(closeAlarm());
+    } catch (error) {
+      dispatch(closeAlarm());
+      return false;
+    }
   };
   // 코멘드 관련 입니다
 

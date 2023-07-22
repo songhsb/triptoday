@@ -95,27 +95,117 @@
       },
       "address": "서울 송파구 가락동 600",
       "id": 8
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "대구",
+      "location": "ggg",
+      "description": "ggg",
+      "image": "https://media.triple.guide/triple-cms/c_limit,f_auto,h_2048,w_2048/115defee-c480-48b1-889c-4b990cb1cd9d.jpeg",
+      "latLng": {
+        "latitude": 35.852203401338635,
+        "longitude": 129.21229580862243
+      },
+      "address": "경북 경주시 성건동 650-21",
+      "id": 9
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "경상도",
+      "location": "경주",
+      "description": "...",
+      "image": "https://media.triple.guide/triple-cms/c_limit,f_auto,h_2048,w_2048/115defee-c480-48b1-889c-4b990cb1cd9d.jpeg",
+      "latLng": {
+        "latitude": 35.81389428783277,
+        "longitude": 129.0558473922068
+      },
+      "address": "경북 경주시 산내면 감산리 747",
+      "id": 10
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "대구",
+      "location": "f",
+      "description": "f",
+      "image": "f",
+      "latLng": {
+        "latitude": 35.29422946688933,
+        "longitude": 127.29656884902221
+      },
+      "address": "전남 곡성군 곡성읍 학정리 287",
+      "id": 11
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "서울",
+      "location": "s",
+      "description": "s",
+      "image": "",
+      "latLng": {
+        "latitude": 36.375416463268415,
+        "longitude": 128.18498275726805
+      },
+      "address": "경북 상주시 거동동 370-4",
+      "id": 12
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "경기도",
+      "location": "배고픈지역",
+      "description": "배고픈지역",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzYqB33QvQjkhqVrT7wXOiDkSChsfwywOd8A&usqp=CAU",
+      "latLng": {
+        "latitude": 36.74813841453687,
+        "longitude": 127.29089237674933
+      },
+      "address": "충남 천안시 동남구 수신면 장산리 745-6",
+      "id": 13
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "서울",
+      "location": "s",
+      "description": "s",
+      "image": "",
+      "latLng": {
+        "latitude": 36.87011918586886,
+        "longitude": 127.23938203769995
+      },
+      "address": "충남 천안시 서북구 입장면 호당리 산 50-10",
+      "id": 14
     }
   ],
   "likes": [
     {
       "id": 1,
-      "userList": ["olxloh@naver.com", "jieun2563@naver.com"]
+      "userList": [
+        "olxloh@naver.com",
+        "jieun2563@naver.com"
+      ]
     },
     {
       "id": 2,
-      "userList": ["khhds00@naver.com"]
+      "userList": [
+        "khhds00@naver.com",
+        "jieun2563@naver.com"
+      ]
     },
     {
       "id": 3,
-      "userList": ["olxloh@naver.com", "jieun2563@naver.com", "khhds00@naver.com"]
+      "userList": [
+        "olxloh@naver.com",
+        "khhds00@naver.com",
+        "jieun2563@naver.com"
+      ]
     },
     {
       "userList": [],
       "id": 4
     },
     {
-      "userList": [],
+      "userList": [
+        "jieun2563@naver.com"
+      ],
       "id": 5
     },
     {
@@ -127,7 +217,9 @@
       "id": 7
     },
     {
-      "userList": [],
+      "userList": [
+        "jieun2563@naver.com"
+      ],
       "id": 8
     },
     {
@@ -135,7 +227,9 @@
       "id": 9
     },
     {
-      "userList": [],
+      "userList": [
+        "jieun2563@naver.com"
+      ],
       "id": 10
     },
     {
@@ -145,6 +239,564 @@
     {
       "userList": [],
       "id": 12
+    },
+    {
+      "userList": [
+        "jieun2563@naver.com"
+      ],
+      "id": 13
+    },
+    {
+      "userList": [],
+      "id": 14
+    },
+    {
+      "userList": [],
+      "id": 15
+    },
+    {
+      "userList": [],
+      "id": 16
+    },
+    {
+      "userList": [],
+      "id": 17
+    },
+    {
+      "userList": [],
+      "id": 18
+    },
+    {
+      "userList": [],
+      "id": 19
+    },
+    {
+      "userList": [],
+      "id": 20
+    },
+    {
+      "userList": [],
+      "id": 21
+    },
+    {
+      "userList": [],
+      "id": 22
+    },
+    {
+      "userList": [],
+      "id": 23
+    },
+    {
+      "userList": [],
+      "id": 24
+    },
+    {
+      "userList": [],
+      "id": 25
+    },
+    {
+      "userList": [],
+      "id": 26
+    },
+    {
+      "userList": [],
+      "id": 27
+    },
+    {
+      "userList": [],
+      "id": 28
+    },
+    {
+      "userList": [],
+      "id": 29
+    },
+    {
+      "userList": [],
+      "id": 30
+    },
+    {
+      "userList": [],
+      "id": 31
+    },
+    {
+      "userList": [],
+      "id": 32
+    },
+    {
+      "userList": [],
+      "id": 33
+    },
+    {
+      "userList": [],
+      "id": 34
+    },
+    {
+      "userList": [],
+      "id": 35
+    },
+    {
+      "userList": [],
+      "id": 36
+    },
+    {
+      "userList": [],
+      "id": 37
+    },
+    {
+      "userList": [],
+      "id": 38
+    },
+    {
+      "userList": [],
+      "id": 39
+    },
+    {
+      "userList": [],
+      "id": 40
+    },
+    {
+      "userList": [],
+      "id": 41
+    },
+    {
+      "userList": [],
+      "id": 42
+    },
+    {
+      "userList": [],
+      "id": 43
+    },
+    {
+      "userList": [],
+      "id": 44
+    },
+    {
+      "userList": [],
+      "id": 45
+    },
+    {
+      "userList": [],
+      "id": 46
+    },
+    {
+      "userList": [],
+      "id": 47
+    },
+    {
+      "userList": [],
+      "id": 48
+    },
+    {
+      "userList": [],
+      "id": 49
+    },
+    {
+      "userList": [],
+      "id": 50
+    },
+    {
+      "userList": [],
+      "id": 51
+    },
+    {
+      "userList": [],
+      "id": 52
+    },
+    {
+      "userList": [],
+      "id": 53
+    },
+    {
+      "userList": [],
+      "id": 54
+    },
+    {
+      "userList": [],
+      "id": 55
+    },
+    {
+      "userList": [],
+      "id": 56
+    },
+    {
+      "userList": [],
+      "id": 57
+    },
+    {
+      "userList": [],
+      "id": 58
+    },
+    {
+      "userList": [],
+      "id": 59
+    },
+    {
+      "userList": [],
+      "id": 60
+    },
+    {
+      "userList": [],
+      "id": 61
+    },
+    {
+      "userList": [],
+      "id": 62
+    },
+    {
+      "userList": [],
+      "id": 63
+    },
+    {
+      "userList": [],
+      "id": 64
+    },
+    {
+      "userList": [],
+      "id": 65
+    },
+    {
+      "userList": [],
+      "id": 66
+    },
+    {
+      "userList": [],
+      "id": 67
+    },
+    {
+      "userList": [],
+      "id": 68
+    },
+    {
+      "userList": [],
+      "id": 69
+    },
+    {
+      "userList": [],
+      "id": 70
+    },
+    {
+      "userList": [],
+      "id": 71
+    },
+    {
+      "userList": [],
+      "id": 72
+    },
+    {
+      "userList": [],
+      "id": 73
+    },
+    {
+      "userList": [],
+      "id": 74
+    },
+    {
+      "userList": [],
+      "id": 75
+    },
+    {
+      "userList": [],
+      "id": 76
+    },
+    {
+      "userList": [],
+      "id": 77
+    },
+    {
+      "userList": [],
+      "id": 78
+    },
+    {
+      "userList": [],
+      "id": 79
+    },
+    {
+      "userList": [],
+      "id": 80
+    },
+    {
+      "userList": [],
+      "id": 81
+    },
+    {
+      "userList": [],
+      "id": 82
+    },
+    {
+      "userList": [],
+      "id": 83
+    },
+    {
+      "userList": [],
+      "id": 84
+    },
+    {
+      "userList": [],
+      "id": 85
+    },
+    {
+      "userList": [],
+      "id": 86
+    },
+    {
+      "userList": [],
+      "id": 87
+    },
+    {
+      "userList": [],
+      "id": 88
+    },
+    {
+      "userList": [],
+      "id": 89
+    },
+    {
+      "userList": [],
+      "id": 90
+    },
+    {
+      "userList": [],
+      "id": 91
+    },
+    {
+      "userList": [],
+      "id": 92
+    },
+    {
+      "userList": [],
+      "id": 93
+    },
+    {
+      "userList": [],
+      "id": 94
+    },
+    {
+      "userList": [],
+      "id": 95
+    },
+    {
+      "userList": [],
+      "id": 96
+    },
+    {
+      "userList": [],
+      "id": 97
+    },
+    {
+      "userList": [],
+      "id": 98
+    },
+    {
+      "userList": [],
+      "id": 99
+    },
+    {
+      "userList": [],
+      "id": 100
+    },
+    {
+      "userList": [],
+      "id": 101
+    },
+    {
+      "userList": [],
+      "id": 102
+    },
+    {
+      "userList": [],
+      "id": 103
+    },
+    {
+      "userList": [],
+      "id": 104
+    },
+    {
+      "userList": [],
+      "id": 105
+    },
+    {
+      "userList": [],
+      "id": 106
+    },
+    {
+      "userList": [],
+      "id": 107
+    },
+    {
+      "userList": [],
+      "id": 108
+    },
+    {
+      "userList": [],
+      "id": 109
+    },
+    {
+      "userList": [],
+      "id": 110
+    },
+    {
+      "userList": [],
+      "id": 111
+    },
+    {
+      "userList": [],
+      "id": 112
+    },
+    {
+      "userList": [],
+      "id": 113
+    },
+    {
+      "userList": [],
+      "id": 114
+    },
+    {
+      "userList": [],
+      "id": 115
+    },
+    {
+      "userList": [],
+      "id": 116
+    },
+    {
+      "userList": [],
+      "id": 117
+    },
+    {
+      "userList": [],
+      "id": 118
+    },
+    {
+      "userList": [],
+      "id": 119
+    },
+    {
+      "userList": [],
+      "id": 120
+    },
+    {
+      "userList": [],
+      "id": 121
+    },
+    {
+      "userList": [],
+      "id": 122
+    },
+    {
+      "userList": [],
+      "id": 123
+    },
+    {
+      "userList": [],
+      "id": 124
+    },
+    {
+      "userList": [],
+      "id": 125
+    },
+    {
+      "userList": [],
+      "id": 126
+    },
+    {
+      "userList": [],
+      "id": 127
+    },
+    {
+      "userList": [],
+      "id": 128
+    },
+    {
+      "userList": [],
+      "id": 129
+    },
+    {
+      "userList": [],
+      "id": 130
+    },
+    {
+      "userList": [],
+      "id": 131
+    },
+    {
+      "userList": [],
+      "id": 132
+    },
+    {
+      "userList": [],
+      "id": 133
+    },
+    {
+      "userList": [],
+      "id": 134
+    },
+    {
+      "userList": [],
+      "id": 135
+    },
+    {
+      "userList": [],
+      "id": 136
+    },
+    {
+      "userList": [],
+      "id": 137
+    },
+    {
+      "userList": [],
+      "id": 138
+    },
+    {
+      "userList": [],
+      "id": 139
+    },
+    {
+      "userList": [],
+      "id": 140
+    },
+    {
+      "userList": [],
+      "id": 141
+    },
+    {
+      "userList": [],
+      "id": 142
+    },
+    {
+      "userList": [],
+      "id": 143
+    },
+    {
+      "userList": [],
+      "id": 144
+    },
+    {
+      "userList": [],
+      "id": 145
+    },
+    {
+      "userList": [],
+      "id": 146
+    },
+    {
+      "userList": [],
+      "id": 147
+    },
+    {
+      "userList": [],
+      "id": 148
+    },
+    {
+      "userList": [],
+      "id": 149
+    },
+    {
+      "userList": [],
+      "id": 150
+    },
+    {
+      "userList": [],
+      "id": 151
     }
   ],
   "comments": [
@@ -153,6 +805,15 @@
       "email": "작성자 아이디",
       "body": "some comment",
       "postId": "1"
+    },
+    {
+      "id": "PrBPXrXlXtksmuHvL_VG4",
+      "nickName": "나롱이",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "jieun2563@naver.com",
+      "body": "ㅋㅋㅋㅋ",
+      "uid": "UZZWGGCvUyZdNkuvIgIIudlnWJm2",
+      "postId": "13"
     }
   ]
 }

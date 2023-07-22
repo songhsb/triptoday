@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  content: 'initial content',
+  message: 'initial content',
   isOpenAlarm: false,
 };
 
@@ -10,16 +10,19 @@ const confirmSlice = createSlice({
   initialState,
   reducers: {
     openAlarm: (state, action) => {
-      return { content: action.payload.content, isOpenAlarm: action.payload.isOpenAlarm, next: action.payload.next, alarmType: action.payload.alarmType };
+      return { message: action.payload.message, isOpenAlarm: action.payload.isOpenAlarm, alarmType: action.payload.alarmType };
+    },
+    openConfirmAlarm: (state, action) => {
+      return { message: action.payload.message, isOpenAlarm: action.payload.isOpenAlarm, buttonActions: action.payload.buttonActions, alarmType: action.payload.alarmType };
     },
     closeAlarm: (state, action) => {
       return {
-        content: 'initial content',
+        message: 'initial content',
         isOpenAlarm: false,
       };
     },
   },
 });
 
-export const { ask } = confirmSlice.actions;
+export const { openAlarm, closeAlarm, openConfirmAlarm } = confirmSlice.actions;
 export default confirmSlice.reducer;

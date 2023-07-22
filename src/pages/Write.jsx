@@ -9,10 +9,13 @@ import Layout from '../components/common/Layout';
 import { useRecoilValue } from 'recoil';
 import { EmailAtom } from '../recoil/SearchAtom';
 import WriteForm from '../components/Write/WriteForm';
+import { useDispatch } from 'react-redux';
+import { openAlarm } from '../redux/modules/confirm';
+import useAlert from '../hooks/useAlert';
 
 function Write() {
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const [category, setCategory] = useInput('서울');
   const [location, setLocation] = useInput('');
   const [description, setDescription] = useInput('');
@@ -20,6 +23,7 @@ function Write() {
   const [markerInfo, setMarkerInfo] = useState(null);
   console.log(markerInfo);
   const queryClient = useQueryClient();
+  const { customAlert } = useAlert();
 
   const postsMutation = useMutation(addPosts, {
     onSuccess: () => {
@@ -32,14 +36,17 @@ function Write() {
     console.log(emailDischarge);
   }, []);
 
-  const handleWriteButtonClick = e => {
+  // 커스텀 알림창 하려고 비동기함수 처리합니다.
+  const handleWriteButtonClick = async e => {
     e.preventDefault();
     if (!markerInfo) {
-      alert('지도에 핀을 찍어주세요!');
+      customAlert('지도에 핀을 찍어주세요!');
+      // alert('지도에 핀을 찍어주세요!');
       return false;
     }
     if (!location || !description) {
-      alert('필수 입력값이 없습니다. 확인해주세요');
+      customAlert('필수 입력값이 없습니다. 확인해주세요');
+      // alert('필수 입력값이 없습니다. 확인해주세요');
       return false;
     }
     postsMutation.mutate({
