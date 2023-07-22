@@ -177,13 +177,6 @@
   ],
   "likes": [
     {
-      "id": 1,
-      "userList": [
-        "olxloh@naver.com",
-        "jieun2563@naver.com"
-      ]
-    },
-    {
       "id": 2,
       "userList": [
         "khhds00@naver.com",
@@ -797,6 +790,18 @@
     {
       "userList": [],
       "id": 151
+    },
+    {
+      "userList": [],
+      "id": 152
+    },
+    {
+      "userList": [],
+      "id": 153
+    },
+    {
+      "id": 1,
+      "userList": []
     }
   ],
   "comments": [
