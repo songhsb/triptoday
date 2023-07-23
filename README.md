@@ -1,8 +1,10 @@
-# Create React App - Todo List App
+# Create React App - Trip Today
+오늘의 여행 ( 여행 명소 정보 제공 플랫폼 )
 React 아웃소싱 팀프로젝트 2023.07.17-2023.07.24
 
 # 프로젝트 소개
 오늘의 여행 ( 여행 명소 정보 제공 플랫폼 )
+
 - 관리자가 추가한 여행 명소에 댓글을 달 수 있는 일반 유저
 - 지도 API를 사용해 지역 단위, 또는 테마 별로 위치 및 정보 제공
 - 다양한 여행 정보를 제공하여 국내의 숨은 명소 정보 제공
@@ -30,7 +32,6 @@ React 아웃소싱 팀프로젝트 2023.07.17-2023.07.24
 |상세페이지 | /detail | `GET`    |      |   adminId,location : string,title : string,body : string,image : string   |
 | 글작성(관리자) | /posts | `POST`   | id,email: string,category: string,location: string,description: string,image: string     |      |
 | 글수정(관리자) | /posts/:id | `PATCH`   | adminId,postId,location : string,title : string,body : string,image : string,   |      |
-
 | 글삭제(관리자) | /post/:id | `DELETE`   |     |      |
 
 | 댓글 등록 |  | `POST`   | userId,postId,comment : string, date,   |      |
