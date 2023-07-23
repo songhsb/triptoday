@@ -46,6 +46,7 @@ const StOuter = styled.div`
 const StInner = styled.div`
   background-color: #fff;
   width: 400px;
-  height: 250px;
+  height: 280px;
   border-radius: 10px;
+  padding: 25px;
 `;
