@@ -48,43 +48,238 @@
       }
     },
     {
-      "id": 1,
-      "email": "작성자 아이디",
+      "email": "admin@test.com",
       "category": "강원도",
-      "location": "대한민국 영월",
-      "description": "작은 한반도가 숨어있는 영월군. 멀리서도 물속이 훤히 들여다보일 만큼 맑은 평창강이 감싸 안은 선암마을은 한반도를 빼닮아 한반도 지형이라는 이름을 갖고 있다. 이 아름다운 경관에 맞서는 신비로움이 숨어있으니 바로 고씨동굴이다. 약 5억 년 전에 형성된 것으로 추정되는 이 동굴은 석회동굴로 새로운 볼거리가 가득하다. 그 밖에 육지 속 작은 섬 청령포와 여름에는 래프팅을, 겨울이면 얼음낚시를 즐길 수 있는 동강도 인기 관광 코스! ",
-      "image": "https://myro.co.kr/myro_image/city/yeongwol.jpg",
+      "location": "대한민국 춘천",
+      "description": "경춘선 청춘열차와 함께 일상 속 한 발짝 더 가까워진 낭만도시 춘천. 춘천의 대표 여행지로 손꼽히는 남이섬은 사계절마다 다채로운 모습으로 늘 새로운 공간을 연출하고, 김유정 작품의 무대가 되었던 실레마을을 걷다 보면 점순이 등 작품 속 인물들이 마중 나올 것만 같다. 자연 속에 파묻힌 문학과 예술의 숨결을 느끼고 싶다면 춘천 청춘열차에 올라보자.",
+      "image": "https://www.myro.co.kr/myro_image/city/chuncheon.jpg",
       "latLng": {
-        "latitude": 37.18610826882379,
-        "longitude": 128.45149303027506
+        "latitude": 37.88473628742231,
+        "longitude": 127.71682693732238
       },
-      "address": "강원특별자치도 영월군 영월읍 방절리 139"
+      "address": "강원특별자치도 춘천시 근화동 190",
+      "id": 40
     },
     {
-      "email": "khhds00@naver.com",
-      "category": "경기도",
-      "location": "대한민국 가평 ",
-      "description": "자연의 정취에 젖어들게 만드는 가평 아침고요수목원. 어디를 둘러봐도 풍경이 가득해 지루할 틈이 없다. 그중에도 가평하면 빼놓을 수 없는 쁘띠프랑스는 프랑스를 떠올리게 하는 이국적인 풍경으로 빨간 지붕이 매력적이다. 또한 매년 가을에 열리는 자라섬 국제재즈페스티벌은 석양과 음악이 어우러질 때까지 재즈의 매력에 흠뻑 취해볼 수 있다.",
-      "image": "https://myro.co.kr/myro_image/city/gapyeong.jpg",
+      "email": "admin@test.com",
+      "category": "강원도",
+      "location": "대한민국 동해시",
+      "description": "동해시(東海市)는 대한민국 강원특별자치도 동해안 남부에 있는 시이다. 동해시의 동쪽에는 묵호항과 동해항이 있고, 서쪽에는 두타산(1,352m)이 있다. 해마다 10월에는 동해무릉제가 열린다. 무릉계곡을 비롯해 두타산·청옥산 같은 산지와 망상·어달·추암 해수욕장 등이 어우러져 자연 경관이 아름답다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K20150610112046588.jpg",
       "latLng": {
-        "latitude": 37.83198883327494,
-        "longitude": 127.50962847275386
+        "latitude": 37.54684579831493,
+        "longitude": 129.1077823080617
       },
-      "address": "경기 가평군 가평읍 읍내리 1010",
-      "id": 2
+      "address": "강원특별자치도 동해시 발한동 196-1",
+      "id": 41
     },
     {
-      "email": "khhds00@naver.com",
+      "email": "admin@test.com",
       "category": "강원도",
-      "location": "대한민국 강릉",
-      "description": "은은한 커피향이 남다른 강원도 강릉시. 그중에도 카페거리로 유명한 안목해변은 발이 닿는 어디든 향긋한 커피 한 잔에 지평선 끝까지 펼쳐지는 바다 풍경은 덤으로 얻을 수 있다. 일출 명소로 유명한 정동진과 야경이 아름다운 경포대는 대표 여행 코스! 구름도 머물다 간다는 해발 1,100m에 위치한 강릉 안반데기 마을은 전망대에 올라 드넓게 펼쳐진 배추밭이 붉게 물드는 일출 전경이 일품이다.",
-      "image": "https://myro.co.kr/myro_image/city/gangneung.jpg",
+      "location": "대한민국 속초",
+      "description": "산과 바다와 호수가 함께 잘 어우러진 곳이 속초이다. 동해의 푸른 파도와 설악의 수려한 기상이 느껴지며 빼어난 자연경관과 유서 깊은 문화재가 잘 보존되어 있다. 특히 한국 전쟁 후 실향민과 피난민의 전통과 문화가 남아있어 역사적 의의가 깊은 곳이다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K2015061194657532.JPG",
       "latLng": {
-        "latitude": 37.752114428948964,
-        "longitude": 128.8759034687553
+        "latitude": 38.19007524887519,
+        "longitude": 128.60378052432
       },
-      "address": "강원특별자치도 강릉시 홍제동 1001",
-      "id": 3
+      "address": "강원특별자치도 속초시 조양동 1464-7",
+      "id": 42
+    },
+    {
+      "email": "admin@test.com",
+      "category": "강원도",
+      "location": "대한민국 삼척",
+      "description": "삼척은 동해를 끼고 있어 예로부터 지금까지 어업을 중심으로 살아온 어촌이다. 그런 만큼 어촌생활의 전통이 남아있으며 바다에 얽혀있는 어촌 생활의 전통문화와 이야기, 동해안과 산림이 보여주는 천혜의 자연풍경을 잘 보존하여 신비함과 아름다움을 동시에 주고 있다. 이러한 자연경관의 보전과 함께 다양한 레포츠와 공원단지의 조성을 통해 명품해양도시를 목표로 달려가고 있다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K20151027121116513.JPG",
+      "latLng": {
+        "latitude": 37.443416779125926,
+        "longitude": 129.1813774170997
+      },
+      "address": "강원특별자치도 삼척시 정상동 산 15",
+      "id": 43
+    },
+    {
+      "email": "admin@test.com",
+      "category": "강원도",
+      "location": "대한민국 철원",
+      "description": "철원은 드넓은 평야를 중심으로 예로부터 역사적•지리적 중요성을 인정받아 왔다. 후삼국 시대에는 태봉국의 도읍지였으며, 한국전쟁 때는 철의 삼각지대 중 하나로 치열한 격전이 일어났던 곳이다. 웅장한 기상과 유서 깊은 문화유적들이 곳곳에서 역사의 숨결을 뿜어내고 있다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K20150813104128729.JPG",
+      "latLng": {
+        "latitude": 38.147134753574946,
+        "longitude": 127.31322160464173
+      },
+      "address": "강원특별자치도 철원군 갈말읍 신철원리 602-4",
+      "id": 44
+    },
+    {
+      "email": "admin@test.com",
+      "category": "강원도",
+      "location": "대한민국 평창",
+      "description": "평창은 평균 해발 700m의 지대로 이 지점이 가장 행복한 고도를 지니고 있다고 한다. 인체에 가장 적합한 기압 상태로 생체리듬에 좋으며, 고기압과 저기압이 만나는 지역으로 모든 동식물에 최적의 생육 조건을 갖추었다고 한다. 또한, 뇌에서 분비되는 멜라토닌 호르몬이 증가하여 다른 지대보다 적은 수면시간으로도 충분한 수면효과가 있다고 하며 노화 방지와 피로회복에도 좋다고 한다. 이렇게 건강과 휴식을 챙길 수 있는 평창에서 다양한 문화와 레포츠를 즐길 수 있다는 것은 큰 매력임이 분명하다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K20150730105916845.jpg",
+      "latLng": {
+        "latitude": 37.56329703397033,
+        "longitude": 128.42953630265743
+      },
+      "address": "강원특별자치도 평창군 용평면 재산리 1427-105",
+      "id": 45
+    },
+    {
+      "email": "admin@test.com",
+      "category": "강원도",
+      "location": "대한민국 횡성",
+      "description": "횡성은 청정 자연을 바탕으로 농가 인구가 전체 인구의 60퍼센트를 차지하는 농업 도시다. 횡성 한우가 대표 특산물로 자리를 잡으며 축산업의 비중도 커지고 있는데 모두 횡성이 가지고 있는 청정 자연이 있기에 가능한 일이라 할 수 있다. 이러한 청정 자연을 찾아 귀촌과 귀농을 하는 전입자들이 늘어나는 추세이며 수도권에서 멀지 않고 편리한 교통 여건을 갖추어 접근성이 뛰어나다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K20151106183546575.JPG",
+      "latLng": {
+        "latitude": 37.49194652414461,
+        "longitude": 127.98493736819371
+      },
+      "address": "강원특별자치도 횡성군 횡성읍 읍하리 58-1",
+      "id": 46
+    },
+    {
+      "email": "admin@test.com",
+      "category": "강원도",
+      "location": "대한민국 정선",
+      "description": "백두대간에 자리한 정선은 높은 산이 많다. 산이 높으면 골이 깊고, 골이 깊으면 물이 맑다는 옛말 그대로 정선 곳곳마다 맑은 물이 흘러 산세와 조화를 이루는 풍경은 사람의 손으로는 만들 수 없는 자연의 작품이다. 이러한 자연을 좀 더 편리하고 가깝게 즐길 수 있는 시설들은 더욱 많은 정선의 풍경을 마음속에 담을 수 있도록 도와준다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K201507231120546.jpg",
+      "latLng": {
+        "latitude": 37.38088644213227,
+        "longitude": 128.66035512317117
+      },
+      "address": "강원특별자치도 정선군 정선읍 봉양리 266-1",
+      "id": 47
+    },
+    {
+      "email": "admin@test.com",
+      "category": "강원도",
+      "location": "대한민국 인제",
+      "description": "인제는 울창한 맑고 푸른 물이 흐르는 계곡과 울창함과 경관에 있어서 최고를 자랑하는 원시림을 잘 보존하고 있는 우리나라 제일의 청정지역이다. 아름다운 자연의 모습을 유지하며 수많은 종의 야생 동•식물들이 자생하고 있으니 생물자원의 수도라고도 할 수 있다. 이러한 자연환경의 힘을 바탕으로 자연 그대로의 경관 외에도 산악형 종합리조트, 휴양, 모험 관광단지 등을 개발하여 자연과 인공의 조화를 이루고 있다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K20150716113253172.jpg",
+      "latLng": {
+        "latitude": 38.07023164843089,
+        "longitude": 128.17004986159805
+      },
+      "address": "강원특별자치도 인제군 인제읍 상동리 39-6",
+      "id": 48
+    },
+    {
+      "email": "admin@test.com",
+      "category": "충청도",
+      "location": "대한민국 천안",
+      "description": "사랑 받는 간식인 호두과자의 고장 천안은 충청남도 북동부에 위치해 있으며 도로 교통로의 중점으로 예로부터 교통이 발달한 지역으로 꼽혔다. 2012년에 출범한 세종특별자치시와 인접한 위치에 있어 앞으로의 발전이 더 기대되는 도시이다.",
+      "image": "http://119.206.205.28/repository/know/contents/K20141010111229532.jpg",
+      "latLng": {
+        "latitude": 36.81638439833833,
+        "longitude": 127.11297248635002
+      },
+      "address": "충남 천안시 서북구 불당동 226-2",
+      "id": 49
+    },
+    {
+      "email": "admin@test.com",
+      "category": "충청도",
+      "location": "대한민국 아산",
+      "description": "수도권과 충남의 관문 역할을 하는 아산은 북쪽은 차령산맥의 여맥에 속하는 구릉성 산지를 이루고 남쪽엔 평야가 펼쳐진 남고북저의 지형을 형성한다. 왕실 온천인 온양온천, 동양 4대 유황 온천 가운데 하나인 도고 온천, 테마형 가족 온천인 아산 온천 등이 있어 예로부터 온천과 건강의 도시로 널리 알려진 고장이다",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K20151103155141308.JPG",
+      "latLng": {
+        "latitude": 36.78990930900321,
+        "longitude": 127.00107555833624
+      },
+      "address": "충남 아산시 온천동 1616",
+      "id": 50
+    },
+    {
+      "email": "admin@test.com",
+      "category": "충청도",
+      "location": "대한민국 보령",
+      "description": "보령은 대한민국을 대표하는 축제로 성장한 머드 축제를 필두로 다양한 경험을 할 수 있는 축제의 고장이다. 또한, 청정한 서해를 접하는 덕에 해산물이 풍부하여 사현 포도, 꽃게탕, 천북굴 구이 등 보령 8미가 유명하다. 보령의 아름다운 경관을 배경으로 다채로운 축제를 즐기며 맛 좋은 여행을 할 수 있다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K2015061895042774.jpg",
+      "latLng": {
+        "latitude": 36.33394541677218,
+        "longitude": 126.61150441364651
+      },
+      "address": "충남 보령시 명천동 269-4",
+      "id": 51
+    },
+    {
+      "email": "admin@test.com",
+      "category": "충청도",
+      "location": "대한민국 태안",
+      "description": "태안은 산지가 개간지로 개발되어 논과 밭으로 이용되며 리아스 식 해안은 간척지로 잘 개발된 곳이다. 천연 송림과 아름다운 해안이 있는 30여 개의 해수욕장과 신비한 전설을 간직한 수많은 섬으로 이루어져 있다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K2015061210427358.jpg",
+      "latLng": {
+        "latitude": 36.74717634146254,
+        "longitude": 126.29733844854461
+      },
+      "address": "충남 태안군 태안읍 남문리 746",
+      "id": 52
+    },
+    {
+      "email": "admin@test.com",
+      "category": "충청도",
+      "location": "대한민국 단양",
+      "description": "문화관광이 활성화되면서 지자체들은 그 지역의 명소를 한데 묶어 소개하는 데 열중하고 있다. 하지만 그보다 수백 년 앞서, 수많은 시인과 묵객에게 인정받은 ‘관동팔경’과 ‘단양팔경’이 이미 존재하고 있었다. 그 중 관동팔경은 여러 지자체에 걸쳐 있는 것인 만큼, 한 지자체의 절경을 모은 것으로는 단양팔경이 원조라 할 수 있다. 오랜 역사가 인정해 주는 단양의 절경은 이제 본격적인 관광자원으로 개발되며 그 명성을 이어가려 하고 있다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K20150720105726548.jpg",
+      "latLng": {
+        "latitude": 36.984374884921614,
+        "longitude": 128.36193391542255
+      },
+      "address": "충북 단양군 단양읍 별곡리 산 15",
+      "id": 53
+    },
+    {
+      "email": "admin@test.com",
+      "category": "충청도",
+      "location": "대한민국 부여",
+      "description": "금강 유역에 자리 잡은 부여는 일찍이 비옥하고 넓은 평야가 발달하였고 수로를 통한 교통과 문화의 중심지였다. 금강의 축복을 받은 부여는 1,400여 년 전 찬란했던 백제문화의 숨결이 살아있는 고장이다. 발길 닿는 곳마다 200여 점의 백제 유적과 유물이 산재해 있는 지붕 없는 노상박물관이다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K201506159452712.jpg",
+      "latLng": {
+        "latitude": 36.279172284043135,
+        "longitude": 126.90775208043145
+      },
+      "address": "충남 부여군 부여읍 동남리 768-14",
+      "id": 54
+    },
+    {
+      "email": "admin@test.com",
+      "category": "충청도",
+      "location": "대한민국 공주",
+      "description": "이름만큼이나 단아한 도시 공주. 백제의 유서 깊은 역사와 아름다운 풍경을 자랑하는 공주는 충남에서 가장 큰 땅을 차지하고 있으며 해발 845m의 계룡산과 그 주위를 휘돌아 흐르는 충청의 젖줄 금강 등 자연과 유적지가 조화를 이룬 10경을 간직하고 있다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K2015082811214314.jpg",
+      "latLng": {
+        "latitude": 36.44813757817208,
+        "longitude": 127.11903961186214
+      },
+      "address": "충남 공주시 봉황동 304-3",
+      "id": 55
+    },
+    {
+      "email": "admin@test.com",
+      "category": "충청도",
+      "location": "대한민국 괴산",
+      "description": "농촌과 어촌 그리고 강촌이 어우러진 서천은 아름다운 소도시다. 4대강 가운데 하나인 금강이 아름다운 경관을 휘돌고 매년 겨울이면 철새들이 찾아와 절경을 이룬다. 또한, 풍부한 수자원을 바탕으로 광활한 옥토의 평야가 펼쳐져 있으니 예로부터 축복받은 고장이라 할 수 있다. 금강과 서해의 아름다운 경관을 배경으로 전통과 문화가 살아 숨 쉬는 곳이다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K20150528184943193.jpg",
+      "latLng": {
+        "latitude": 36.07927488505426,
+        "longitude": 126.70228753556184
+      },
+      "address": "충남 서천군 서천읍 군사리 61-38",
+      "id": 56
+    },
+    {
+      "email": "admin@test.com",
+      "category": "충청도",
+      "location": "대한민국 당진",
+      "description": "당진은 바다와 땅이 만나 어우러진 천혜의 터전을 형성하고 있는 고장이다. 역사적으로 새로운 것을 받아들이는데 있어서는 개방적이고, 나라를 지키는데 있어서는 외세를 극복하며 충의 정신을 자랑한 고장이다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K2015061810293093.jpg",
+      "latLng": {
+        "latitude": 36.89521965699906,
+        "longitude": 126.6499645063972
+      },
+      "address": "충남 당진시 수청동 산 161",
+      "id": 57
     },
     {
       "email": "khhds00@naver.com",
@@ -458,131 +653,6 @@
       "id": 94
     }
   ],
-  "likes": [
-    {
-      "id": 1,
-      "userList": ["heejung2@naver.com", "jieun2563@naver.com"]
-    },
-    {
-      "id": 3,
-      "userList": ["heejung2@naver.com", "khhds@kkao.com"]
-    },
-    {
-      "id": 6,
-      "userList": ["heejung2@naver.com", "dbgml@naver.com"]
-    },
-    {
-      "id": 5,
-      "userList": ["heejung2@naver.com"]
-    },
-    {
-      "id": 2,
-      "userList": ["heejung2@naver.com"]
-    },
-    {
-      "id": 8,
-      "userList": ["heejung2@naver.com"]
-    }
-  ],
-  "comments": [
-    {
-      "id": "FArmtP4HpZOFkGGvdC95d",
-      "nickName": "김승범",
-      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
-      "email": "khhds00@naver.com",
-      "body": "댓글을 달아보자",
-      "uid": "hLyZ1wnmJ6Tb7hCgFBPZ4ZhUe9n1",
-      "postId": "3"
-    },
-    {
-      "id": "prWobjk-QvPsvy0Fz3UuE",
-      "nickName": "김승범",
-      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
-      "email": "khhds00@naver.com",
-      "body": "여기도 댓글을 달아보자",
-      "uid": "hLyZ1wnmJ6Tb7hCgFBPZ4ZhUe9n1",
-      "postId": "1"
-    },
-    {
-      "id": "n6svgMyTjoQmISpGvKTGK",
-      "nickName": "ssss",
-      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
-      "email": "sun@sun.com",
-      "body": "굿",
-      "uid": "C5QrPAbB4VNzrmVfqVvDSF8tvCL2",
-      "postId": "3"
-    },
-    {
-      "id": "XcsJpefZsGbKOsqvK8M5A",
-      "nickName": "희정3",
-      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
-      "email": "heejung2@naver.com",
-      "body": "댓글을 달았습니다",
-      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
-      "postId": "1"
-    },
-    {
-      "id": "tx7myXpd4e0C5PMeoV_8H",
-      "nickName": "유희",
-      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
-      "email": "dbgml@naver.com",
-      "body": "수정수정 가능",
-      "uid": "Dm1FUrkNOQcVd29159HBjurpkB33",
-      "postId": "1"
-    },
-    {
-      "id": "IVzhssgtMhP0h6ew4bA-K",
-      "nickName": "희정3",
-      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
-      "email": "heejung2@naver.com",
-      "body": "댓글",
-      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
-      "postId": "6"
-    },
-    {
-      "id": "Gf4AWm3mr5rZOAKnPMbhj",
-      "nickName": "희정3",
-      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
-      "email": "heejung2@naver.com",
-      "body": "댓글",
-      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
-      "postId": "2"
-    },
-    {
-      "id": "409oEq_tkcIJXk6dZncDk",
-      "nickName": "희정3",
-      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
-      "email": "heejung2@naver.com",
-      "body": "댓글댓글댓글",
-      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
-      "postId": "2"
-    },
-    {
-      "id": "X_6QTTj9E9bbOS7kOmaBu",
-      "nickName": "희정3",
-      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
-      "email": "heejung2@naver.com",
-      "body": "내용입니다",
-      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
-      "postId": "2"
-    },
-    {
-      "id": "VlaO3qCP99JcKPacJdxNv",
-      "nickName": "희정3",
-      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
-      "email": "heejung2@naver.com",
-      "body": "굿굿",
-      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
-      "postId": "3"
-    },
-    {
-      "id": "HPV4E4psWcS8A6rWgBzSk",
-      "nickName": "희정3",
-      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
-      "email": "heejung2@naver.com",
-      "body": "댓글입니다.",
-      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
-      "postId": "5"
-    }
-  ]
+  "likes": [],
+  "comments": []
 }
