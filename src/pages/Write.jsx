@@ -8,6 +8,7 @@ import Layout from '../components/common/Layout';
 import { useRecoilValue } from 'recoil';
 import { EmailAtom } from '../recoil/SearchAtom';
 import WriteForm from '../components/Write/WriteForm';
+// import WriteFormEx from '../components/Write/WriteFormEx';
 import useAlert from '../hooks/useAlert';
 
 function Write() {

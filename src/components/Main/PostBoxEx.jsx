@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useCallback, useState, useEffect } from 'react';
 import { styled } from 'styled-components';
 import { StImage, StMpCategory, StTitle, StyledPostsyBox } from '../../pages/Main';
 import { useRecoilValue } from 'recoil';
@@ -20,7 +20,7 @@ function PostBoxEx({ posts, category, handleDetailButtonClick }) {
   //     if (node) observer.current.observe(node);
   //   });
 
-  const lastPostRef = useRef();
+  const divRef = useRef();
   const [currentPage, setCurrentPage] = useState(1);
   const limit = 10;
   const offset = (currentPage - 1) * limit;
@@ -46,9 +46,8 @@ function PostBoxEx({ posts, category, handleDetailButtonClick }) {
   );
 
   useEffect(() => {
-    observer.observe(lastPostRef.current);
+    observer.observe(divRef.current);
   }, []);
-
   return (
     <StUl>
       {searchList.length > 0
@@ -75,7 +74,7 @@ function PostBoxEx({ posts, category, handleDetailButtonClick }) {
               </StyledPostsyBox>
             ))
             .slice(0, offset + 10)}
-      <div ref={lastPostRef}></div>
+      <div ref={divRef}></div>
     </StUl>
   );
 }

@@ -5,7 +5,7 @@ import { StButton } from '../components/common/Button';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 import { getPosts, updatePosts } from '../api/posts';
 import { useNavigate, useParams } from 'react-router-dom';
-import MapForUpdate from '../components/Map/MapForUpdate';
+import MapForWrite from '../components/Map/MapForWrite';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import Layout from '../components/common/Layout';
 import { StRequiredFieldsText } from '../components/Write/WriteForm';
@@ -71,7 +71,6 @@ function UpdateWrite() {
           latLng: posts.latLng,
           address: posts.address,
         };
-        console.log('Confirmed');
         dispatch(closeAlarm());
       } else if (!!markerInfo) {
         newPosts = {
@@ -87,7 +86,6 @@ function UpdateWrite() {
       postsMutation.mutate({ id, posts, newPosts });
       navigate('/');
     } catch (error) {
-      console.log('Cancelled');
       dispatch(closeAlarm());
       customAlert('위치를 재설정 해주세요'); // 근데 여기 error 부분에들어가는게 맞나요....? ㅎㅎㅎㅎ
       return false;
@@ -131,7 +129,7 @@ function UpdateWrite() {
             Image <br />
             <StRequiredFieldsText value={updateimage} onChange={setUpdateImage} />
           </div>
-          <MapForUpdate markerInfo={markerInfo} setMarkerInfo={setMarkerInfo} posts={posts} />
+          <MapForWrite markerInfo={markerInfo} setMarkerInfo={setMarkerInfo} posts={posts} />
           <StButton $fontColor={'black'}>수정</StButton>
           <StButton type="button" onClick={handleCancelButtonClick} $fontColor={'black'}>
             취소{' '}
