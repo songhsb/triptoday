@@ -27,9 +27,9 @@ function UpdateForm({ handleWriteButtonClick, setCategory, updatelocation, setUp
         <StRequiredFieldsText value={updateimage} onChange={setUpdateImage} />
       </div>
       <MapForUpdate markerInfo={markerInfo} setMarkerInfo={setMarkerInfo} posts={posts} />
-      <StButton $fontColor={'black'}>수정</StButton>
-      <StButton type="button" onClick={handleCancelButtonClick} $fontColor={'black'}>
-        취소{' '}
+      <StButton>수정</StButton>
+      <StButton type="button" onClick={handleCancelButtonClick}>
+        취소
       </StButton>
     </form>
   );
