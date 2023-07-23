@@ -183,4 +183,5 @@ const StSearchBtn = styled.button`
   border: 0; /* 버튼의 border를 0으로 설정하여 안 보이도록 합니다. */
   background-color: transparent; /* 버튼의 배경을 투명으로 만듭니다. */
   margin-right: 20px;
+  cursor: pointer;
 `;

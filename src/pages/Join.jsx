@@ -41,7 +41,6 @@ const Join = () => {
     };
     fetchData();
   }, []);
-  // console.log('+++++++++++++++++++++++++++++', allUsers);
 
   // 이미등록된 이메일,닉네임 배열
   const existsEmail = allUsers.map(item => item.email);
@@ -67,8 +66,6 @@ const Join = () => {
     try {
       // auth
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      console.log('-----------user', userCredential.user);
-
       // firebase 등록
       const docUserRef = await addDoc(collection(db, 'users'), {
         id: nanoid(),
@@ -79,7 +76,6 @@ const Join = () => {
         isAdmin: adminCheck,
         profileImg: 'https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689',
       });
-      console.log('-----------Document isAdmin: ', docUserRef.isAdmin);
       setAdminCheck(false);
       navigate('/');
       window.location.reload();

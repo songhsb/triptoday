@@ -12,7 +12,6 @@ import { styled } from 'styled-components';
 import { StButton } from '../components/common/Button';
 import { StInput } from '../components/common/InputStyle';
 import { touristAttraction } from '../api/touristAttraction';
-import axios from 'axios';
 import FormDialog from '../components/Detail/UpdateCommnet';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import Layout from '../components/common/Layout';
