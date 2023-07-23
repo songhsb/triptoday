@@ -286,23 +286,15 @@
   "likes": [
     {
       "id": 1,
-      "userList": [
-        "heejung2@naver.com",
-        "jieun2563@naver.com"
-      ]
+      "userList": ["heejung2@naver.com", "jieun2563@naver.com"]
     },
     {
       "id": 3,
-      "userList": [
-        "heejung2@naver.com",
-        "khhds@kkao.com"
-      ]
+      "userList": ["heejung2@naver.com", "khhds@kkao.com"]
     },
     {
       "id": 6,
-      "userList": [
-        "heejung2@naver.com"
-      ]
+      "userList": ["heejung2@naver.com"]
     },
     {
       "id": 5,
