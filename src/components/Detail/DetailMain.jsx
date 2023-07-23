@@ -5,6 +5,7 @@ import { StTitle } from '../../pages/Main';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { EmailAtom } from '../../recoil/SearchAtom';
+import plusBtn from '../../assets/img/plus.svg';
 
 function DetailMain({ posts, seeMore, setSeeMore, postsMutation }) {
   const emailDisCharge = useRecoilValue(EmailAtom);
@@ -24,34 +25,32 @@ function DetailMain({ posts, seeMore, setSeeMore, postsMutation }) {
 
   return (
     <StDetailMain>
-      <div>
-        <StDetailImage src={posts.image} />
-      </div>
-      <div>
+      <StDetailImage>
+        <img src={posts.image} />
+      </StDetailImage>
+      <StDetailInfo>
+        <StTitle>{posts.location}</StTitle>
+        <StDetailCategory>지역: {posts.category}</StDetailCategory>
+        <StDetailDescription>{posts.description}</StDetailDescription>
         <LikesPosts postId={posts.id} />
-        <StTitleDetail>
-          <StTitle>{posts.location}</StTitle>
-          {emailDisCharge == posts.email ? (
-            <div>
-              <StDetailSeeMore onClick={handleSeeMoreButtonClick} />
-              {seeMore && (
-                <StDetaiSeeMorelUl>
-                  <StDetailListItem onClick={() => handleUpdateButtonClick(posts.id)}>
-                    <StDetailButton>수정</StDetailButton>
-                  </StDetailListItem>
-                  <StDetailListItem onClick={() => handleDeleteButtonClick(posts.id)}>
-                    <StDetailButton>삭제</StDetailButton>
-                  </StDetailListItem>
-                </StDetaiSeeMorelUl>
-              )}
-            </div>
-          ) : null}
-        </StTitleDetail>
-        <div>
-          <StDetailCategory>지역: {posts.category}</StDetailCategory>
-          <p>{posts.description}</p>
-        </div>
-      </div>
+        {emailDisCharge == posts.email ? (
+          <StEditBtn>
+            <StDetailSeeMore onClick={handleSeeMoreButtonClick}>
+              <img src={plusBtn} alt="" />
+            </StDetailSeeMore>
+            {seeMore && (
+              <StDetaiSeeMorelUl>
+                <StDetailListItem onClick={() => handleUpdateButtonClick(posts.id)}>
+                  <StDetailButton>수정</StDetailButton>
+                </StDetailListItem>
+                <StDetailListItem onClick={() => handleDeleteButtonClick(posts.id)}>
+                  <StDetailButton>삭제</StDetailButton>
+                </StDetailListItem>
+              </StDetaiSeeMorelUl>
+            )}
+          </StEditBtn>
+        ) : null}
+      </StDetailInfo>
     </StDetailMain>
   );
 }
@@ -60,49 +59,72 @@ export default DetailMain;
 
 const StDetailMain = styled.main`
   display: flex;
-  justify-content: space-between;
 `;
-
-const StDetailImage = styled.img`
-  width: 190px;
-  height: 206px;
-  margin-bottom: 5px;
-  margin-right: 20px;
-`;
-
-const StTitleDetail = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const StDetailSeeMore = styled.button`
-  width: 20px;
-  height: 20px;
-  border: none;
-  background-image: url(https://t1.daumcdn.net/tistory_admin/static/mobile/tt_img_area_reply.svg);
+const StDetailImage = styled.div`
+  width: 40%;
+  height: 350px;
   overflow: hidden;
-  font-size: 0;
-  line-height: 0;
-  color: transparent;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  img {
+    width: 100%;
+  }
+`;
+const StDetailInfo = styled.div`
+  width: calc(60% - 20px);
+  position: relative;
+`;
+const StDetailCategory = styled.p`
+  color: black;
+  font-size: 16px;
+  font-weight: 800;
+  margin: 10px 0px 0;
+`;
+const StDetailDescription = styled.div`
+  padding: 20px 0;
+`;
+
+// button
+const StEditBtn = styled.div`
+  position: absolute;
+  right: 0%;
+  top: 0%;
+`;
+const StDetailSeeMore = styled.button`
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  border: solid 1px #eee;
+  padding: 5px;
+  border-radius: 25px;
+  cursor: pointer;
+  img {
+    width: 100%;
+    filter: invert(29%) sepia(1%) saturate(0%) hue-rotate(145deg) brightness(102%) contrast(81%);
+  }
 `;
 const StDetaiSeeMorelUl = styled.ul`
-  position: fixed;
+  position: absolute;
+  right: 0%;
+  top: 30px;
+  border: solid 1px #eee;
 `;
 
 const StDetailListItem = styled.li`
-  height: 40px;
-  padding: 5px 8px;
+  width: 80px;
   box-sizing: border-box;
 `;
 
 const StDetailButton = styled.button`
   width: 100%;
-  padding: 7px 10px;
+  padding: 10px;
   border: none;
   background-color: #fff;
   border-radius: 8px;
   cursor: pointer;
-  text-align: left;
+  text-align: center;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -111,11 +133,4 @@ const StDetailButton = styled.button`
   &:focus {
     background-color: #f8e4ff;
   }
-`;
-
-const StDetailCategory = styled.p`
-  color: black;
-  font-size: 16px;
-  font-weight: 800;
-  margin: 10px 0px;
 `;

@@ -55,7 +55,7 @@ const ReadMapInPost = ({ posts }) => {
   // useEffect 여기에 위치
   return (
     <div>
-      <div ref={mapRef} style={{ width: '1200px', height: '300px' }}></div>
+      <div ref={mapRef} style={{ width: '100%', height: '300px' }}></div>
     </div>
   );
 };

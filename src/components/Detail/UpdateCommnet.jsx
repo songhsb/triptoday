@@ -39,7 +39,7 @@ export default function FormDialog({ comment }) {
 
   return (
     <div>
-      <StButton $btnSize={'small'} onClick={handleClickOpen}>
+      <StButton $btnSize={'small'} onClick={handleClickOpen} style={{ margin: '0' }}>
         수정
       </StButton>
       <Dialog open={open} onClose={handleClose}>
