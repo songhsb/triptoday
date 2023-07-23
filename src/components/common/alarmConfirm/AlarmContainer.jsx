@@ -6,6 +6,7 @@ import { styled } from 'styled-components';
 import { CiCircleAlert } from 'react-icons/ci';
 import { CiCircleQuestion } from 'react-icons/ci';
 import './alarm.css';
+import { StAlarmButton } from '../AlarmButton';
 
 const AlarmContainer = () => {
   const { message, isOpenAlarm, buttonActions, alarmType } = useSelector(state => state.confirm);
@@ -34,11 +35,19 @@ const AlarmContainer = () => {
         ) : (
           <p>{message}</p>
         )}
-        {alarmType === 'alert' && <button onClick={onClickAlertHandler}>닫기</button>}
+        {alarmType === 'alert' && (
+          <StAlarmButton $buttonType={'close'} onClick={onClickAlertHandler}>
+            닫기
+          </StAlarmButton>
+        )}
         {alarmType === 'confirm' && (
           <StButtons>
-            <button onClick={buttonActions.ok.click}>확인</button>
-            <button onClick={buttonActions.cancel.click}>취소</button>
+            <StAlarmButton $buttonType={'yes'} onClick={buttonActions.ok.click}>
+              확인
+            </StAlarmButton>
+            <StAlarmButton $buttonType={'no'} onClick={buttonActions.cancel.click}>
+              취소
+            </StAlarmButton>
           </StButtons>
         )}
       </StWrapper>
