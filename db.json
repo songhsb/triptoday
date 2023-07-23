@@ -52,15 +52,25 @@
   "likes": [
     {
       "id": 1,
-      "userList": ["olxloh@naver.com", "jieun2563@naver.com"]
+      "userList": [
+        "olxloh@naver.com",
+        "jieun2563@naver.com"
+      ]
     },
     {
       "id": 2,
-      "userList": ["khhds00@naver.com"]
+      "userList": [
+        "khhds00@naver.com",
+        "hong@test.com"
+      ]
     },
     {
       "id": 3,
-      "userList": ["olxloh@naver.com", "jieun2563@naver.com", "khhds00@naver.com"]
+      "userList": [
+        "olxloh@naver.com",
+        "jieun2563@naver.com",
+        "khhds00@naver.com"
+      ]
     },
     {
       "userList": [],
@@ -189,6 +199,42 @@
     {
       "userList": [],
       "id": 35
+    },
+    {
+      "userList": [],
+      "id": 36
+    },
+    {
+      "userList": [],
+      "id": 37
+    },
+    {
+      "userList": [],
+      "id": 38
+    },
+    {
+      "userList": [],
+      "id": 39
+    },
+    {
+      "userList": [],
+      "id": 40
+    },
+    {
+      "userList": [],
+      "id": 41
+    },
+    {
+      "userList": [],
+      "id": 42
+    },
+    {
+      "userList": [],
+      "id": 43
+    },
+    {
+      "userList": [],
+      "id": 44
     }
   ],
   "comments": [
