@@ -11,24 +11,31 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
+    "dotenv": "^16.3.1",
     "firebase": "^10.0.0",
     "json-server": "^0.17.3",
+    "multer": "^1.4.5-lts.1",
     "nanoid": "^4.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
     "react-query": "^3.39.3",
     "react-redux": "^8.1.1",
     "react-router-dom": "^6.14.1",
     "react-scripts": "5.0.1",
+    "react-spinners": "^0.13.8",
+    "recoil": "^0.7.7",
     "shortid": "^2.2.16",
     "styled-components": "^6.0.4",
+    "swiper": "^10.0.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "json": "json-server --watch db.json --port 4001"
   },
   "eslintConfig": {
     "extends": [

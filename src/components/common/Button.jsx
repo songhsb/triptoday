@@ -12,29 +12,37 @@ const StButtonWrap = styled.div`
   justify-content: flex-end;
   margin-bottom: 10px;
 `;
+
 const StButton = styled.button`
   position: relative;
+  overflow: hidden;
+  display: inline-block;
   cursor: pointer;
   align-items: center;
   background-color: ${props => props.$bgColor || 'transparent'};
   border: ${props => props.$stBorder || 'solid 3px #9ADCFF'};
-  color: ${props => props.$fontColor || '#fff'};
+  color: ${props => props.$fontColor || '#black'};
   border-radius: 8px;
   padding: 1px 0;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
   ${({ $btnSize }) => {
     let btnHeight;
     let btnWidth;
     switch ($btnSize) {
       case 'large':
-        btnWidth = '230px';
+        btnWidth = '100%';
+        btnHeight = '50px';
+        break;
+      case 'half':
+        btnWidth = '50%';
         btnHeight = '50px';
         break;
 
       case 'small':
-        btnWidth = '100px';
-        btnHeight = '40px';
+        btnWidth = '80px';
+        btnHeight = '36px';
         break;
 
       default:
@@ -43,19 +51,21 @@ const StButton = styled.button`
         break;
     }
     return `width : ${btnWidth};
-                height : ${btnHeight}`;
+            height : ${btnHeight}`;
   }};
   &::before {
     content: '';
-    width: 0%;
-    height: 100%;
+
+    width: 100%;
+    height: 0;
     position: absolute;
-    border-radius: 4px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
     z-index: -1;
     background-color: #9adcff;
     left: 0;
     top: 0;
-    transition: 0.3s ease-in-out;
+    transition: 0.4s ease-in-out;
   }
   &:hover {
     color: #fff;
@@ -64,10 +74,9 @@ const StButton = styled.button`
 
   &:hover::before {
     content: '';
-    width: 100%;
-    height: 100%;
     color: white;
     position: absolute;
+    height: 200%;
   }
   &:active {
     background-color: ${props => props.$acColor || props.$bgColor};
@@ -76,9 +85,9 @@ const StButton = styled.button`
     margin-right: 10px;
   }
   &:disabled {
-    background-color: #ddd;
+    background-color: #cdedff;
     border: 0;
-    color: #555;
+    color: #fff;
     cursor: default;
     &:hover::before {
       width: 0%;
