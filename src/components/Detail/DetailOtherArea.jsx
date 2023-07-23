@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 function DetailOtherArea({ posts, data }) {
   const navigate = useNavigate();
   const handleDetailButtonClick = id => {
-    navigate(`/detail/${id}`);
+    window.location.href = `${process.env.REACT_APP_DETAIL_URL}/${id}`;
   };
   return (
     <div>

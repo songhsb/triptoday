@@ -2,7 +2,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { auth } from '../../firebase';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
-import { addPostIdToLikes, patchLikes } from '../../api/likes';
+import { addPostIdToLikes, getLikes, patchLikes } from '../../api/likes';
 import axios from 'axios';
 import { GoHeartFill } from 'react-icons/go';
 import { GoHeart } from 'react-icons/go';
