@@ -1074,7 +1074,7 @@
     },
     {
       "id": 4,
-      "userList": []
+      "userList": ["heejung2@naver.com"]
     },
     {
       "id": 6,
@@ -1130,7 +1130,7 @@
     },
     {
       "id": 53,
-      "userList": ["jieun2563@naver.com"]
+      "userList": ["jieun2563@naver.com", "heejung2@naver.com"]
     },
     {
       "id": 53,
@@ -1191,6 +1191,18 @@
     {
       "id": 3,
       "userList": []
+    },
+    {
+      "id": 8,
+      "userList": ["jieun2563@naver.com"]
+    },
+    {
+      "id": 52,
+      "userList": []
+    },
+    {
+      "id": 5,
+      "userList": []
     }
   ],
   "comments": [
@@ -1247,6 +1259,15 @@
       "body": "ㅎㅎㅎㅎ",
       "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
       "postId": "80"
+    },
+    {
+      "id": "CagO4OeWgGS4U0xv4kQA8",
+      "nickName": "나롱이",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "jieun2563@naver.com",
+      "body": "s",
+      "uid": "UZZWGGCvUyZdNkuvIgIIudlnWJm2",
+      "postId": "52"
     }
   ]
 }
