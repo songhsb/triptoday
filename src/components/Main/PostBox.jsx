@@ -6,19 +6,6 @@ import { SearchAtom } from '../../recoil/SearchAtom';
 
 function PostBoxEx({ posts, category, handleDetailButtonClick }) {
   const searchList = useRecoilValue(SearchAtom);
-  //   const [pageNumber, setPageNumber] = useState(1);
-  //   const observer = useRef();
-
-  //   const lastPostRef = useCallback(node => {
-  //     // if (loading) return;
-  //     if (observer.current) observer.current.disconnect();
-  //     observer.current = new IntersectionObserver(entries => {
-  //       if (entries[0].isIntersecting) {
-  //         setPageNumber(prevPageNumber => prevPageNumber + 1);
-  //       }
-  //     });
-  //     if (node) observer.current.observe(node);
-  //   });
 
   const lastPostRef = useRef();
   const [currentPage, setCurrentPage] = useState(1);
