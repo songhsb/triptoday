@@ -10,6 +10,17 @@ React 아웃소싱 팀프로젝트 2023.07.17-2023.07.24
 - 다양한 여행 정보를 제공하여 국내의 숨은 명소 정보 제공
 - 지도 서비스 지원을 통해 사용자가 시각적 정보를 제공 받을 수 있음
 
+# 팀원
+
+| 팀원   | 스택         | 팀원구분 | 깃허브                                      | 블로그                                             |
+| ------ | ------------ | -------- | ------------------------------------------- | -------------------------------------------------- |
+| 송현섭 | `프론트엔드` | 팀원   | [songhsb](https://github.com/songhsb))     | [songhsb]((https://velog.io/@songhsb)) |
+| 유희정 | `프론트엔드` | 팀원     | [heejung](https://github.com/heejung-newheee) | [heejung](https://newheee.tistory.com/)               |
+| 임선우 | `프론트엔드` | 팀원     | [sunwoo](https://github.com/treasureholy)      | [sunwoo](https://devdox.tistory.com/) |
+| 이지은 | `프론트엔드`     | 팀원     | [jieun](https://github.com/JellyBear97)     | [jieun](https://iam-jelly-bear.com/)       |
+| 김승범 | `프론트엔드`     | `팀장`     | [seungbeom](https://github.com/seungbeom1999)     | [seungbeom](https://drawme.tistory.com/)       |
+
+
 # 기술스택
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
 
