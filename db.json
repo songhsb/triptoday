@@ -147,20 +147,45 @@
       },
       "address": "경기 용인시 처인구 포곡읍 전대리 310",
       "id": 6
+    },
+    {
+      "email": "sun@sun.com",
+      "category": "대구",
+      "location": "ㅁ",
+      "description": "ㅁ",
+      "image": "ㅁ",
+      "latLng": {
+        "latitude": 37.2538119420492,
+        "longitude": 127.71707826355077
+      },
+      "address": "경기 여주시 강천면 적금리 48-4",
+      "id": 7
     }
   ],
   "likes": [
     {
       "id": 1,
-      "userList": ["heejung2@naver.com", "jieun2563@naver.com"]
+      "userList": [
+        "heejung2@naver.com",
+        "jieun2563@naver.com"
+      ]
     },
     {
       "id": 3,
-      "userList": ["heejung2@naver.com", "khhds@kkao.com"]
+      "userList": [
+        "heejung2@naver.com",
+        "khhds@kkao.com"
+      ]
     },
     {
       "id": 6,
-      "userList": ["heejung2@naver.com"]
+      "userList": [
+        "heejung2@naver.com"
+      ]
+    },
+    {
+      "id": 5,
+      "userList": []
     }
   ],
   "comments": [
