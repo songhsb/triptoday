@@ -33,8 +33,7 @@ React 아웃소싱 팀프로젝트 2023.07.17-2023.07.24
 | 글작성(관리자) | /posts | `POST`   | id,email: string,category: string,location: string,description: string,image: string     |      |
 | 글수정(관리자) | /posts/:id | `PATCH`   | adminId,postId,location : string,title : string,body : string,image : string,   |      |
 | 글삭제(관리자) | /post/:id | `DELETE`   |     |      |
-
-| 댓글 등록 |  | `POST`   | userId,postId,comment : string, date,   |      |
+| 댓글 등록 | s | `POST`   | userId,postId,comment : string, date,   |      |
 | 댓글 수정 | /comments/:id | `PATCH`   |comment ID|      |
 | 댓글 등록 | /comments/:id | `DELETE`   | comment ID |      |
 
