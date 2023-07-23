@@ -67,8 +67,15 @@ const Main = () => {
   const ThreePostData = postList?.find(item => item.id == threeId);
   console.log(firstPostData);
 
+  // let likesSort = likes.sort((a, b) => {
+  //   if (a.userList.length > b.userList.length) return 1;
+  //   if (a.userList.length < b.userList.length) return -1;
+  //   return 0;
+  // });
+  // console.log(likesSort);
   let values = Object.values(postIdCount);
-  const firstlikes = values[0];
+  console.log();
+  const firstlikes = likes.find(item => item.id === firstId);
   const Secondlikes = values[1];
   const Threeikes = values[2];
 
@@ -103,7 +110,7 @@ const Main = () => {
         <StLankingDiv>
           <StRankItem url={firstPostData?.image} key={firstPostData?.id} onClick={() => handleDetailButtonClick(firstPostData?.id)}>
             <StLike>
-              <GoHeartFill /> {firstlikes}
+              <GoHeartFill /> {firstlikes.userList.length}
             </StLike>
             <StHoverLayer>
               <div>{firstPostData?.location}</div>
