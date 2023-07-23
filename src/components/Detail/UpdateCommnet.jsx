@@ -57,6 +57,22 @@ export default function FormDialog({ comment }) {
           </StButton>
         </DialogActions>
       </Dialog>
+
+      {/* <StEditModal open={open} onClose={handleClose}>
+        <StEditTit>수정하시겠습니까?</StEditTit>
+        <StEditContent>
+          <DialogContentText>{comment.body}</DialogContentText>
+          <StInput type="text" placeholder="댓글 수정" value={body || ''} onChange={onChangeBodyHandler}></StInput>
+        </StEditContent>
+        <DialogActions>
+          <StButton $btnSize={'small'} onClick={handleClose}>
+            취소
+          </StButton>
+          <StButton $btnSize={'small'} onClick={() => handleCommentUpdateClick({ comment, body })}>
+            수정
+          </StButton>
+        </DialogActions>
+      </StEditModal> */}
     </div>
   );
 }
