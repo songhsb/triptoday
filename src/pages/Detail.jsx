@@ -191,7 +191,7 @@ const Detail = () => {
                 <p>{comment.body}</p>
                 {(user?.uid === comment.uid || thisUser?.isAdmin) && (
                   <StCommentBtnDiv>
-                    {!thisUser?.isAdmin && <FormDialog comment={comment} />}
+                    {user?.uid === comment.uid && <FormDialog comment={comment} />}
                     <StButton $btnSize={'small'} onClick={() => handleCommentDelete(comment.id)}>
                       삭제
                     </StButton>

@@ -47,119 +47,6 @@
       },
       "address": "강원특별자치도 강릉시 홍제동 1001",
       "id": 3
-    },
-    {
-      "category": "서울",
-      "location": "경주",
-      "description": "굿",
-      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
-      "latLng": {
-        "latitude": 35.83991036264332,
-        "longitude": 129.22901799908698
-      },
-      "address": "경북 경주시 인왕동 5-5",
-      "id": 5
-    },
-    {
-      "category": "서울",
-      "location": "경주",
-      "description": "굿",
-      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
-      "latLng": {
-        "latitude": 35.83991036264332,
-        "longitude": 129.22901799908698
-      },
-      "address": "경북 경주시 인왕동 5-5",
-      "id": 5
-    },
-    {
-      "category": "서울",
-      "location": "경주",
-      "description": "굿",
-      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
-      "latLng": {
-        "latitude": 35.83991036264332,
-        "longitude": 129.22901799908698
-      },
-      "address": "경북 경주시 인왕동 5-5",
-      "id": 5
-    },
-    {
-      "category": "서울",
-      "location": "경주",
-      "description": "굿",
-      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
-      "latLng": {
-        "latitude": 35.83991036264332,
-        "longitude": 129.22901799908698
-      },
-      "address": "경북 경주시 인왕동 5-5",
-      "id": 5
-    },
-    {
-      "id": 1,
-      "email": "작성자 아이디",
-      "category": "강원도",
-      "location": "대한민국 영월",
-      "description": "작은 한반도가 숨어있는 영월군. 멀리서도 물속이 훤히 들여다보일 만큼 맑은 평창강이 감싸 안은 선암마을은 한반도를 빼닮아 한반도 지형이라는 이름을 갖고 있다. 이 아름다운 경관에 맞서는 신비로움이 숨어있으니 바로 고씨동굴이다. 약 5억 년 전에 형성된 것으로 추정되는 이 동굴은 석회동굴로 새로운 볼거리가 가득하다. 그 밖에 육지 속 작은 섬 청령포와 여름에는 래프팅을, 겨울이면 얼음낚시를 즐길 수 있는 동강도 인기 관광 코스! ",
-      "image": "https://myro.co.kr/myro_image/city/yeongwol.jpg",
-      "latLng": {
-        "latitude": 37.18610826882379,
-        "longitude": 128.45149303027506
-      },
-      "address": "강원특별자치도 영월군 영월읍 방절리 139"
-    },
-    {
-      "email": "khhds00@naver.com",
-      "category": "경기도",
-      "location": "대한민국 가평 ",
-      "description": "자연의 정취에 젖어들게 만드는 가평 아침고요수목원. 어디를 둘러봐도 풍경이 가득해 지루할 틈이 없다. 그중에도 가평하면 빼놓을 수 없는 쁘띠프랑스는 프랑스를 떠올리게 하는 이국적인 풍경으로 빨간 지붕이 매력적이다. 또한 매년 가을에 열리는 자라섬 국제재즈페스티벌은 석양과 음악이 어우러질 때까지 재즈의 매력에 흠뻑 취해볼 수 있다.",
-      "image": "https://myro.co.kr/myro_image/city/gapyeong.jpg",
-      "latLng": {
-        "latitude": 37.83198883327494,
-        "longitude": 127.50962847275386
-      },
-      "address": "경기 가평군 가평읍 읍내리 1010",
-      "id": 2
-    },
-    {
-      "email": "khhds00@naver.com",
-      "category": "강원도",
-      "location": "대한민국 강릉",
-      "description": "은은한 커피향이 남다른 강원도 강릉시. 그중에도 카페거리로 유명한 안목해변은 발이 닿는 어디든 향긋한 커피 한 잔에 지평선 끝까지 펼쳐지는 바다 풍경은 덤으로 얻을 수 있다. 일출 명소로 유명한 정동진과 야경이 아름다운 경포대는 대표 여행 코스! 구름도 머물다 간다는 해발 1,100m에 위치한 강릉 안반데기 마을은 전망대에 올라 드넓게 펼쳐진 배추밭이 붉게 물드는 일출 전경이 일품이다.",
-      "image": "https://myro.co.kr/myro_image/city/gangneung.jpg",
-      "latLng": {
-        "latitude": 37.752114428948964,
-        "longitude": 128.8759034687553
-      },
-      "address": "강원특별자치도 강릉시 홍제동 1001",
-      "id": 3
-    },
-    {
-      "email": "heejung2@naver.com",
-      "category": "서울",
-      "location": "에버랜드-EVERLAND",
-      "description": " 꿈과 환상의 나라",
-      "image": "https://t1.daumcdn.net/cfile/tistory/991C833A5B811D492D",
-      "latLng": {
-        "latitude": 37.29325736891816,
-        "longitude": 127.20250660725996
-      },
-      "address": "경기 용인시 처인구 포곡읍 전대리 310",
-      "id": 6
-    },
-    {
-      "email": "sun@sun.com",
-      "category": "대구",
-      "location": "ㅁ",
-      "description": "ㅁ",
-      "image": "ㅁ",
-      "latLng": {
-        "latitude": 37.2538119420492,
-        "longitude": 127.71707826355077
-      },
-      "address": "경기 여주시 강천면 적금리 48-4",
-      "id": 7
     }
   ],
   "likes": [
@@ -168,7 +55,7 @@
       "userList": []
     },
     {
-      "id": 1,
+      "id": 2,
       "userList": []
     }
   ],
@@ -178,15 +65,6 @@
       "email": "작성자 아이디",
       "body": "some comment",
       "postId": "1"
-    },
-    {
-      "id": "n6svgMyTjoQmISpGvKTGK",
-      "nickName": "ssss",
-      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
-      "email": "sun@sun.com",
-      "body": "굿",
-      "uid": "C5QrPAbB4VNzrmVfqVvDSF8tvCL2",
-      "postId": "3"
     }
   ]
 }
