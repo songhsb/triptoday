@@ -47,20 +47,55 @@
       },
       "address": "강원특별자치도 강릉시 홍제동 1001",
       "id": 3
+    },
+    {
+      "email": "sun@sun.com",
+      "category": "서울",
+      "location": "a",
+      "description": "a",
+      "image": "a",
+      "latLng": {
+        "latitude": 36.79495890020718,
+        "longitude": 128.4826400551504
+      },
+      "address": "경북 영주시 봉현면 노좌리 산 32",
+      "id": 4
+    },
+    {
+      "email": "sun@sun.com",
+      "category": "부산",
+      "location": "ㄴ",
+      "description": "ㄴ",
+      "image": "ㄴ",
+      "latLng": {
+        "latitude": 37.36891108954368,
+        "longitude": 127.94033865805358
+      },
+      "address": "강원특별자치도 원주시 우산동 85-12",
+      "id": 5
     }
   ],
   "likes": [
     {
       "id": 1,
-      "userList": ["olxloh@naver.com", "jieun2563@naver.com"]
+      "userList": [
+        "olxloh@naver.com",
+        "jieun2563@naver.com"
+      ]
     },
     {
       "id": 2,
-      "userList": ["khhds00@naver.com"]
+      "userList": [
+        "khhds00@naver.com"
+      ]
     },
     {
       "id": 3,
-      "userList": ["olxloh@naver.com", "jieun2563@naver.com", "khhds00@naver.com"]
+      "userList": [
+        "olxloh@naver.com",
+        "jieun2563@naver.com",
+        "khhds00@naver.com"
+      ]
     },
     {
       "userList": [],
@@ -96,11 +131,73 @@
     },
     {
       "id": 1,
-      "userList": ["jieun2563@naver.com"]
+      "userList": [
+        "jieun2563@naver.com"
+      ]
     },
     {
       "id": 6,
       "userList": []
+    },
+    {
+      "userList": [],
+      "id": 12
+    },
+    {
+      "userList": [],
+      "id": 13
+    },
+    {
+      "userList": [],
+      "id": 14
+    },
+    {
+      "userList": [],
+      "id": 15
+    },
+    {
+      "userList": [],
+      "id": 16
+    },
+    {
+      "userList": [],
+      "id": 17
+    },
+    {
+      "userList": [],
+      "id": 18
+    },
+    {
+      "userList": [],
+      "id": 19
+    },
+    {
+      "userList": [],
+      "id": 20
+    },
+    {
+      "userList": [],
+      "id": 21
+    },
+    {
+      "userList": [],
+      "id": 22
+    },
+    {
+      "userList": [],
+      "id": 23
+    },
+    {
+      "userList": [],
+      "id": 24
+    },
+    {
+      "userList": [],
+      "id": 25
+    },
+    {
+      "userList": [],
+      "id": 26
     }
   ],
   "comments": [
@@ -109,6 +206,15 @@
       "email": "작성자 아이디",
       "body": "some comment",
       "postId": "1"
+    },
+    {
+      "id": "n6svgMyTjoQmISpGvKTGK",
+      "nickName": "ssss",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "sun@sun.com",
+      "body": "굿",
+      "uid": "C5QrPAbB4VNzrmVfqVvDSF8tvCL2",
+      "postId": "3"
     }
   ]
 }
