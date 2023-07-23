@@ -35,7 +35,7 @@ const Header = () => {
       setUserEmail(user?.email);
       setEmailDischarge(user?.email);
       //로그인 사용자의 이메일
-      console.log('user', user);
+      // console.log('user', user);
     });
   }, []);
 

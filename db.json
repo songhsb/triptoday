@@ -62,29 +62,24 @@
       "id": 4
     }
   ],
-  "likes": [
-    {
-      "id": 3,
-      "userList": []
-    },
-    {
-      "id": 2,
-      "userList": []
-    },
-    {
-      "id": 1,
-      "userList": []
-    },
-    {
-      "id": 4,
-      "userList": []
-    }
-  ],
+  "likes": [],
   "comments": [
     {
-      "id": 1,
-      "email": "작성자 아이디",
-      "body": "some comment",
+      "id": "FArmtP4HpZOFkGGvdC95d",
+      "nickName": "김승범",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "khhds00@naver.com",
+      "body": "댓글을 달아보자",
+      "uid": "hLyZ1wnmJ6Tb7hCgFBPZ4ZhUe9n1",
+      "postId": "3"
+    },
+    {
+      "id": "prWobjk-QvPsvy0Fz3UuE",
+      "nickName": "김승범",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "khhds00@naver.com",
+      "body": "여기도 댓글을 달아보자",
+      "uid": "hLyZ1wnmJ6Tb7hCgFBPZ4ZhUe9n1",
       "postId": "1"
     },
     {
