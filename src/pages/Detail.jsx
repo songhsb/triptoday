@@ -32,7 +32,7 @@ const Detail = () => {
   const { confirm } = useConfirm();
   const dispatch = useDispatch();
 
-  const { isLoading, isError, data } = useQuery('postsData', getPosts);
+  const { isLoading, isError, data, isFetching } = useQuery('postsData', getPosts);
 
   const queryClient = useQueryClient();
 
@@ -125,7 +125,7 @@ const Detail = () => {
     if (!isLoading && !isError) {
       locationData();
     }
-  }, [isLoading, isError]);
+  }, [isLoading, isError, isFetching]);
 
   if (isLoading) {
     return <LoadingSpinner />;

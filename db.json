@@ -112,6 +112,32 @@
       },
       "address": "경기 여주시 강천면 적금리 48-4",
       "id": 7
+    },
+    {
+      "email": "heejung2@naver.com",
+      "category": "제주도",
+      "location": "제주 서귀포",
+      "description": "1995년 8월 26일 제주기념물로 지정되었다가 2008년 8월 8일 명승으로 변경되었다. 한라산 남쪽 기슭에 발달한 폭포로, 폭포수가 바다로 떨어지는 동양 유일의 해안폭포이다. ",
+      "image": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150831_146%2F14409922888995YijF_JPEG%2F156281546650093_1.jpg",
+      "latLng": {
+        "latitude": 33.24501751317579,
+        "longitude": 126.57139057808949
+      },
+      "address": "제주특별자치도 서귀포시 서귀동 962",
+      "id": 8
+    },
+    {
+      "email": "heejung2@naver.com",
+      "category": "제주도",
+      "location": "제주도 한림읍",
+      "description": "성이시돌목장은 청정제주에서 유기농우유와 무항생제 소고기를 생산하며, 경주마 육성 및 위탁사육 사업을 하고 있습니다.",
+      "image": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150831_4%2F1441007149791BPsNI_JPEG%2F12049000_0.jpg",
+      "latLng": {
+        "latitude": 33.34778007276049,
+        "longitude": 126.32737256222207
+      },
+      "address": "제주특별자치도 제주시 한림읍 금악리 142",
+      "id": 9
     }
   ],
   "likes": [
@@ -147,13 +173,29 @@
       "userList": [
         "heejung2@naver.com"
       ]
+    },
+    {
+      "id": 8,
+      "userList": []
     }
   ],
   "comments": [
     {
-      "id": 1,
-      "email": "작성자 아이디",
-      "body": "some comment",
+      "id": "FArmtP4HpZOFkGGvdC95d",
+      "nickName": "김승범",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "khhds00@naver.com",
+      "body": "댓글을 달아보자",
+      "uid": "hLyZ1wnmJ6Tb7hCgFBPZ4ZhUe9n1",
+      "postId": "3"
+    },
+    {
+      "id": "prWobjk-QvPsvy0Fz3UuE",
+      "nickName": "김승범",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "khhds00@naver.com",
+      "body": "여기도 댓글을 달아보자",
+      "uid": "hLyZ1wnmJ6Tb7hCgFBPZ4ZhUe9n1",
       "postId": "1"
     },
     {

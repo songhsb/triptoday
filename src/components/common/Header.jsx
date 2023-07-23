@@ -35,7 +35,7 @@ const Header = () => {
       setUserEmail(user?.email);
       setEmailDischarge(user?.email);
       //로그인 사용자의 이메일
-      console.log('user', user);
+      // console.log('user', user);
     });
   }, []);
 
@@ -174,6 +174,7 @@ const StSearchForm = styled.div`
 const StSearchInput = styled.input`
   width: 279px;
   height: 45px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 18px;
