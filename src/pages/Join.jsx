@@ -25,7 +25,6 @@ const Join = () => {
   const [allUsers, setAllUsers] = useState([]);
 
   useEffect(() => {
-    console.log('나냐 ???????????');
     const initialUsers = [];
     const fetchData = async () => {
       const queryRef = query(collection(db, 'users'));
@@ -41,7 +40,6 @@ const Join = () => {
       setAllUsers(initialUsers);
     };
     fetchData();
-    console.log('나냐 ???????????');
   }, []);
   // console.log('+++++++++++++++++++++++++++++', allUsers);
 
@@ -83,7 +81,7 @@ const Join = () => {
       });
       console.log('-----------Document isAdmin: ', docUserRef.isAdmin);
       setAdminCheck(false);
-      navigate('/'); // 메인으로 왜안감?
+      navigate('/');
       window.location.reload();
     } catch (error) {
       const errorCode = error.code;
