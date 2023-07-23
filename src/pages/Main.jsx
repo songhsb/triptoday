@@ -13,18 +13,15 @@ import { getLikes } from '../api/likes';
 import Select from '../components/Main/Select'; // 승범님꺼
 import PostBox from '../components/Main/PostBox';
 import { getComments } from '../api/comments';
-
 const Main = () => {
   const { isLoading, isError, data: posts } = useQuery('postsData', getPosts);
   const { data: likes } = useQuery('likes', getLikes);
   const { data: comments } = useQuery('comments', getComments);
-
   const [category, setCategory] = useInput(null);
   const [postList, setPostList] = useState([]);
   const [likeList, setLikeList] = useState([]);
   const navigate = useNavigate();
   // const [select, setSelect] = useState(false);
-
   useEffect(() => {
     const post = posts?.data;
     if ((!isLoading && !isError) || !likeList) {
@@ -35,15 +32,12 @@ const Main = () => {
       setLikeList([]);
     }
   }, [isLoading, isError, posts, likes]);
-
   if (isLoading) {
     return <LoadingSpinner />;
   }
-
   if (isError) {
     return <h1>오류가 발생했어요!</h1>;
   }
-
   let postIdCount = {};
   if (likeList?.length > 0) {
     likeList.forEach(item => {
@@ -52,30 +46,25 @@ const Main = () => {
     });
   }
   console.log(postIdCount);
-
   const sortedCounts = Object.entries(postIdCount)
     .sort((a, b) => b[1] - a[1])
     .map(([postId, count]) => postId);
-
   console.log(sortedCounts);
+
   let firstId = sortedCounts[0];
   let secondId = sortedCounts[1];
   let threeId = sortedCounts[2];
-
   const firstPostData = postList?.find(item => item.id == firstId);
   const SecondPostData = postList?.find(item => item.id == secondId);
   const ThreePostData = postList?.find(item => item.id == threeId);
   console.log(firstPostData);
 
-  let values = Object.values(postIdCount);
-  const firstlikes = values[0];
-  const Secondlikes = values[1];
-  const Threeikes = values[2];
-
+  const firstlikes = postIdCount[firstId];
+  const Secondlikes = postIdCount[secondId];
+  const Threeikes = postIdCount[threeId];
   const handleDetailButtonClick = id => {
     navigate(`/detail/${id}`);
   };
-
   // const OPTIONS = [
   //   { value: '서울', name: '서울' },
   //   { value: '대구', name: '대구' },
@@ -99,7 +88,6 @@ const Main = () => {
       <Layout>
         {/* 베스트 여행지  */}
         <StLankTitle>오늘의 베스트 여행지</StLankTitle>
-
         <StLankingDiv>
           <StRankItem url={firstPostData?.image} key={firstPostData?.id} onClick={() => handleDetailButtonClick(firstPostData?.id)}>
             <StLike>
@@ -110,7 +98,6 @@ const Main = () => {
               <div>{firstPostData?.category}</div>
             </StHoverLayer>
           </StRankItem>
-
           <StRankItem url={SecondPostData?.image} key={SecondPostData?.id} onClick={() => handleDetailButtonClick(SecondPostData?.id)}>
             <StLike>
               <GoHeartFill /> {Secondlikes}
@@ -120,7 +107,6 @@ const Main = () => {
               <div>{SecondPostData?.category}</div>
             </StHoverLayer>
           </StRankItem>
-
           <StRankItem url={ThreePostData?.image} key={ThreePostData?.id} onClick={() => handleDetailButtonClick(ThreePostData?.id)}>
             <StLike>
               <GoHeartFill /> {Threeikes}
@@ -131,11 +117,9 @@ const Main = () => {
             </StHoverLayer>
           </StRankItem>
         </StLankingDiv>
-
         <div>
           {/* 셀렉트박스  */}
           {/* <Select onClick={selectHandler} select={select} setSelect={setSelect} options={OPTIONS}></Select> */}
-
           <Select setCategory={setCategory} />
           <PostBox posts={posts} category={category} handleDetailButtonClick={handleDetailButtonClick} />
         </div>
@@ -143,9 +127,7 @@ const Main = () => {
     </>
   );
 };
-
 export default Main;
-
 const StLankTitle = styled.h2`
   font-weight: bold;
   font-size: 2rem;
@@ -213,7 +195,6 @@ const StHoverLayer = styled.div`
     padding-left: 5px;
   }
 `;
-
 const StUl = styled.ul`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -221,7 +202,6 @@ const StUl = styled.ul`
   margin: 5px;
   gap: 20px;
 `;
-
 export const StyledPostsyBox = styled.li`
   padding: 10px;
   background-color: #f0f4f7;
@@ -229,26 +209,22 @@ export const StyledPostsyBox = styled.li`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
-
   &:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 `;
-
 export const StImage = styled.img`
   width: 100%;
   height: 206px;
   border-radius: 3px;
   margin-bottom: 5px;
 `;
-
 export const StTitle = styled.h2`
   margin-top: 5px;
   font-size: 18px;
   font-weight: bold;
   color: #293241;
 `;
-
 export const StMpCategory = styled.p`
   color: #888;
   font-size: 14px;

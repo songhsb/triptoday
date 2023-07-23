@@ -49,54 +49,6 @@
       "id": 3
     },
     {
-      "category": "서울",
-      "location": "경주",
-      "description": "굿",
-      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
-      "latLng": {
-        "latitude": 35.83991036264332,
-        "longitude": 129.22901799908698
-      },
-      "address": "경북 경주시 인왕동 5-5",
-      "id": 5
-    },
-    {
-      "category": "서울",
-      "location": "경주",
-      "description": "굿",
-      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
-      "latLng": {
-        "latitude": 35.83991036264332,
-        "longitude": 129.22901799908698
-      },
-      "address": "경북 경주시 인왕동 5-5",
-      "id": 5
-    },
-    {
-      "category": "서울",
-      "location": "경주",
-      "description": "굿",
-      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
-      "latLng": {
-        "latitude": 35.83991036264332,
-        "longitude": 129.22901799908698
-      },
-      "address": "경북 경주시 인왕동 5-5",
-      "id": 5
-    },
-    {
-      "category": "서울",
-      "location": "경주",
-      "description": "굿",
-      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
-      "latLng": {
-        "latitude": 35.83991036264332,
-        "longitude": 129.22901799908698
-      },
-      "address": "경북 경주시 인왕동 5-5",
-      "id": 5
-    },
-    {
       "id": 1,
       "email": "작성자 아이디",
       "category": "강원도",
@@ -163,22 +115,6 @@
     }
   ],
   "likes": [
-    {
-      "id": 1,
-      "userList": ["heejung2@naver.com", "jieun2563@naver.com"]
-    },
-    {
-      "id": 3,
-      "userList": ["heejung2@naver.com", "khhds@kkao.com"]
-    },
-    {
-      "id": 6,
-      "userList": ["heejung2@naver.com"]
-    },
-    {
-      "id": 5,
-      "userList": []
-    }
   ],
   "comments": [
     {
@@ -206,6 +142,69 @@
       "email": "sun@sun.com",
       "body": "굿",
       "uid": "C5QrPAbB4VNzrmVfqVvDSF8tvCL2",
+      "postId": "3"
+    },
+    {
+      "id": "XcsJpefZsGbKOsqvK8M5A",
+      "nickName": "희정3",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "heejung2@naver.com",
+      "body": "댓글을 달았습니다",
+      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
+      "postId": "1"
+    },
+    {
+      "id": "tx7myXpd4e0C5PMeoV_8H",
+      "nickName": "유희",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "dbgml@naver.com",
+      "body": "수정수정 가능",
+      "uid": "Dm1FUrkNOQcVd29159HBjurpkB33",
+      "postId": "1"
+    },
+    {
+      "id": "IVzhssgtMhP0h6ew4bA-K",
+      "nickName": "희정3",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "heejung2@naver.com",
+      "body": "댓글",
+      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
+      "postId": "6"
+    },
+    {
+      "id": "Gf4AWm3mr5rZOAKnPMbhj",
+      "nickName": "희정3",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "heejung2@naver.com",
+      "body": "댓글",
+      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
+      "postId": "2"
+    },
+    {
+      "id": "409oEq_tkcIJXk6dZncDk",
+      "nickName": "희정3",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "heejung2@naver.com",
+      "body": "댓글댓글댓글",
+      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
+      "postId": "2"
+    },
+    {
+      "id": "X_6QTTj9E9bbOS7kOmaBu",
+      "nickName": "희정3",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "heejung2@naver.com",
+      "body": "내용입니다",
+      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
+      "postId": "2"
+    },
+    {
+      "id": "VlaO3qCP99JcKPacJdxNv",
+      "nickName": "희정3",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "heejung2@naver.com",
+      "body": "굿굿",
+      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
       "postId": "3"
     }
   ]

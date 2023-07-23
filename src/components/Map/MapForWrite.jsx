@@ -149,7 +149,7 @@ const MapForWrite = ({
 export default MapForWrite;
 
 const MapBox = styled.div`
-  width: 800px;
+  width: 100%;
   height: 500px;
   margin: 30px 0;
   border-radius: 10px;

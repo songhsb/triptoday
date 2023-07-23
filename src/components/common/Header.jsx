@@ -105,18 +105,16 @@ const Header = () => {
   return (
     <StHeader>
       <StLogo onClick={() => navigate('/')}>
-        <StTravelImg>
-          <img src={logoimg} alt="로고" />
-        </StTravelImg>
+        <img src={logoimg} alt="로고" />
       </StLogo>
       {/* 검색창 */}
-      <StContener>
-        <form>
-          <StSearchText type="text" value={searchValue} onChange={setSearchValue} />
+      <StContainer>
+        <StSearchForm>
+          <StSearchInput type="text" value={searchValue} onChange={setSearchValue} />
           <StSearchBtn onClick={searchData}>
-            <StSearchimg src={Search} />
+            <img src={Search} />
           </StSearchBtn>
-        </form>
+        </StSearchForm>
         &nbsp;
         {/* 로그인버튼 */}
         {thisUser?.isAdmin && (
@@ -144,7 +142,7 @@ const Header = () => {
             </StButton>
           </>
         )}
-      </StContener>
+      </StContainer>
     </StHeader>
   );
 };
@@ -162,35 +160,26 @@ const StLogo = styled.div`
   cursor: pointer;
   font-size: 22px;
   font-weight: 800;
+  width: 200px;
 `;
-const StContener = styled.div`
+
+const StContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-export const StSearchText = styled.input`
+const StSearchForm = styled.div`
+  display: flex;
+`;
+const StSearchInput = styled.input`
   width: 279px;
   height: 45px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  margin-top: 10px;
   font-size: 18px;
-  margin-bottom: 10px;
 `;
-const StTravelImg = styled.div`
-  width: 200px;
-`;
-
 const StSearchBtn = styled.button`
   border: 0; /* 버튼의 border를 0으로 설정하여 안 보이도록 합니다. */
   background-color: transparent; /* 버튼의 배경을 투명으로 만듭니다. */
-  width: 40px;
-  height: 40px;
-  margin-top: 10px;
   margin-right: 20px;
-  margin-bottom: 10px;
-`;
-const StSearchimg = styled.img`
-  width: 33px;
-  height: 34px;
 `;
