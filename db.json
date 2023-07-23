@@ -23,6 +23,7 @@
       "address": "강원특별자치도 영월군 영월읍 방절리 139"
     },
     {
+      "id": 2,
       "email": "khhds00@naver.com",
       "category": "경기도",
       "location": "대한민국 가평 ",
@@ -32,10 +33,10 @@
         "latitude": 37.83198883327494,
         "longitude": 127.50962847275386
       },
-      "address": "경기 가평군 가평읍 읍내리 1010",
-      "id": 2
+      "address": "경기 가평군 가평읍 읍내리 1010"
     },
     {
+      "id": 3,
       "email": "khhds00@naver.com",
       "category": "강원도",
       "location": "대한민국 강릉",
@@ -44,9 +45,7 @@
       "latLng": {
         "latitude": 37.752114428948964,
         "longitude": 128.8759034687553
-      },
-      "address": "강원특별자치도 강릉시 홍제동 1001",
-      "id": 3
+      }
     },
     {
       "email": "admin@test.com",

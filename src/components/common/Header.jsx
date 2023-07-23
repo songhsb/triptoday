@@ -174,6 +174,7 @@ const StSearchForm = styled.div`
 const StSearchInput = styled.input`
   width: 279px;
   height: 45px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 18px;
