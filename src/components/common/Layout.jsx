@@ -1,8 +1,14 @@
 import React from 'react';
 import { styled } from 'styled-components';
+import TopBtn from './TopBtn';
 
 const Layout = ({ children }) => {
-  return <Container>{children}</Container>;
+  return (
+    <>
+      <Container>{children}</Container>
+      <TopBtn />
+    </>
+  );
 };
 
 export default Layout;

@@ -83,8 +83,8 @@ const Join = () => {
       });
       console.log('-----------Document isAdmin: ', docUserRef.isAdmin);
       setAdminCheck(false);
-      window.location.reload();
       navigate('/'); // 메인으로 왜안감?
+      window.location.reload();
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -159,7 +159,7 @@ const Join = () => {
             (name.length < 2 || reg_name5.test(name)) &&
             (existsNickName.includes(nickName) === true || reg_nick.test(nickName)) &&
             (existsEmail.includes(email) === true || reg_email.test(email)) &&
-            (password.length >= 6 || reg_pw1.test(password)) &&
+            (password.length > 6 || reg_pw1.test(password)) &&
             password === cfmPassword &&
             ((adminCheck === true && adminCode === 'adminCode') || (adminCheck === false && adminCode === ''))
               ? false

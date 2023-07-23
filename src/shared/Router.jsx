@@ -9,10 +9,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MapTest from '../pages/MapTest';
 import Write from '../pages/Write';
 import UpdateWrite from '../pages/UpdateWrite';
+import AlarmContainer from '../components/common/alarmConfirm/AlarmContainer';
 
 const Router = () => {
   return (
     <BrowserRouter>
+      <AlarmContainer />
       <Header />
       <Routes>
         <Route path="/" element={<Main />} />
