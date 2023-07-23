@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
 
 export default Layout;
 
-const Container = styled.div`
+const Container = styled.main`
   max-width: 1200px;
   margin: 0 auto;
   padding: 80px 10px;

@@ -8,9 +8,8 @@ import LoadingSpinner from '../components/common/LoadingSpinner';
 import Slider from '../components/Main/Slider';
 import Layout from '../components/common/Layout';
 import { GoHeartFill } from 'react-icons/go';
-// import Select from '../components/common/Select'; // 내꺼
 import { getLikes } from '../api/likes';
-import Select from '../components/Main/Select'; // 승범님꺼
+import Select from '../components/Main/Select';
 import PostBox from '../components/Main/PostBox';
 import { getComments } from '../api/comments';
 const Main = () => {
@@ -21,7 +20,7 @@ const Main = () => {
   const [postList, setPostList] = useState([]);
   const [likeList, setLikeList] = useState([]);
   const navigate = useNavigate();
-  // const [select, setSelect] = useState(false);
+
   useEffect(() => {
     const post = posts?.data;
     if ((!isLoading && !isError) || !likeList) {
@@ -45,11 +44,10 @@ const Main = () => {
       postIdCount[postId] = item.userList?.length;
     });
   }
-  console.log(postIdCount);
+
   const sortedCounts = Object.entries(postIdCount)
     .sort((a, b) => b[1] - a[1])
     .map(([postId, count]) => postId);
-  console.log(sortedCounts);
 
   let firstId = sortedCounts[0];
   let secondId = sortedCounts[1];
@@ -65,21 +63,7 @@ const Main = () => {
   const handleDetailButtonClick = id => {
     navigate(`/detail/${id}`);
   };
-  // const OPTIONS = [
-  //   { value: '서울', name: '서울' },
-  //   { value: '대구', name: '대구' },
-  //   { value: '부산', name: '부산' },
-  //   { value: '경기도', name: '경기도' },
-  //   { value: '강원도', name: '강원도' },
-  //   { value: '충청도', name: '충청도' },
-  //   { value: '경상도', name: '경상도' },
-  //   { value: '전라도', name: '전라도' },
-  //   { value: '제주도', name: '제주도' },
-  // ];
-  // const selectHandler = () => {
-  //   console.log('000');
-  //   setSelect(true);
-  // };
+
   return (
     <>
       <LoadingSpinner />
@@ -119,7 +103,6 @@ const Main = () => {
         </StLankingDiv>
         <div>
           {/* 셀렉트박스  */}
-          {/* <Select onClick={selectHandler} select={select} setSelect={setSelect} options={OPTIONS}></Select> */}
           <Select setCategory={setCategory} />
           <PostBox posts={posts} category={category} handleDetailButtonClick={handleDetailButtonClick} />
         </div>
