@@ -13,6 +13,7 @@ import LoadingSpinner from './LoadingSpinner';
 import useInput from '../../hooks/useInput';
 import { EmailAtom, SearchAtom } from '../../recoil/SearchAtom';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
+import TopBtn from './TopBtn';
 
 const Header = () => {
   const navigate = useNavigate('');
@@ -103,7 +104,6 @@ const Header = () => {
 
   return (
     <StHeader>
-      {/* <ModalForAlert /> */}
       <StLogo onClick={() => navigate('/')}>
         <StTravelImg>
           <img src={logoimg} alt="로고" />
@@ -121,9 +121,7 @@ const Header = () => {
         {/* 로그인버튼 */}
         {thisUser?.isAdmin && (
           <>
-            <StButton $fontColor={'black'} onClick={() => navigate('/write')}>
-              글쓰기
-            </StButton>
+            <StButton onClick={() => navigate('/write')}>글쓰기</StButton>
           </>
         )}
         {user ? (

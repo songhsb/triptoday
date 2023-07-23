@@ -8,9 +8,11 @@ import { GoHeartFill } from 'react-icons/go';
 import { GoHeart } from 'react-icons/go';
 import './LikesPosts.css';
 import LoadingSpinner from '../common/LoadingSpinner';
+import useAlert from '../../hooks/useAlert';
 
 const LikesPosts = ({ postId }) => {
   const queryClient = useQueryClient();
+  const { customAlert } = useAlert();
   /** NOTE [임시 code] useEffect에 있는 auth 불러오는 logic은 임시 code로 추후 삭제 예정
    * (이 loginUserId는 지금은 auth불러서 가져오는데 -> 나중에 승범님이 Detail 조회에서 ?가져오실 auth정보를 props로 내려받아 내려올 예정임) */
   const [loginUserEmail, setLoginUserEmail] = useState('');
@@ -38,10 +40,13 @@ const LikesPosts = ({ postId }) => {
   );
   // ? 근데.... 음 likes에 다른 이유로 에러가 떴는데 postId에 있는 userList를 빈값 줘버리면 어떡해? 그런 일은 안생기나
   useEffect(() => {
-    likesDocMutation.mutate({
-      userList: [],
-    });
-  }, []);
+    if (isError) {
+      likesDocMutation.mutate({
+        id: postId,
+        userList: [],
+      });
+    }
+  }, [isError]);
 
   useEffect(() => {
     onAuthStateChanged(auth, user => {
@@ -68,7 +73,7 @@ const LikesPosts = ({ postId }) => {
   const fullheart = likes.userList?.includes(loginUserEmail);
   const onClickHeartHandler = (loginUserEmail, fullheart) => {
     if (!loginUserEmail) {
-      alert('로그인 해야 누를 수 있습니다.');
+      customAlert('로그인 해야 누를 수 있습니다.');
       return false;
     }
     let switchedLikes;

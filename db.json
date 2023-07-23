@@ -47,729 +47,137 @@
       },
       "address": "강원특별자치도 강릉시 홍제동 1001",
       "id": 3
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "category": "서울",
+      "location": "경주",
+      "description": "굿",
+      "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjJfMTk4%2FMDAxNjg0NzU5NDQ4NTMz.LI_Rnz_mrLrbv86s2t5x4SGEQHO8x2pVuPpbKhZMfS4g.HzmywBKlzOiIIEhHoCV9ZD9Z1s1mfgGZjy7jj3rl4OYg.JPEG.yakgwa01%2FKakaoTalk_20230522_152610320_11.jpg&type=a340",
+      "latLng": {
+        "latitude": 35.83991036264332,
+        "longitude": 129.22901799908698
+      },
+      "address": "경북 경주시 인왕동 5-5",
+      "id": 5
+    },
+    {
+      "id": 1,
+      "email": "작성자 아이디",
+      "category": "강원도",
+      "location": "대한민국 영월",
+      "description": "작은 한반도가 숨어있는 영월군. 멀리서도 물속이 훤히 들여다보일 만큼 맑은 평창강이 감싸 안은 선암마을은 한반도를 빼닮아 한반도 지형이라는 이름을 갖고 있다. 이 아름다운 경관에 맞서는 신비로움이 숨어있으니 바로 고씨동굴이다. 약 5억 년 전에 형성된 것으로 추정되는 이 동굴은 석회동굴로 새로운 볼거리가 가득하다. 그 밖에 육지 속 작은 섬 청령포와 여름에는 래프팅을, 겨울이면 얼음낚시를 즐길 수 있는 동강도 인기 관광 코스! ",
+      "image": "https://myro.co.kr/myro_image/city/yeongwol.jpg",
+      "latLng": {
+        "latitude": 37.18610826882379,
+        "longitude": 128.45149303027506
+      },
+      "address": "강원특별자치도 영월군 영월읍 방절리 139"
+    },
+    {
+      "email": "khhds00@naver.com",
+      "category": "경기도",
+      "location": "대한민국 가평 ",
+      "description": "자연의 정취에 젖어들게 만드는 가평 아침고요수목원. 어디를 둘러봐도 풍경이 가득해 지루할 틈이 없다. 그중에도 가평하면 빼놓을 수 없는 쁘띠프랑스는 프랑스를 떠올리게 하는 이국적인 풍경으로 빨간 지붕이 매력적이다. 또한 매년 가을에 열리는 자라섬 국제재즈페스티벌은 석양과 음악이 어우러질 때까지 재즈의 매력에 흠뻑 취해볼 수 있다.",
+      "image": "https://myro.co.kr/myro_image/city/gapyeong.jpg",
+      "latLng": {
+        "latitude": 37.83198883327494,
+        "longitude": 127.50962847275386
+      },
+      "address": "경기 가평군 가평읍 읍내리 1010",
+      "id": 2
+    },
+    {
+      "email": "khhds00@naver.com",
+      "category": "강원도",
+      "location": "대한민국 강릉",
+      "description": "은은한 커피향이 남다른 강원도 강릉시. 그중에도 카페거리로 유명한 안목해변은 발이 닿는 어디든 향긋한 커피 한 잔에 지평선 끝까지 펼쳐지는 바다 풍경은 덤으로 얻을 수 있다. 일출 명소로 유명한 정동진과 야경이 아름다운 경포대는 대표 여행 코스! 구름도 머물다 간다는 해발 1,100m에 위치한 강릉 안반데기 마을은 전망대에 올라 드넓게 펼쳐진 배추밭이 붉게 물드는 일출 전경이 일품이다.",
+      "image": "https://myro.co.kr/myro_image/city/gangneung.jpg",
+      "latLng": {
+        "latitude": 37.752114428948964,
+        "longitude": 128.8759034687553
+      },
+      "address": "강원특별자치도 강릉시 홍제동 1001",
+      "id": 3
+    },
+    {
+      "email": "heejung2@naver.com",
+      "category": "서울",
+      "location": "에버랜드-EVERLAND",
+      "description": " 꿈과 환상의 나라",
+      "image": "https://t1.daumcdn.net/cfile/tistory/991C833A5B811D492D",
+      "latLng": {
+        "latitude": 37.29325736891816,
+        "longitude": 127.20250660725996
+      },
+      "address": "경기 용인시 처인구 포곡읍 전대리 310",
+      "id": 6
+    },
+    {
+      "email": "sun@sun.com",
+      "category": "대구",
+      "location": "ㅁ",
+      "description": "ㅁ",
+      "image": "ㅁ",
+      "latLng": {
+        "latitude": 37.2538119420492,
+        "longitude": 127.71707826355077
+      },
+      "address": "경기 여주시 강천면 적금리 48-4",
+      "id": 7
     }
   ],
   "likes": [
     {
       "id": 1,
-      "userList": [
-        "olxloh@naver.com",
-        "jieun2563@naver.com",
-        "khhds00@naver.com"
-      ]
-    },
-    {
-      "id": 2,
-      "userList": [
-        "khhds00@naver.com"
-      ]
+      "userList": ["heejung2@naver.com", "jieun2563@naver.com"]
     },
     {
       "id": 3,
-      "userList": [
-        "olxloh@naver.com",
-        "jieun2563@naver.com"
-      ]
+      "userList": ["heejung2@naver.com", "khhds@kkao.com"]
     },
     {
-      "userList": [],
-      "id": 4
+      "id": 6,
+      "userList": ["heejung2@naver.com"]
     },
     {
-      "userList": [],
-      "id": 5
-    },
-    {
-      "userList": [],
-      "id": 6
-    },
-    {
-      "userList": [],
-      "id": 7
-    },
-    {
-      "userList": [],
-      "id": 8
-    },
-    {
-      "userList": [],
-      "id": 9
-    },
-    {
-      "userList": [],
-      "id": 10
-    },
-    {
-      "userList": [],
-      "id": 11
-    },
-    {
-      "userList": [],
-      "id": 12
-    },
-    {
-      "userList": [],
-      "id": 13
-    },
-    {
-      "userList": [],
-      "id": 14
-    },
-    {
-      "userList": [],
-      "id": 15
-    },
-    {
-      "userList": [],
-      "id": 16
-    },
-    {
-      "userList": [],
-      "id": 17
-    },
-    {
-      "userList": [],
-      "id": 18
-    },
-    {
-      "userList": [],
-      "id": 19
-    },
-    {
-      "userList": [],
-      "id": 20
-    },
-    {
-      "userList": [],
-      "id": 21
-    },
-    {
-      "userList": [],
-      "id": 22
-    },
-    {
-      "userList": [],
-      "id": 23
-    },
-    {
-      "userList": [],
-      "id": 24
-    },
-    {
-      "userList": [],
-      "id": 25
-    },
-    {
-      "userList": [],
-      "id": 26
-    },
-    {
-      "userList": [],
-      "id": 27
-    },
-    {
-      "userList": [],
-      "id": 28
-    },
-    {
-      "userList": [],
-      "id": 29
-    },
-    {
-      "userList": [],
-      "id": 30
-    },
-    {
-      "userList": [],
-      "id": 31
-    },
-    {
-      "userList": [],
-      "id": 32
-    },
-    {
-      "userList": [],
-      "id": 33
-    },
-    {
-      "userList": [],
-      "id": 34
-    },
-    {
-      "userList": [],
-      "id": 35
-    },
-    {
-      "userList": [],
-      "id": 36
-    },
-    {
-      "userList": [],
-      "id": 37
-    },
-    {
-      "userList": [],
-      "id": 38
-    },
-    {
-      "userList": [],
-      "id": 39
-    },
-    {
-      "userList": [],
-      "id": 40
-    },
-    {
-      "userList": [],
-      "id": 41
-    },
-    {
-      "userList": [],
-      "id": 42
-    },
-    {
-      "userList": [],
-      "id": 43
-    },
-    {
-      "userList": [],
-      "id": 44
-    },
-    {
-      "userList": [],
-      "id": 45
-    },
-    {
-      "userList": [],
-      "id": 46
-    },
-    {
-      "userList": [],
-      "id": 47
-    },
-    {
-      "userList": [],
-      "id": 48
-    },
-    {
-      "userList": [],
-      "id": 49
-    },
-    {
-      "userList": [],
-      "id": 50
-    },
-    {
-      "userList": [],
-      "id": 51
-    },
-    {
-      "userList": [],
-      "id": 52
-    },
-    {
-      "userList": [],
-      "id": 53
-    },
-    {
-      "userList": [],
-      "id": 54
-    },
-    {
-      "userList": [],
-      "id": 55
-    },
-    {
-      "userList": [],
-      "id": 56
-    },
-    {
-      "userList": [],
-      "id": 57
-    },
-    {
-      "userList": [],
-      "id": 58
-    },
-    {
-      "userList": [],
-      "id": 59
-    },
-    {
-      "userList": [],
-      "id": 60
-    },
-    {
-      "userList": [],
-      "id": 61
-    },
-    {
-      "userList": [],
-      "id": 62
-    },
-    {
-      "userList": [],
-      "id": 63
-    },
-    {
-      "userList": [],
-      "id": 64
-    },
-    {
-      "userList": [],
-      "id": 65
-    },
-    {
-      "userList": [],
-      "id": 66
-    },
-    {
-      "userList": [],
-      "id": 67
-    },
-    {
-      "userList": [],
-      "id": 68
-    },
-    {
-      "userList": [],
-      "id": 69
-    },
-    {
-      "userList": [],
-      "id": 70
-    },
-    {
-      "userList": [],
-      "id": 71
-    },
-    {
-      "userList": [],
-      "id": 72
-    },
-    {
-      "userList": [],
-      "id": 73
-    },
-    {
-      "userList": [],
-      "id": 74
-    },
-    {
-      "userList": [],
-      "id": 75
-    },
-    {
-      "userList": [],
-      "id": 76
-    },
-    {
-      "userList": [],
-      "id": 77
-    },
-    {
-      "userList": [],
-      "id": 78
-    },
-    {
-      "userList": [],
-      "id": 79
-    },
-    {
-      "userList": [],
-      "id": 80
-    },
-    {
-      "userList": [],
-      "id": 81
-    },
-    {
-      "userList": [],
-      "id": 82
-    },
-    {
-      "userList": [],
-      "id": 83
-    },
-    {
-      "userList": [],
-      "id": 84
-    },
-    {
-      "userList": [],
-      "id": 85
-    },
-    {
-      "userList": [],
-      "id": 86
-    },
-    {
-      "userList": [],
-      "id": 87
-    },
-    {
-      "userList": [],
-      "id": 88
-    },
-    {
-      "userList": [],
-      "id": 89
-    },
-    {
-      "userList": [],
-      "id": 90
-    },
-    {
-      "userList": [],
-      "id": 91
-    },
-    {
-      "userList": [],
-      "id": 92
-    },
-    {
-      "userList": [],
-      "id": 93
-    },
-    {
-      "userList": [],
-      "id": 94
-    },
-    {
-      "userList": [],
-      "id": 95
-    },
-    {
-      "userList": [],
-      "id": 96
-    },
-    {
-      "userList": [],
-      "id": 97
-    },
-    {
-      "userList": [],
-      "id": 98
-    },
-    {
-      "userList": [],
-      "id": 99
-    },
-    {
-      "userList": [],
-      "id": 100
-    },
-    {
-      "userList": [],
-      "id": 101
-    },
-    {
-      "userList": [],
-      "id": 102
-    },
-    {
-      "userList": [],
-      "id": 103
-    },
-    {
-      "userList": [],
-      "id": 104
-    },
-    {
-      "userList": [],
-      "id": 105
-    },
-    {
-      "userList": [],
-      "id": 106
-    },
-    {
-      "userList": [],
-      "id": 107
-    },
-    {
-      "userList": [],
-      "id": 108
-    },
-    {
-      "userList": [],
-      "id": 109
-    },
-    {
-      "userList": [],
-      "id": 110
-    },
-    {
-      "userList": [],
-      "id": 111
-    },
-    {
-      "userList": [],
-      "id": 112
-    },
-    {
-      "userList": [],
-      "id": 113
-    },
-    {
-      "userList": [],
-      "id": 114
-    },
-    {
-      "userList": [],
-      "id": 115
-    },
-    {
-      "userList": [],
-      "id": 116
-    },
-    {
-      "userList": [],
-      "id": 117
-    },
-    {
-      "userList": [],
-      "id": 118
-    },
-    {
-      "userList": [],
-      "id": 119
-    },
-    {
-      "userList": [],
-      "id": 120
-    },
-    {
-      "userList": [],
-      "id": 121
-    },
-    {
-      "userList": [],
-      "id": 122
-    },
-    {
-      "userList": [],
-      "id": 123
-    },
-    {
-      "userList": [],
-      "id": 124
-    },
-    {
-      "userList": [],
-      "id": 125
-    },
-    {
-      "userList": [],
-      "id": 126
-    },
-    {
-      "userList": [],
-      "id": 127
-    },
-    {
-      "userList": [],
-      "id": 128
-    },
-    {
-      "userList": [],
-      "id": 129
-    },
-    {
-      "userList": [],
-      "id": 130
-    },
-    {
-      "userList": [],
-      "id": 131
-    },
-    {
-      "userList": [],
-      "id": 132
-    },
-    {
-      "userList": [],
-      "id": 133
-    },
-    {
-      "userList": [],
-      "id": 134
-    },
-    {
-      "userList": [],
-      "id": 135
-    },
-    {
-      "userList": [],
-      "id": 136
-    },
-    {
-      "userList": [],
-      "id": 137
-    },
-    {
-      "userList": [],
-      "id": 138
-    },
-    {
-      "userList": [],
-      "id": 139
-    },
-    {
-      "userList": [],
-      "id": 140
-    },
-    {
-      "userList": [],
-      "id": 141
-    },
-    {
-      "userList": [],
-      "id": 142
-    },
-    {
-      "userList": [],
-      "id": 143
-    },
-    {
-      "userList": [],
-      "id": 144
-    },
-    {
-      "userList": [],
-      "id": 145
-    },
-    {
-      "userList": [],
-      "id": 146
-    },
-    {
-      "userList": [],
-      "id": 147
-    },
-    {
-      "userList": [],
-      "id": 148
-    },
-    {
-      "userList": [],
-      "id": 149
-    },
-    {
-      "userList": [],
-      "id": 150
-    },
-    {
-      "userList": [],
-      "id": 151
-    },
-    {
-      "userList": [],
-      "id": 152
-    },
-    {
-      "userList": [],
-      "id": 153
-    },
-    {
-      "userList": [],
-      "id": 154
-    },
-    {
-      "userList": [],
-      "id": 155
-    },
-    {
-      "userList": [],
-      "id": 156
-    },
-    {
-      "userList": [],
-      "id": 157
-    },
-    {
-      "userList": [],
-      "id": 158
-    },
-    {
-      "userList": [],
-      "id": 159
-    },
-    {
-      "userList": [],
-      "id": 160
-    },
-    {
-      "userList": [],
-      "id": 161
-    },
-    {
-      "userList": [],
-      "id": 162
-    },
-    {
-      "userList": [],
-      "id": 163
-    },
-    {
-      "userList": [],
-      "id": 164
-    },
-    {
-      "userList": [],
-      "id": 165
-    },
-    {
-      "userList": [],
-      "id": 166
-    },
-    {
-      "userList": [],
-      "id": 167
-    },
-    {
-      "userList": [],
-      "id": 168
-    },
-    {
-      "userList": [],
-      "id": 169
-    },
-    {
-      "userList": [],
-      "id": 170
-    },
-    {
-      "userList": [],
-      "id": 171
-    },
-    {
-      "userList": [],
-      "id": 172
-    },
-    {
-      "userList": [],
-      "id": 173
-    },
-    {
-      "userList": [],
-      "id": 174
-    },
-    {
-      "userList": [],
-      "id": 175
-    },
-    {
-      "userList": [],
-      "id": 176
-    },
-    {
-      "userList": [],
-      "id": 177
-    },
-    {
-      "userList": [],
-      "id": 178
+      "id": 5,
+      "userList": []
     }
   ],
   "comments": [
@@ -790,6 +198,15 @@
       "body": "여기도 댓글을 달아보자",
       "uid": "hLyZ1wnmJ6Tb7hCgFBPZ4ZhUe9n1",
       "postId": "1"
+    },
+    {
+      "id": "n6svgMyTjoQmISpGvKTGK",
+      "nickName": "ssss",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "sun@sun.com",
+      "body": "굿",
+      "uid": "C5QrPAbB4VNzrmVfqVvDSF8tvCL2",
+      "postId": "3"
     }
   ]
 }

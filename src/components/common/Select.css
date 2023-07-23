@@ -1,0 +1,12 @@
+.hide {
+    position: absolute;
+    left: 0;
+    max-height: 0;
+}
+
+.show {
+    padding: 8px 0;
+    max-height: 280px;
+    border-color: rgba(224, 226, 231, 0.5);
+    box-shadow: 0 4px 9px 0 rgba(63, 65, 80, 0.1);
+}

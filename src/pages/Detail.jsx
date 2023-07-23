@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useInput from '../hooks/useInput';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 import { auth, db } from '../firebase';
 import { onAuthStateChanged } from 'firebase/auth';
@@ -8,27 +8,29 @@ import { collection, getDocs, query } from 'firebase/firestore';
 import { nanoid } from 'nanoid';
 import { deletePosts, getPosts } from '../api/posts';
 import { getComments, addComments, deleteComments } from '../api/comments';
-import { StCategory, StImage, StMpCategory, StTitle, StyledPostsyBox } from './Main';
 import { styled } from 'styled-components';
 import { StButton } from '../components/common/Button';
 import { StInput } from '../components/common/InputStyle';
 import { touristAttraction } from '../api/touristAttraction';
 import axios from 'axios';
-import FormDialog from '../components/comment/UpdateComment';
-import LikesPosts from '../components/Detail/LikesPosts';
+import FormDialog from '../components/Detail/UpdateCommnet';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import Layout from '../components/common/Layout';
 import ReadMapInPost from '../components/Map/ReadMapInPost';
 import DetailMain from '../components/Detail/DetailMain';
 import DetailOtherArea from '../components/Detail/DetailOtherArea';
 import DetailRecommendArea from '../components/Detail/DetailRecommendArea';
+import useConfirm from '../hooks/useConfirm';
+import { useDispatch } from 'react-redux';
+import { closeAlarm } from '../redux/modules/confirm';
 
 const Detail = () => {
-  const navigate = useNavigate();
   const param = useParams();
   const id = param.id;
   const [list, setList] = useState([]);
   const [seeMore, setSeeMore] = useState(false);
+  const { confirm } = useConfirm();
+  const dispatch = useDispatch();
 
   const { isLoading, isError, data, isFetching } = useQuery('postsData', getPosts);
 
@@ -99,9 +101,19 @@ const Detail = () => {
       setter('');
     }
   };
+  // const handleCommentDelete = async id => {
+  //   if (window.confirm('삭제 하시겠습니까?')) {
+  //     deleteMutation.mutate(id);
+  //   }
+  // };
   const handleCommentDelete = async id => {
-    if (window.confirm('삭제 하시겠습니까?')) {
+    try {
+      await confirm('삭제하시겠습니까?');
       deleteMutation.mutate(id);
+      dispatch(closeAlarm());
+    } catch (error) {
+      dispatch(closeAlarm());
+      return false;
     }
   };
   // 코멘드 관련 입니다
