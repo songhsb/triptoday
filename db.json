@@ -89,36 +89,12 @@
   ],
   "likes": [
     {
-      "id": 10,
-      "userList": [
-        "jieun2563@naver.com"
-      ]
-    },
-    {
-      "id": 5,
-      "userList": [
-        "jieun2563@naver.com"
-      ]
-    },
-    {
-      "id": 1,
-      "userList": []
-    },
-    {
       "id": 2,
       "userList": []
     },
     {
       "id": 3,
-      "userList": [
-        "jieun2563@naver.com"
-      ]
-    },
-    {
-      "id": 11,
-      "userList": [
-        "jieun2563@naver.com"
-      ]
+      "userList": []
     }
   ],
   "comments": [
