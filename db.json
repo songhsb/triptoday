@@ -949,7 +949,6 @@
       "address": "제주특별자치도 제주시 한림읍 금악리 142",
       "id": 85
     },
-
     {
       "email": "heejung2@naver.com",
       "category": "제주도",
@@ -978,7 +977,7 @@
     },
     {
       "email": "heejung2@naver.com",
-      "category": "서울",
+      "category": "제주도",
       "location": "제주도 구좌읍",
       "description": "제주특별자치도 제주시 구좌읍 세화리에 있는 해수욕장. 1980년에 개장한 조그만 해수욕장이다. 코발트 빛깔의 맑은 바다가 아름다운 곳으로 인파로 붐비지 않아 아직 자연 그대로의 깨끗한 모습을 간직하고 있다.",
       "image": "https://lh3.googleusercontent.com/p/AF1QipMRR_l0z2HD3xK4nGUKq78fcnm_rqjb1jx1RgED=s680-w680-h510",
@@ -991,7 +990,7 @@
     },
     {
       "email": "heejung2@naver.com",
-      "category": "서울",
+      "category": "제주도",
       "location": "제주도 조천읍",
       "description": "제주특별자치도 제주시 조천읍 교래리 해발 400m 고지에 발달한 기생화산의 분화구. 1979년 6월 21일 천연기념물로 지정되었다. ",
       "image": "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA3MjFfOTIg%2FMDAxNjg5OTQzMzEyOTI1.vaJA1GAwXU-r4bkd-Q_hP4LEJgTcskd59pHQ9UHHELcg.LuFKSgE0uj3AG8czCEhCooeyAweHhfu-ENHIPHJXQSgg.JPEG%2F2EA77236-552D-4F91-B4D8-3EEE2C1ABE52.jpeg",
@@ -1004,7 +1003,7 @@
     },
     {
       "email": "heejung2@naver.com",
-      "category": "서울",
+      "category": "제주도",
       "location": "제주도 서귀포시",
       "description": "제주에 첫발을 디딜 때, 운이 좋다면 가장 먼저 눈에 띄는 것은 멀리 한라산이 거대한 덩치를 뽐내며 웅장한 자태로 솟아있는 모습이다. ",
       "image": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150901_47%2F1441045536666OTKPv_JPEG%2F156281538832608_1.jpg",
@@ -1071,7 +1070,12 @@
   "likes": [
     {
       "id": 1,
-      "userList": []
+      "userList": [
+        "heejung2@naver.com",
+        "jieun2563@naver.com",
+        "khhds00@naver.com",
+        "song@test.com"
+      ]
     },
     {
       "id": 4,
@@ -1083,11 +1087,16 @@
     },
     {
       "id": 9,
-      "userList": []
+      "userList": [
+        "khhds00@naver.com",
+        "dbgml@naver.com"
+      ]
     },
     {
       "id": 10,
-      "userList": []
+      "userList": [
+        "khhds00@naver.com"
+      ]
     },
     {
       "id": 13,
@@ -1095,11 +1104,20 @@
     },
     {
       "id": 19,
-      "userList": []
+      "userList": [
+        "heejung2@naver.com",
+        "khhds00@naver.com",
+        "jieun2563@naver.com",
+        "dbgml@naver.com"
+      ]
     },
     {
       "id": 37,
-      "userList": []
+      "userList": [
+        "heejung2@naver.com",
+        "khhds00@naver.com",
+        "dbgml@naver.com"
+      ]
     },
     {
       "id": 38,
@@ -1107,6 +1125,168 @@
     },
     {
       "id": 16,
+      "userList": [
+        "heejung2@naver.com",
+        "jieun2563@naver.com"
+      ]
+    },
+    {
+      "id": 36,
+      "userList": [
+        "jieun2563@naver.com"
+      ]
+    },
+    {
+      "id": 37,
+      "userList": [
+        "jieun2563@naver.com",
+        "heejung2@naver.com",
+        "dbgml@naver.com"
+      ]
+    },
+    {
+      "id": 38,
+      "userList": [
+        "jieun2563@naver.com"
+      ]
+    },
+    {
+      "id": 39,
+      "userList": [
+        "jieun2563@naver.com",
+        "dbgml@naver.com"
+      ]
+    },
+    {
+      "id": 46,
+      "userList": [
+        "jieun2563@naver.com",
+        "heejung2@naver.com",
+        "olxloh@gmail.com",
+        "olxloha@gmail.com"
+      ]
+    },
+    {
+      "id": 53,
+      "userList": [
+        "jieun2563@naver.com"
+      ]
+    },
+    {
+      "id": 53,
+      "userList": [
+        "jieun2563@naver.com",
+        "heejung2@naver.com",
+        "olxloh@gmail.com",
+        "olxloha@gmail.com",
+        "dbgml@naver.com",
+        "khhds00@naver.com"
+      ]
+    },
+    {
+      "id": 54,
+      "userList": [
+        "jieun2563@naver.com",
+        "heejung2@naver.com",
+        "olxloh@gmail.com",
+        "olxloha@gmail.com",
+        "dbgml@naver.com",
+        "khhds00@naver.com",
+        "jieun@naver.com"
+      ]
+    },
+    {
+      "id": 55,
+      "userList": [
+        "jieun2563@naver.com",
+        "heejung2@naver.com",
+        "olxloh@gmail.com",
+        "olxloha@gmail.com",
+        "dbgml@naver.com"
+      ]
+    },
+    {
+      "id": 56,
+      "userList": [
+        "jieun2563@naver.com",
+        "heejung2@naver.com",
+        "olxloh@gmail.com",
+        "olxloha@gmail.com",
+        "dbgml@naver.com"
+      ]
+    },
+    {
+      "id": 57,
+      "userList": [
+        "jieun2563@naver.com",
+        "heejung2@naver.com",
+        "olxloh@gmail.com",
+        "olxloha@gmail.com",
+        "dbgml@naver.com"
+      ]
+    },
+    {
+      "id": 58,
+      "userList": [
+        "jieun2563@naver.com",
+        "heejung2@naver.com",
+        "olxloh@gmail.com",
+        "olxloha@gmail.com",
+        "dbgml@naver.com"
+      ]
+    },
+    {
+      "id": 59,
+      "userList": [
+        "jieun2563@naver.com",
+        "heejung2@naver.com",
+        "olxloh@gmail.com",
+        "olxloha@gmail.com",
+        "dbgml@naver.com"
+      ]
+    },
+    {
+      "id": 60,
+      "userList": [
+        "jieun2563@naver.com",
+        "heejung2@naver.com",
+        "olxloh@gmail.com",
+        "olxloha@gmail.com",
+        "dbgml@naver.com"
+      ]
+    },
+    {
+      "id": 80,
+      "userList": []
+    },
+    {
+      "id": 78,
+      "userList": [
+        "jieun2563@naver.com"
+      ]
+    },
+    {
+      "id": 2,
+      "userList": []
+    },
+    {
+      "id": 86,
+      "userList": [
+        "jieun@naver.com"
+      ]
+    },
+    {
+      "id": 82,
+      "userList": [
+        "jieun@naver.com"
+      ]
+    },
+    {
+      "id": 7,
+      "userList": []
+    },
+    {
+      "id": 3,
       "userList": []
     }
   ],
@@ -1137,6 +1317,33 @@
       "body": "굿",
       "uid": "C5QrPAbB4VNzrmVfqVvDSF8tvCL2",
       "postId": "3"
+    },
+    {
+      "id": "p0MmrVmukMuKTREv9aMZF",
+      "nickName": "희정3",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "heejung2@naver.com",
+      "body": "예뻐요 ㅋㅋㅋ",
+      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
+      "postId": "2"
+    },
+    {
+      "id": "wmY5zISMZq7vVEFenJNo4",
+      "nickName": "이구아나",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "jieun@naver.com",
+      "body": "가고싶다...JEJU 진째루",
+      "uid": "V2Mg4ZiWP0XQHTe2K5p6BLIhKHL2",
+      "postId": "82"
+    },
+    {
+      "id": "3oWF9rXaUGXUXCkeXK1CU",
+      "nickName": "희정3",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "heejung2@naver.com",
+      "body": "ㅎㅎㅎㅎ",
+      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
+      "postId": "80"
     }
   ]
 }
