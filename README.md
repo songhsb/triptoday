@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Create React App - Todo List App
+React 아웃소싱 팀프로젝트 2023.07.17-2023.07.24
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 프로젝트 소개
+오늘의 여행 ( 여행 명소 정보 제공 플랫폼 )
+- 관리자가 추가한 여행 명소에 댓글을 달 수 있는 일반 유저
+- 지도 API를 사용해 지역 단위, 또는 테마 별로 위치 및 정보 제공
+- 다양한 여행 정보를 제공하여 국내의 숨은 명소 정보 제공
+- 지도 서비스 지원을 통해 사용자가 시각적 정보를 제공 받을 수 있음
 
-## Available Scripts
+# 기술스택
+<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
 
-In the project directory, you can run:
+# 구현기능
+  - 글 작성
+  - 글 조회
+  - 글 삭제
+  - 글 완료 상태 변경
+  - 글 상세페이지 이동
+  - 회원가입 (아이디중복 / 유효성 검사)
+  - 로그인/로그아웃 (로그인 상태에 따라 보여지는 버튼)
+    
+# API 명세
 
-### `npm start`
+| 기능   | URL         | Method | Request                                      | Response                                             |
+| ------ | ------------ | -------- | ------------------------------------------- | -------------------------------------------------- |
+| 회원가입 | /join | `POST`   |   id: string,uid: string,email: string,password: string,nickName: string  |  | 
+| 로그인 | /login | `POST`   | email: string,password: string  |    |
+| 메인페이지 | /posts | `GET`     | |      adminId,location : string,title : string,body : string,image : string        |
+|상세페이지 | /detail | `GET`    |      |   adminId,location : string,title : string,body : string,image : string   |
+| 글작성(관리자) | /posts | `POST`   | id,email: string,category: string,location: string,description: string,image: string     |      |
+| 글수정(관리자) | /posts/:id | `PATCH`   | adminId,postId,location : string,title : string,body : string,image : string,   |      |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| 글삭제(관리자) | /post/:id | `DELETE`   |     |      |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| 댓글 등록 |  | `POST`   | userId,postId,comment : string, date,   |      |
+| 댓글 수정 | /comments/:id | `PATCH`   |comment ID|      |
+| 댓글 등록 | /comments/:id | `DELETE`   | comment ID |      |
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
