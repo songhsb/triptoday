@@ -281,6 +281,137 @@
       },
       "address": "전남 순천시 장천동 40-8",
       "id": 75
+    },
+    {
+      "email": "heejung2@naver.com",
+      "category": "제주도",
+      "location": "제주 한림읍",
+      "description": "성이시돌목장은 청정제주에서 유기농우유와 무항생제 소고기를 생산하며, 경주마 육성 및 위탁사육 사업을 하고 있습니다.",
+      "image": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150831_4%2F1441007149791BPsNI_JPEG%2F12049000_0.jpg",
+      "latLng": {
+        "latitude": 33.34791001399006,
+        "longitude": 126.32722653781968
+      },
+      "address": "제주특별자치도 제주시 한림읍 금악리 142",
+      "id": 75
+    },
+
+    {
+      "email": "heejung2@naver.com",
+      "category": "제주도",
+      "location": "제주도 서귀포",
+      "description": "1995년 8월 26일 제주기념물로 지정되었다가 2008년 8월 8일 명승으로 변경되었다. 한라산 남쪽 기슭에 발달한 폭포로, 폭포수가 바다로 떨어지는 동양 유일의 해안폭포이다. ",
+      "image": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150831_146%2F14409922888995YijF_JPEG%2F156281546650093_1.jpg",
+      "latLng": {
+        "latitude": 33.24451172040263,
+        "longitude": 126.571135523899
+      },
+      "address": "제주특별자치도 서귀포시 서귀동 100-2",
+      "id": 76
+    },
+    {
+      "email": "heejung2@naver.com",
+      "category": "제주도",
+      "location": "제주도 애월읍",
+      "description": "제주특별자치도 제주시 애월읍 곽지리에 있는 해수욕장으로, 길이 약 350m, 폭 70m의 백사장과 평균 수심 1.5m의 비교적 좋은 조건을 갖추었다. ",
+      "image": "https://api.cdn.visitjeju.net/photomng/imgpath/201912/12/590903b3-88f5-4e15-9f7e-d5a3571122c6.jpg",
+      "latLng": {
+        "latitude": 33.45016637705662,
+        "longitude": 126.30391130788523
+      },
+      "address": "제주특별자치도 제주시 애월읍 곽지리 1565",
+      "id": 77
+    },
+    {
+      "email": "heejung2@naver.com",
+      "category": "서울",
+      "location": "제주도 구좌읍",
+      "description": "제주특별자치도 제주시 구좌읍 세화리에 있는 해수욕장. 1980년에 개장한 조그만 해수욕장이다. 코발트 빛깔의 맑은 바다가 아름다운 곳으로 인파로 붐비지 않아 아직 자연 그대로의 깨끗한 모습을 간직하고 있다.",
+      "image": "https://lh3.googleusercontent.com/p/AF1QipMRR_l0z2HD3xK4nGUKq78fcnm_rqjb1jx1RgED=s680-w680-h510",
+      "latLng": {
+        "latitude": 33.52503524421665,
+        "longitude": 126.86005829264329
+      },
+      "address": "제주특별자치도 제주시 구좌읍 세화리 산 1-1",
+      "id": 78
+    },
+    {
+      "email": "heejung2@naver.com",
+      "category": "서울",
+      "location": "제주도 조천읍",
+      "description": "제주특별자치도 제주시 조천읍 교래리 해발 400m 고지에 발달한 기생화산의 분화구. 1979년 6월 21일 천연기념물로 지정되었다. ",
+      "image": "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA3MjFfOTIg%2FMDAxNjg5OTQzMzEyOTI1.vaJA1GAwXU-r4bkd-Q_hP4LEJgTcskd59pHQ9UHHELcg.LuFKSgE0uj3AG8czCEhCooeyAweHhfu-ENHIPHJXQSgg.JPEG%2F2EA77236-552D-4F91-B4D8-3EEE2C1ABE52.jpeg",
+      "latLng": {
+        "latitude": 33.43265029218343,
+        "longitude": 126.69365430190688
+      },
+      "address": "제주특별자치도 제주시 조천읍 교래리 342-2",
+      "id": 79
+    },
+    {
+      "email": "heejung2@naver.com",
+      "category": "서울",
+      "location": "제주도 서귀포시",
+      "description": "제주에 첫발을 디딜 때, 운이 좋다면 가장 먼저 눈에 띄는 것은 멀리 한라산이 거대한 덩치를 뽐내며 웅장한 자태로 솟아있는 모습이다. ",
+      "image": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150901_47%2F1441045536666OTKPv_JPEG%2F156281538832608_1.jpg",
+      "latLng": {
+        "latitude": 33.424186752172034,
+        "longitude": 126.9303251828534
+      },
+      "address": "제주특별자치도 서귀포시 성산읍 고성리 87",
+      "id": 90
+    },
+    {
+      "email": "heejung2@naver.com",
+      "category": "제주도",
+      "location": "제주도 서귀포",
+      "description": "제주 자연을 담은 동백 정원 카멜리아 힐은 30년 열정과 사랑으로 제주의 자연을 담은, 동양에서 가장 큰 동백 수목원입니다.",
+      "image": "https://search.pstatic.net/common/?src=https%3A%2F%2Fnaverbooking-phinf.pstatic.net%2F20230615_235%2F1686818051690B5zXQ_JPEG%2FKD5A0049.jpg",
+      "latLng": {
+        "latitude": 33.28967450876939,
+        "longitude": 126.37008969577252
+      },
+      "address": "제주특별자치도 서귀포시 안덕면 상창리 271",
+      "id": 91
+    },
+    {
+      "email": "heejung2@naver.com",
+      "category": "제주도",
+      "location": "제주도 조천읍",
+      "description": "제주특별자치도 제주시 봉개동의 비자림로에서 서귀포시 남원읍 한남리의 사려니오름까지 이어지는 숲길",
+      "image": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150206_65%2F1423209295855rmah6_JPEG%2F%25C1%25A6%25C1%25D6_%25BB%25E7%25B7%25C1%25B4%25CF%25BD%25A3%25B1%25E6_10.JPG%3Ftype%3Dm500_500",
+      "latLng": {
+        "latitude": 33.392350586243964,
+        "longitude": 126.65503739217277
+      },
+      "address": "제주특별자치도 서귀포시 남원읍 수망리 산 203",
+      "id": 92
+    },
+    {
+      "email": "heejung2@naver.com",
+      "category": "제주도",
+      "location": "제주도 우도면",
+      "description": "설명 제주특별자치도 제주시 우도면을 이루는 섬. 면적 6.18㎢, 인구 1,722명(2021년)이다. 해안선길이 17㎞, 최고점 132m이다.",
+      "image": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20140407_17%2F1396856877035VNpHa_JPEG%2F%25C1%25A6%25C1%25D6_%25BF%25EC%25B5%25B5_11.jpg%3Ftype%3Dm500_500",
+      "latLng": {
+        "latitude": 33.50577554528378,
+        "longitude": 126.95436757039182
+      },
+      "address": "제주특별자치도 제주시 우도면 연평리 1461-5",
+      "id": 93
+    },
+    {
+      "email": "heejung2@naver.com",
+      "category": "제주도",
+      "location": "제주도 서귀포",
+      "description": "제주특별자치도 서귀포시에 있는 자연하천. 2011년 6월 30일 명승으로 지정되었다. 2011년 6월 30일 문화재청이 외돌개, 산방산과 함께 국가지정문화재 명승으로 지정했다. ",
+      "image": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150831_135%2F14410251400248AD0O_JPEG%2F156281543462002_1.jpg",
+      "latLng": {
+        "latitude": 33.25322575656485,
+        "longitude": 126.62251684314575
+      },
+      "address": "제주특별자치도 서귀포시 하효동 993-2",
+      "id": 94
     }
   ],
   "likes": [
@@ -294,27 +425,19 @@
     },
     {
       "id": 6,
-      "userList": ["heejung2@naver.com"]
+      "userList": ["heejung2@naver.com", "dbgml@naver.com"]
     },
     {
       "id": 5,
-      "userList": []
+      "userList": ["heejung2@naver.com"]
     },
     {
       "id": 2,
-      "userList": []
+      "userList": ["heejung2@naver.com"]
     },
     {
-      "id": 7,
-      "userList": []
-    },
-    {
-      "id": 4,
-      "userList": []
-    },
-    {
-      "id": 68,
-      "userList": []
+      "id": 8,
+      "userList": ["heejung2@naver.com"]
     }
   ],
   "comments": [
@@ -407,6 +530,15 @@
       "body": "굿굿",
       "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
       "postId": "3"
+    },
+    {
+      "id": "HPV4E4psWcS8A6rWgBzSk",
+      "nickName": "희정3",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "heejung2@naver.com",
+      "body": "댓글입니다.",
+      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
+      "postId": "5"
     }
   ]
 }

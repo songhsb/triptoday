@@ -95,6 +95,7 @@ const LikesPosts = ({ postId }) => {
           onClick={() => {
             onClickHeartHandler(loginUserEmail, fullheart);
           }}
+          style={{ position: 'relative', top: '3px', marginRight: '6px' }}
         />
       ) : (
         <GoHeart
@@ -102,6 +103,7 @@ const LikesPosts = ({ postId }) => {
           onClick={() => {
             onClickHeartHandler(loginUserEmail, fullheart);
           }}
+          style={{ position: 'relative', top: '3px', marginRight: '6px' }}
         />
       )}
       <span>좋아요수 : {likes.userList.length}명</span>
