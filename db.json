@@ -87,16 +87,7 @@
       "id": 11
     }
   ],
-  "likes": [
-    {
-      "id": 2,
-      "userList": []
-    },
-    {
-      "id": 3,
-      "userList": []
-    }
-  ],
+  "likes": [],
   "comments": [
     {
       "id": 1,
