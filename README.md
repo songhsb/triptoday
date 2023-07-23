@@ -14,7 +14,7 @@ React 아웃소싱 팀프로젝트 2023.07.17-2023.07.24
 
 | 팀원   | 스택         | 팀원구분 | 깃허브                                      | 블로그                                             |
 | ------ | ------------ | -------- | ------------------------------------------- | -------------------------------------------------- |
-| 송현섭 | `프론트엔드` | 팀원   | [songhsb](https://github.com/songhsb))     | [songhsb]((https://velog.io/@songhsb)) |
+| 송현섭 | `프론트엔드` | 팀원   | [songhsb](https://github.com/songhsb)     | [songhsb](https://velog.io/@songhsb) |
 | 유희정 | `프론트엔드` | 팀원     | [heejung](https://github.com/heejung-newheee) | [heejung](https://newheee.tistory.com/)               |
 | 임선우 | `프론트엔드` | 팀원     | [sunwoo](https://github.com/treasureholy)      | [sunwoo](https://devdox.tistory.com/) |
 | 이지은 | `프론트엔드`     | 팀원     | [jieun](https://github.com/JellyBear97)     | [jieun](https://iam-jelly-bear.com/)       |
