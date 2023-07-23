@@ -126,8 +126,10 @@ const MapForWrite = ({ markerInfo, setMarkerInfo }) => {
 export default MapForWrite;
 
 const MapBox = styled.div`
-  width: 900px;
+  width: 100%;
   height: 500px;
+  margin: 30px 0;
+  border-radius: 10px;
 `;
 
 const MapSearchInput = styled.input`
@@ -135,7 +137,11 @@ const MapSearchInput = styled.input`
   height: 50px;
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0%);
+  top: 2%;
+  transform: translate(-50%, 0);
+  border: 0;
+  border: solid 1px #ddd;
+  padding: 13px;
   z-index: 2;
   font-size: 20px;
   border-radius: 10px;

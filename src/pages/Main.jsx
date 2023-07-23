@@ -65,10 +65,12 @@ const Main = () => {
   const firstPostData = postList?.find(item => item.id == firstId);
   const SecondPostData = postList?.find(item => item.id == secondId);
   const ThreePostData = postList?.find(item => item.id == threeId);
+  console.log(firstPostData);
 
-  const firstlikes = likes?.find(item => item.id == firstId);
-  const Secondlikes = likes?.find(item => item.id == secondId);
-  const Threeikes = likes?.find(item => item.id == threeId);
+  let values = Object.values(postIdCount);
+  const firstlikes = values[0];
+  const Secondlikes = values[1];
+  const Threeikes = values[2];
 
   const handleDetailButtonClick = id => {
     navigate(`/detail/${id}`);
@@ -101,7 +103,7 @@ const Main = () => {
         <StLankingDiv>
           <StRankItem url={firstPostData?.image} key={firstPostData?.id} onClick={() => handleDetailButtonClick(firstPostData?.id)}>
             <StLike>
-              <GoHeartFill /> {firstlikes?.userList.length}
+              <GoHeartFill /> {firstlikes}
             </StLike>
             <StHoverLayer>
               <div>{firstPostData?.location}</div>
@@ -111,7 +113,7 @@ const Main = () => {
 
           <StRankItem url={SecondPostData?.image} key={SecondPostData?.id} onClick={() => handleDetailButtonClick(SecondPostData?.id)}>
             <StLike>
-              <GoHeartFill /> {Secondlikes?.userList.length}
+              <GoHeartFill /> {Secondlikes}
             </StLike>
             <StHoverLayer>
               <div>{SecondPostData?.location}</div>
@@ -121,7 +123,7 @@ const Main = () => {
 
           <StRankItem url={ThreePostData?.image} key={ThreePostData?.id} onClick={() => handleDetailButtonClick(ThreePostData?.id)}>
             <StLike>
-              <GoHeartFill /> {Threeikes?.userList.length}
+              <GoHeartFill /> {Threeikes}
             </StLike>
             <StHoverLayer>
               <div>{ThreePostData?.location}</div>

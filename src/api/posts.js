@@ -9,8 +9,8 @@ const getPosts = async () => {
   }
 };
 
-const addPosts = async newPosts => {
-  await axios.post(`${process.env.REACT_APP_SERVER_URL}/posts`, newPosts);
+const addPosts = async newPost => {
+  await axios.post(`${process.env.REACT_APP_SERVER_URL}/posts`, newPost);
 };
 const updatePosts = async ({ id, posts, newPosts }) => {
   await axios.put(`${process.env.REACT_APP_SERVER_URL}/posts/${id}`, { ...posts, ...newPosts });

@@ -9,6 +9,7 @@ import Layout from '../components/common/Layout';
 import { useRecoilValue } from 'recoil';
 import { EmailAtom } from '../recoil/SearchAtom';
 import WriteForm from '../components/Write/WriteForm';
+import WriteFormEx from '../components/Write/WriteFormEx';
 
 function Write() {
   const navigate = useNavigate();
@@ -58,7 +59,7 @@ function Write() {
     <>
       <LoadingSpinner />
       <Layout>
-        <WriteForm
+        <WriteFormEx
           handleWriteButtonClick={handleWriteButtonClick}
           setCategory={setCategory}
           location={location}

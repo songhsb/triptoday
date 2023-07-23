@@ -38,9 +38,7 @@ const LikesPosts = ({ postId }) => {
   );
   // ? 근데.... 음 likes에 다른 이유로 에러가 떴는데 postId에 있는 userList를 빈값 줘버리면 어떡해? 그런 일은 안생기나
   useEffect(() => {
-    likesDocMutation.mutate({
-      userList: [],
-    });
+    likesDocMutation.mutate({ id: postId, userList: [] });
   }, []);
 
   useEffect(() => {

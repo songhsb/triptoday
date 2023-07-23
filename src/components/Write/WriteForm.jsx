@@ -22,7 +22,7 @@ function WriteForm({ handleWriteButtonClick, setCategory, location, setLocation,
         <StRequiredFieldsText value={image} onChange={setImage} />
       </div>
       <MapForWrite markerInfo={markerInfo} setMarkerInfo={setMarkerInfo} />
-      <StButton $fontColor={'black'}>등록</StButton>
+      <StButton>등록</StButton>
     </form>
   );
 }
@@ -34,12 +34,11 @@ export const StyledMoodSelect = styled.select`
   font-size: 16px;
 `;
 export const StRequiredFieldsText = styled.input`
-  width: 800px;
-  height: 60px;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  margin-right: 10px;
-  margin-top: 10px;
+  width: 100%;
+  border: 0;
+  border: solid 1px #ccc;
+  border-radius: 10px;
+  padding: 13px;
+  margin: 12px 0;
   font-size: 18px;
-  margin-bottom: 10px;
 `;
