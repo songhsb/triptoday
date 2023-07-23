@@ -1,13 +1,4 @@
 {
-  "users": {
-    "id": 1,
-    "name": "typicode",
-    "nickName": "nick name",
-    "email": "아이디",
-    "pw": "password",
-    "adminNumber": "string",
-    "admin": false
-  },
   "posts": [
     {
       "id": 1,
@@ -47,6 +38,201 @@
       },
       "address": "강원특별자치도 강릉시 홍제동 1001",
       "id": 3
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "서울",
+      "location": "대한민국 강남",
+      "description": "강남은 과거부터 새로운 문화를 받아들이고 연결하는 ‘문화 관문’ 역할을 해왔으며, 현재는 문화를 받아들이는 것에 그치지 않고 자신만의 문화를 만들어 세계에 알리는 역할까지 하고 있습니다. 압구정로데오와 청담의 편집숍은 최신 트렌드를 선도하고 있고, 강남역 일대의 수많은 맛집과 카페들은 SNS 명소로 사람들의 발길을 사로잡고 있으며, 신사동 가로수길에서는 K-뷰티의 현주소를 알아볼 수 있습니다.",
+      "image": "https://www.gangnam.go.kr/upload/editor/2022/10/07/af149235-ff84-420d-af5c-e652161de152.jpg",
+      "latLng": {
+        "latitude": 37.51738110336438,
+        "longitude": 127.04117416697166
+      },
+      "address": "서울 강남구 논현동 279-92",
+      "id": 4
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "서울",
+      "location": "대한민국 용산",
+      "description": "대한민국 용산구는 서울특별시의 중심에 위치한 도심형 구로서, 다양한 관광 명소와 문화 시설로 가득한 매력적인 여행지입니다. 용산구는 전통과 현대가 어우러진 독특한 분위기를 가지고 있으며, 다양한 즐길 거리들이 있어서 관광객들의 관심을 끌고 있습니다. 용산구는 전통과 현대가 어우러지는 멋진 도시로서 다양한 관광 명소와 문화적인 즐길 거리들이 풍부합니다. 이곳을 방문하면 서울의 다양한 측면을 경험하고 즐길 수 있으며, 독특한 경험과 추억을 만들 수 있을 것입니다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K20150918104651558.JPG",
+      "latLng": {
+        "latitude": 37.532560769096165,
+        "longitude": 126.99040583254234
+      },
+      "address": "서울 용산구 이태원동 34-87",
+      "id": 5
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "서울",
+      "location": "대한민국 동대문",
+      "description": "서울 동부의 중심으로 불리는 서울 동대문구는 선농단, 세종대왕기념관 등의 문화유산 등으로 우리 고유의 문화와 역사의 숨결이 숨쉬는 도시다. 일찍이 서울 동부의 부도심 기능을 수행하며 문화, 교통, 관광의 새로운 인프라를 형성하고 있다.",
+      "image": "https://www.jeonmae.co.kr/news/photo/201709/20170908_1_181112.jpg",
+      "latLng": {
+        "latitude": 37.58421331391733,
+        "longitude": 127.05101553006602
+      },
+      "address": "서울 동대문구 전농동 591-53",
+      "id": 6
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "서울",
+      "location": "대한민국 마포",
+      "description": "조선의 모든 물류가 모였던 그곳, 마포구!! 마포구는 지리적으로 포구문화가 일찍부터 번성하였으며, 강변풍경이 아름다워 전국의 시인묵객들이 즐겨 찾는 고장이었다. 마포나루, 서강나루, 양화나루가 있었는데, 이곳이 워낙 절경이었기에 옛 사람들은 일찍이 마포8경이라 불러왔다. 풍류시객과 중국 사신들이 경치를 조망하며 시문을 읊던 정자가 서강지역만도 30여개가 넘었으며, 전하는 시문만도 50여수가 된다고 한다. 트렌디한 분위기와 다양한 문화 시설, 맛집들이 모여있어 많은 관광객들의 인기를 끌고 있는 매력적인 여행지이다. 마포구는 예술, 음악, 패션 등의 문화적 즐길 거리와 함께 한강의 아름다운 경관을 즐길 수 있는 장소들이 특징이다. ",
+      "image": "https://lh3.googleusercontent.com/p/AF1QipNKcQtVt5Hq7sTTS9P5Pj16YCqwO6ouQCujr59H=s1360-w1360-h1020",
+      "latLng": {
+        "latitude": 37.564020133749715,
+        "longitude": 126.9028861441111
+      },
+      "address": "서울 마포구 성산동 592",
+      "id": 7
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "서울",
+      "location": "대한민국 종로",
+      "description": "사람 중심의 명품 도시 종로구!! 종로는 우리나라의 국가 주요 공공기관이 모여 있어 정치, 경제, 문화의 중추적인 역할을 담당하는 도시다. 조선이 한양으로 천도한 이후 600여 년 동안 우리 민족의 중심이었으며 북악산, 인왕산, 경복궁, 창덕궁, 창경궁, 종묘, 사직단, 동대문 등 수 많은 문화유산을 간직하고 있는 전통의 도시이기도 하다. 종로구는 한국의 전통과 역사를 직접 체험할 수 있는 멋진 여행지로서, 아름다운 궁궐과 전통 건물들, 예술과 문화가 어우러진 장소들을 즐기며 한국의 고유한 매력을 느낄 수 있을 것이다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K20150918105345935.JPG",
+      "latLng": {
+        "latitude": 37.59552091129249,
+        "longitude": 126.97898376559286
+      },
+      "address": "서울 종로구 삼청동 산 2-1",
+      "id": 8
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "서울",
+      "location": "대한민국 송파",
+      "description": "자연이 살아있는 사람 중심의 도시 송파구!! 송파는 자연이 살아있어 쾌적하고 살기 좋은 도시다. 심플하면서도 모던한 실용적인 도시 환경을 조성하여 세대와 세대, 아날로그와 디지털, 자연과 인공이 조화를 이루고 있다. 이는 송파만의 독특한 문화를 형성하여 앞서 가는 도시로의 이미지를 구축했다.  다양한 문화시설과 체험, 자연 경관 등이 풍부하여 많은 여행객들에게 인기가 있는 여행지이다 . 문화와 레저를 즐기며 도심 속에서도 편안한 시간을 보낼 수 있어서 많은 여행객들에게 사랑받는 곳이다. ",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K2015081916226693.jpg",
+      "latLng": {
+        "latitude": 37.50537453078706,
+        "longitude": 127.10694519540029
+      },
+      "address": "서울 송파구 석촌동 209",
+      "id": 9
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "서울",
+      "location": "대한민국 영등포",
+      "description": "사람과 자연 중심 愛 서울 영등포구!! 수도권 서남부의 최대 거점도시로 정치, 금융, 언론, 업무의 복합 기능지역이자, 도심과 외곽지역을 연결하는 교통의 요충지인 곳. 영등포는 서울의 대표적인 도시형 관광지로서, 자연과 문화를 즐기며 다양한 쇼핑과 음식을 맛볼 수 있는 매력적인 여행지이다. 특히 한강을 따라 있는 여의도 지역은 아름다운 야경과 함께 즐길 거리들이 풍부하여 즐거운 시간을 보낼 수 있는 곳이다.",
+      "image": "https://lh3.googleusercontent.com/p/AF1QipPNfdkNNX9inyjcBJPwevAYJhiyR_xdxKDYVvdo=s1360-w1360-h1020",
+      "latLng": {
+        "latitude": 37.526380431128274,
+        "longitude": 126.93501845739092
+      },
+      "address": "서울 영등포구 여의도동 85",
+      "id": 10
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "대구",
+      "location": "대한민국 수성구",
+      "description": "대구시 수성구는 사통팔달의 교통망으로 시내 접근성이 뛰어나고 경부고속도로, 신대구부산고속도로 등과도 인접하고 있다. 최근에는 레저•스포츠시설, 문화시설 등이 속속 들어서면서 고품격 문화를 창조해 나가고 있다. 역사와 문화적인 유산이 풍부한 지역으로서 많은 관광객들에게 인기가 있는 여행지이며, 자연과 도시의 조화로운 경관과 다양한 관광 명소, 맛집들이 있어서 다채로운 여행 체험을 제공한다. 지역적인 특색과 편안한 분위기를 느끼며 즐거운 대구 여행을 즐기고자 하는 분들에게 추천!",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K2015091811467491.JPG",
+      "latLng": {
+        "latitude": 35.82801870209455,
+        "longitude": 128.61756723077113
+      },
+      "address": "대구 수성구 두산동 539",
+      "id": 11
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "대구",
+      "location": "대한민국 대구 중구",
+      "description": "대구중심 넘어 세계중심으로 웅비하는 중구!! 그 어느 도시보다도 건강한 자부심을 갖고 있는 ‘대구의 중심’ 중구는, 우리나라 근대역사를 삶의 통로와 연결 지어 특화거리로 조성하는 사업에 주력했다. 그러면서 시민은 물론 방문객들에게도 과거를 회상하고 반추하는 즐거움을 한아름 선사하고 있다.  역사와 문화가 어우러진 곳으로서, 전통 시장과 문화 공간, 유적지 등이 함께 존재하여 특색 있는 경험을 즐길 수 있는 멋진 여행지이다. 지역의 특산물과 맛집을 맛보며 대구의 다양한 매력을 발견할 수 있을 것이다.",
+      "image": "https://www.jung.daegu.kr/new/DATA/local_gallery/%C5%A9%B1%E2%BA%AF%C8%AF_DSC_1227.jpg",
+      "latLng": {
+        "latitude": 35.869105920406746,
+        "longitude": 128.60179513409102
+      },
+      "address": "대구 중구 동인동2가 42",
+      "id": 12
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "대구",
+      "location": "대한민국 달서구",
+      "description": "넘쳐나는 기쁨, 행복시티 대구 달서구!! 자연과 문화를 동시에 즐길 수 있는 다양한 여행지들이 있어서 많은 관광객들에게 사랑받고 있는 지역이다. 역사와 예술, 쇼핑 등 다양한 즐길 거리들로 가득차 있으며, 특히 자연을 즐기고 싶은 분들에게도 훌륭한 여행지로서 추천한다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K20150624111731409.JPG",
+      "latLng": {
+        "latitude": 35.8225228655182,
+        "longitude": 128.52513037294932
+      },
+      "address": "대구 달서구 월성동 1341-9",
+      "id": 13
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "대구",
+      "location": "대한민국 달성",
+      "description": "천년의 숨결 비슬산에 꽃피는 대구 달성군!! 대구시 전체 면적의 48퍼센트를 차지하고 있는 달성군(427㎢)은 첨단산업단지, 대구테크노폴리스, 대구경북과학기술원 등이 속속 들어서며 첨단산업메카로 부상하고 있다. 그러면서도 한편으로 낙동과 비슬산을 중심으로 천혜의 자연자원과 선조들의 지혜가 묻어나는 향토유적을 간직하고 있다. 달성군은 대구 시내와는 다른 조용하고 평화로운 분위기가 느껴지는 곳으로서, 푸른 자연과 역사적인 유적지들을 즐기며 여유롭고 힐링하는 여행을 즐기기에 좋은 지역이다. 자연과 문화를 함께 체험하고 싶은 분들에게 추천하는 매력적인 여행지이다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K20151015135827329.jpg",
+      "latLng": {
+        "latitude": 35.71915262824712,
+        "longitude": 128.5242184328429
+      },
+      "address": "대구 달성군 가창면 정대리 산 185-1",
+      "id": 14
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "대구",
+      "location": "대한민국 대구 동구",
+      "description": "맑고 푸른 자연이 숨쉬는 도시, 대구 동구!! 대구 문화의 거점 동구는 지역전통문화 계승과 발전이라는 대전제 아래 구민들의 문화복지 향상과 더불어 문화적 토양 제공자로서 동구의 역사자원과 자연자원을 엮어낸 관광문화도시로 웅비하고 있다. 대구의 역사와 문화를 체험하고 다양한 먹거리와 쇼핑을 즐길 수 있는 매력적인 지역으로, 관광객들에게 다양한 경험을 제공한다. 지역 특산물과 맛집들을 맛보며 대구의 다채로운 매력을 발견할 수 있을 것이다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K20151015172114301.JPG",
+      "latLng": {
+        "latitude": 35.99523861246382,
+        "longitude": 128.62848270468297
+      },
+      "address": "대구 동구 송정동 산 25-1",
+      "id": 15
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "대구",
+      "location": "대한민국 대구 북구",
+      "description": "진화하는 도시, 희망찬 대구 북구!! 예부터 금호강과 그 지류에 취락지를 형성하며 대구의 관문이자 교통의 요충지로서 역할을 해온 대구시 북구는 현재 대구북구권의 중심지로써 성장잠재력을 새로이 평가 받고 있다. 그러면서 여전히 수려한 팔공산 자락과 아름다운 금호강이 유유히 흐르며 인심 순후하고 살기 좋은 건 예나 지금이나 여전하다. 푸른 자연과 문화가 어우러져 다양한 즐길 거리들이 조성되어 있는 곳으로서, 힐링하고 편안한 여행을 원하시는 분들에게 특히 좋은 지역이다. 자연을 즐기며 역사와 문화를 체험하고 싶은 분들에게 매력적인 여행지로서 추천!!",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K201505281784223.JPG",
+      "latLng": {
+        "latitude": 35.93233916443508,
+        "longitude": 128.582062100501
+      },
+      "address": "대구 북구 서변동 산 67-7",
+      "id": 16
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "대구",
+      "location": "대한민국 대구 남구",
+      "description": "녹음 속에서 만나는 휴식, 대구 남구!! 남구에는 해발 660m, 1679만여㎡ 면적에 달하는 앞산이 솟아 좌우로 산성산(653m), 대덕산(546m)을 거느리고, 비파산(501m)을 포함해 3개 능선이 이어지면서 이곳의 짙은 녹음만큼이나 고산골, 큰골, 안지랑이골 등과 엮인 다양한 이야깃거리가 다채롭다.  다양한 관광 명소와 문화 시설들이 조성되어 있어서 편안한 자연과 함께 즐거운 시간을 보낼 수 있는 매력적인 여행지이다. 특히 야경이 아름다운 수성못과 대구의 도시 경관을 감상할 수 있는 83타워는 반드시 방문해보시길 추천한다!",
+      "image": "http://119.206.205.28/repository/know/contents/K2014092610198510.jpg",
+      "latLng": {
+        "latitude": 35.82752268646268,
+        "longitude": 128.587868381098
+      },
+      "address": "대구 남구 대명동 산 227-4",
+      "id": 17
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "대구",
+      "location": "대한민국 대구 서구",
+      "description": "꿈과 희망이 자라는 관광도시 대구 서구!! 다양한 문화와 자연 경관을 즐길 수 있는 지역으로서, 역사와 문화를 체험하고 자연을 감상하며 다채로운 여행 경험을 즐기기에 좋은 장소이다. 지역적인 특색과 맛집들도 많이 있어서 많은 여행객들에게 추천되는 지역이다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K20151015174755523.jpg",
+      "latLng": {
+        "latitude": 35.87110153579885,
+        "longitude": 128.559718880595
+      },
+      "address": "대구 서구 평리동 1217-1",
+      "id": 18
     },
     {
       "email": "sun@sun.com",
@@ -190,6 +376,97 @@
       },
       "address": "경기 화성시 남양읍 남양리 2055-16",
       "id": 32
+    },
+    {
+      "email": "sun@sun.com",
+      "category": "경기도",
+      "location": "대한민국 수원",
+      "description": "수원시는 대한민국 경기도 중남부에 있는 특례시이자 경기도청 소재지이다. 동쪽으로는 용인시, 서쪽으로는 안산시, 남쪽으로는 화성시, 북쪽으로 의왕시와 접한다. 시청 소재지는 팔달구 인계동이며, 장안구, 권선구, 팔달구, 영통구의 4개 일반구가 설치되어 있다.",
+      "image": "http://webzine.ggc.go.kr/wp-content/uploads/2019/08/237_86_02.jpg",
+      "latLng": {
+        "latitude": 37.261062920511065,
+        "longitude": 127.02344813023163
+      },
+      "address": "경기 수원시 권선구 권선동 959-11",
+      "id": 33
+    },
+    {
+      "email": "sun@sun.com",
+      "category": "경기도",
+      "location": "대한민국 파주",
+      "description": "파주시는 대한민국 경기도의 북서부에 위치하고 있는 시이다. 서북쪽으로 군사분계선을 경계로 조선민주주의인민공화국 개성시와 접한다. 휴전 협정이 조인된 판문점이 있으며, 통일로·자유로 등의 도로가 있다.",
+      "image": "https://ggtour.or.kr/wp-content/uploads/2014/06/%EC%82%AC%EB%B3%B8-%EC%9D%BC%EA%B4%84%ED%8E%B8%EC%A7%91_IMG_2804.jpg",
+      "latLng": {
+        "latitude": 37.77830875328742,
+        "longitude": 126.73737826483264
+      },
+      "address": "경기 파주시 검산동 645",
+      "id": 34
+    },
+    {
+      "email": "sun@sun.com",
+      "category": "경기도",
+      "location": "대한민국 의정부",
+      "description": "의정부시는 대한민국 경기도 중북부에 위치한, 경기북부의 행정 중심지 역할을 하는 도시로, 경기도청 북부청사, 경기도교육청 제2청사, 의정부지방법원, 경기도북부경찰청 등이 있다. 남쪽은 서울특별시 노원구, 도봉구이며, 서쪽과 북쪽은 양주시, 동남쪽은 남양주시, 동북쪽은 포천시와 접한다.",
+      "image": "https://i.namu.wiki/i/-i817Zwon3SEeIOPU-synW20icFo8utquQwfutGruY2JQRv096F-Fc5TZ_UJriEpRGrpFVXKpQKEV1jD2_1rq4Qw7eobq1Z9L6JnSrHxhmYulfaG9yXmTZX_Piy-DVj-satYeg5mn1VP5M7iKPTEPg.webp",
+      "latLng": {
+        "latitude": 37.738810098352914,
+        "longitude": 127.03303719933604
+      },
+      "address": "경기 의정부시 의정부동 326-28",
+      "id": 35
+    },
+    {
+      "email": "sun@sun.com",
+      "category": "경기도",
+      "location": "대한민국 여주",
+      "description": "여주시는 대한민국 경기도 동남부에 있는 시이다. 동쪽으로 강원특별자치도 원주시, 서쪽으로 이천시, 광주시, 북쪽으로 양평군, 남쪽으로 충청북도 충주시, 음성군과 접한다. 시의 중심으로 남한강이 흐르며, 벼농사 등 농업이 발달하였다.",
+      "image": "https://ggtour.or.kr/wp-content/uploads/2016/12/%EC%97%AC%EC%A3%BC%EC%8B%A0%EB%A5%B5%EC%82%AC-001.jpg",
+      "latLng": {
+        "latitude": 37.296563383905365,
+        "longitude": 127.63375436337049
+      },
+      "address": "경기 여주시 하동 284",
+      "id": 36
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "경기도",
+      "location": "대한민국 경기 성남",
+      "description": "시민이 행복한 도시, 성남!! 성남은 최초의 위성도시로 지정되어 급성장한 도시다. 그래서 성남 전체를 둘러보면 언덕 지형이 많이 보인다. 이는 언덕을 깎지 않고 그대로 건물을 올린 흔적이다. 평평한 지형에 아파트만 오밀조밀하게 세워진 게 아니라 들쭉날쭉하게 여러 건물이 세워진 모습은 성남의 개성이라 할 수 있다. 성남의 슬로건은 ‘시민이 행복한 성남시’다. 그 말처럼, 성남은 시민의 눈높이에 맞춰 다양한 노력을 기울였다. 하나하나가 관광 명소로 자리 잡을 만큼 개성 있는 수많은 공원, 우아함을 즐길 수 있는 카페거리, 풍성한 공연 등을 보면, ‘여기 살 만하네’ 란 말이 절로 나올 것이다.",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K20150821164028800.JPG",
+      "latLng": {
+        "latitude": 37.42772724355742,
+        "longitude": 127.12355579824927
+      },
+      "address": "경기 성남시 중원구 성남동 1906",
+      "id": 37
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "경기도",
+      "location": "대한민국 경기 광주",
+      "description": "순백의 고장, 너른 고을 광주!! 경기도 광주시를 이야기하면 전라도 광주광역시와 헷갈리는 사람이 많다. 하지만 둘의 차이점은 한자 표기에서부터 알 수 있다. 광주광역시가 빛고을(光州)이라면, 광주시는 넓은 고을(廣州)이라 할 수 있다. 사실 광주시는 광주군이었을 당시 성남시와 하남시를 모두 포용하고 있었으므로, 넓은 고을이란 문자 그대로의 의미라 할 수 있었다. 유서 깊은 백제의 도읍지이자 조선 최고의 백자 도요지였던 광주.  서울 근교에 위치한 아름다운 자연과 역사적인 유적지, 문화 시설들이 어우러져 매력적인 여행지이다. 광주는 서울과의 접근성이 좋아서 대중교통이나 자가용으로도 쉽게 방문할 수 있다!",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K201510261964429.jpg",
+      "latLng": {
+        "latitude": 37.42967866809074,
+        "longitude": 127.25525266863592
+      },
+      "address": "경기 광주시 송정동 570",
+      "id": 38
+    },
+    {
+      "email": "jieun2563@naver.com",
+      "category": "경기도",
+      "location": "대한민국 이천",
+      "description": "최고의 밥맛과 예술을 자랑하는 이천!! 이천은 맛 좋은 쌀과 따뜻한 숨결이 느껴지는 도자기의 고장이다. 예부터 비옥한 토질과 잘 마련된 수리시설로 논농사가 발달한 이천은 최상품의 미질을 자랑하며 임금님 수라상에 진상된 것으로 기록된다. 지금도 이천쌀은 그 브랜드 자체로도 국내 최고 쌀임을 입증하고 있다. 자연과 문화를 즐길 수 있는 다양한 여행지들이 있어서 가족, 커플, 친구들과 함께 즐거운 시간을 보내기에 좋은 지역이다. 역사와 예술을 감상하고 자연과 산책을 즐기며 힐링하는 여행을 원하시는 분들에게 특히 추천한다!",
+      "image": "http://www.traveli.co.kr/repository/know/contents/K201509089537762.jpg",
+      "latLng": {
+        "latitude": 37.29585048083455,
+        "longitude": 127.4116129367619
+      },
+      "address": "경기 이천시 사음동 544-23",
+      "id": 39
     },
     {
       "email": "admin@test.com",
@@ -794,27 +1071,43 @@
   "likes": [
     {
       "id": 1,
-      "userList": ["heejung2@naver.com", "jieun2563@naver.com"]
+      "userList": []
     },
     {
-      "id": 3,
-      "userList": ["heejung2@naver.com", "khhds@kkao.com"]
+      "id": 4,
+      "userList": []
     },
     {
       "id": 6,
-      "userList": ["heejung2@naver.com", "dbgml@naver.com"]
+      "userList": []
     },
     {
-      "id": 5,
-      "userList": ["heejung2@naver.com"]
+      "id": 9,
+      "userList": []
     },
     {
-      "id": 2,
-      "userList": ["heejung2@naver.com"]
+      "id": 10,
+      "userList": []
     },
     {
-      "id": 8,
-      "userList": ["heejung2@naver.com"]
+      "id": 13,
+      "userList": []
+    },
+    {
+      "id": 19,
+      "userList": []
+    },
+    {
+      "id": 37,
+      "userList": []
+    },
+    {
+      "id": 38,
+      "userList": []
+    },
+    {
+      "id": 16,
+      "userList": []
     }
   ],
   "comments": [
@@ -844,78 +1137,6 @@
       "body": "굿",
       "uid": "C5QrPAbB4VNzrmVfqVvDSF8tvCL2",
       "postId": "3"
-    },
-    {
-      "id": "XcsJpefZsGbKOsqvK8M5A",
-      "nickName": "희정3",
-      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
-      "email": "heejung2@naver.com",
-      "body": "댓글을 달았습니다",
-      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
-      "postId": "1"
-    },
-    {
-      "id": "tx7myXpd4e0C5PMeoV_8H",
-      "nickName": "유희",
-      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
-      "email": "dbgml@naver.com",
-      "body": "수정수정 가능",
-      "uid": "Dm1FUrkNOQcVd29159HBjurpkB33",
-      "postId": "1"
-    },
-    {
-      "id": "IVzhssgtMhP0h6ew4bA-K",
-      "nickName": "희정3",
-      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
-      "email": "heejung2@naver.com",
-      "body": "댓글",
-      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
-      "postId": "6"
-    },
-    {
-      "id": "Gf4AWm3mr5rZOAKnPMbhj",
-      "nickName": "희정3",
-      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
-      "email": "heejung2@naver.com",
-      "body": "댓글",
-      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
-      "postId": "2"
-    },
-    {
-      "id": "409oEq_tkcIJXk6dZncDk",
-      "nickName": "희정3",
-      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
-      "email": "heejung2@naver.com",
-      "body": "댓글댓글댓글",
-      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
-      "postId": "2"
-    },
-    {
-      "id": "X_6QTTj9E9bbOS7kOmaBu",
-      "nickName": "희정3",
-      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
-      "email": "heejung2@naver.com",
-      "body": "내용입니다",
-      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
-      "postId": "2"
-    },
-    {
-      "id": "VlaO3qCP99JcKPacJdxNv",
-      "nickName": "희정3",
-      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
-      "email": "heejung2@naver.com",
-      "body": "굿굿",
-      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
-      "postId": "3"
-    },
-    {
-      "id": "HPV4E4psWcS8A6rWgBzSk",
-      "nickName": "희정3",
-      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
-      "email": "heejung2@naver.com",
-      "body": "댓글입니다.",
-      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
-      "postId": "5"
     }
   ]
 }

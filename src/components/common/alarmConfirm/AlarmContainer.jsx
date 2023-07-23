@@ -57,7 +57,7 @@ const StWrapper = styled.div`
   align-items: center;
   gap: 20px;
   & p {
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
   }
 `;
