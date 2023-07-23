@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { styled } from 'styled-components';
+
 import './Overlay.css';
-import { hover } from '@testing-library/user-event/dist/hover';
+
 const { kakao } = window;
 
 const ReadMapInPost = ({ posts }) => {
@@ -13,7 +13,7 @@ const ReadMapInPost = ({ posts }) => {
     const container = mapRef.current;
     const options = {
       center: new kakao.maps.LatLng(posts.latLng.latitude, posts.latLng.longitude),
-      level: 4, // 확대/축소 레벨
+      level: 9, // 확대/축소 레벨
       draggable: false, // 지도 이동 막음
       disableDoubleClickZoom: true,
     };
@@ -55,7 +55,7 @@ const ReadMapInPost = ({ posts }) => {
   // useEffect 여기에 위치
   return (
     <div>
-      <div ref={mapRef} style={{ width: '1200px', height: '300px' }}></div>
+      <div ref={mapRef} style={{ width: '100%', height: '300px' }}></div>
     </div>
   );
 };

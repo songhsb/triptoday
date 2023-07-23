@@ -99,28 +99,54 @@
       },
       "address": "경기 용인시 처인구 포곡읍 전대리 310",
       "id": 6
+    },
+    {
+      "email": "sun@sun.com",
+      "category": "대구",
+      "location": "ㅁ",
+      "description": "ㅁ",
+      "image": "ㅁ",
+      "latLng": {
+        "latitude": 37.2538119420492,
+        "longitude": 127.71707826355077
+      },
+      "address": "경기 여주시 강천면 적금리 48-4",
+      "id": 7
     }
   ],
   "likes": [
     {
       "id": 1,
-      "userList": ["heejung2@naver.com", "jieun2563@naver.com"]
+      "userList": [
+        "heejung2@naver.com",
+        "jieun2563@naver.com"
+      ]
     },
     {
       "id": 3,
-      "userList": ["heejung2@naver.com", "khhds@kkao.com"]
+      "userList": [
+        "heejung2@naver.com",
+        "khhds@kkao.com"
+      ]
     },
     {
       "id": 6,
-      "userList": ["heejung2@naver.com"]
+      "userList": [
+        "heejung2@naver.com",
+        "dbgml@naver.com"
+      ]
     },
     {
       "id": 5,
-      "userList": ["heejung2@naver.com"]
+      "userList": [
+        "heejung2@naver.com"
+      ]
     },
     {
       "id": 2,
-      "userList": []
+      "userList": [
+        "heejung2@naver.com"
+      ]
     }
   ],
   "comments": [
@@ -131,13 +157,76 @@
       "postId": "1"
     },
     {
-      "id": "LA8JxEfxpMJXenVubOWxL",
-      "nickName": "나롱이",
+      "id": "n6svgMyTjoQmISpGvKTGK",
+      "nickName": "ssss",
       "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
-      "email": "jieun2563@naver.com",
-      "body": "fdgd",
-      "uid": "UZZWGGCvUyZdNkuvIgIIudlnWJm2",
-      "postId": "10"
+      "email": "sun@sun.com",
+      "body": "굿",
+      "uid": "C5QrPAbB4VNzrmVfqVvDSF8tvCL2",
+      "postId": "3"
+    },
+    {
+      "id": "XcsJpefZsGbKOsqvK8M5A",
+      "nickName": "희정3",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "heejung2@naver.com",
+      "body": "댓글을 달았습니다",
+      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
+      "postId": "1"
+    },
+    {
+      "id": "tx7myXpd4e0C5PMeoV_8H",
+      "nickName": "유희",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "dbgml@naver.com",
+      "body": "수정수정 가능",
+      "uid": "Dm1FUrkNOQcVd29159HBjurpkB33",
+      "postId": "1"
+    },
+    {
+      "id": "IVzhssgtMhP0h6ew4bA-K",
+      "nickName": "희정3",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "heejung2@naver.com",
+      "body": "댓글",
+      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
+      "postId": "6"
+    },
+    {
+      "id": "Gf4AWm3mr5rZOAKnPMbhj",
+      "nickName": "희정3",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "heejung2@naver.com",
+      "body": "댓글",
+      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
+      "postId": "2"
+    },
+    {
+      "id": "409oEq_tkcIJXk6dZncDk",
+      "nickName": "희정3",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "heejung2@naver.com",
+      "body": "댓글댓글댓글",
+      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
+      "postId": "2"
+    },
+    {
+      "id": "X_6QTTj9E9bbOS7kOmaBu",
+      "nickName": "희정3",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "heejung2@naver.com",
+      "body": "내용입니다",
+      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
+      "postId": "2"
+    },
+    {
+      "id": "VlaO3qCP99JcKPacJdxNv",
+      "nickName": "희정3",
+      "profileImg": "https://github.com/songhsb/triptoday/assets/126348461/e0d71b27-1286-4161-acc8-edbf11a79689",
+      "email": "heejung2@naver.com",
+      "body": "굿굿",
+      "uid": "X5foN3ceo4eaCnRAeQ0Ym2vDdPk1",
+      "postId": "3"
     }
   ]
 }

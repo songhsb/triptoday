@@ -56,13 +56,13 @@ const Detail = () => {
       const q = query(collection(db, 'users'));
       const querySnapshot = await getDocs(q);
 
-      const initialTodos = [];
+      const initialUsers = [];
 
       querySnapshot.forEach(doc => {
-        initialTodos.push({ id: doc.id, ...doc.data() });
+        initialUsers.push({ id: doc.id, ...doc.data() });
       });
 
-      setAllUsers(initialTodos);
+      setAllUsers(initialUsers);
     };
     fetchData();
   }, []);
@@ -166,6 +166,7 @@ const Detail = () => {
         </div> */}
         {user && (
           <div>
+            <StFormTit>댓글</StFormTit>
             <StCommentForm onSubmit={handleCommentSubmit}>
               <StInput type="text" placeholder="오늘의 여행은 어떠셨나요?" value={body} onChange={onChangeBodyHandler}></StInput>
               <StButton type="onSubmit" disabled={!body}>
@@ -188,11 +189,11 @@ const Detail = () => {
                     <p>{comment.email}</p>
                   </StCommentRightPart>
                 </StUserInfo>
-                <p>{comment.body}</p>
+                <StCommentText>{comment.body}</StCommentText>
                 {(user?.uid === comment.uid || thisUser?.isAdmin) && (
                   <StCommentBtnDiv>
-                    {!thisUser?.isAdmin && <FormDialog comment={comment} />}
-                    <StButton $btnSize={'small'} onClick={() => handleCommentDelete(comment.id)}>
+                    {user?.uid === comment.uid && <FormDialog comment={comment} />}
+                    <StButton $btnSize={'small'} onClick={() => handleCommentDelete(comment.id)} style={{ margin: '0' }}>
                       삭제
                     </StButton>
                   </StCommentBtnDiv>
@@ -214,22 +215,28 @@ const Detail = () => {
 
 export default Detail;
 
+const StFormTit = styled.p`
+  margin-top: 20px;
+`;
 const StCommentForm = styled.form`
   display: flex;
   align-items: baseline;
+  margin: 0 0 30px;
   gap: 10px;
 `;
 
 const StComment = styled.li`
-  padding: 10px;
-  border-bottom: solid 3px #9adcff;
+  padding: 20px 15px 15px;
+  border-bottom: solid 1px #ddd;
 `;
 
 const StUserInfo = styled.div`
   display: flex;
   gap: 8px;
 `;
-
+const StCommentText = styled.div`
+  padding: 10px 0;
+`;
 const StImageContainer = styled.div`
   width: 40px;
   height: 40px;
@@ -248,7 +255,7 @@ const StCommentRightPart = styled.div`
 `;
 
 const StCommentsContainer = styled.ol`
-  margin-top: 40px;
+  margin: 30px 0 40px;
 `;
 
 const StCommentBtnDiv = styled.div`
@@ -258,7 +265,7 @@ const StCommentBtnDiv = styled.div`
 `;
 
 export const StRecommendTitle = styled.p`
-  margin: 10px;
+  margin: 50px 10px 10px;
   padding-left: 5px;
   font-size: 20px;
   font-weight: 800;
