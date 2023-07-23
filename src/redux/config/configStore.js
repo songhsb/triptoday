@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
+import confirm from '../modules/confirm';
 
 const store = configureStore({
-  reducer: {},
+  reducer: {
+    confirm,
+  },
 });
 
 export default store;

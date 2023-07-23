@@ -12,10 +12,12 @@ import GoogleLogin from '../components/Login/GoogleLogin';
 import GithubLogin from '../components/Login/GithubLogin';
 import FacebookLogin from '../components/Login/FacebookLogin';
 import Layout from '../components/common/Layout';
+import useAlert from '../hooks/useAlert';
 function Login() {
   const [email, emailOnchange] = useInput('');
   const [password, passwordOnchange] = useInput('');
   const navigate = useNavigate();
+  const { customAlert } = useAlert();
   // 가입되어있는 유저정보 가져오기
   const [allUsers, setAllUsers] = useState([]);
   useEffect(() => {
@@ -48,9 +50,9 @@ function Login() {
     console.log('thisUser', thisUser);
     e.preventDefault();
     if (email === '' || !reg_email.test(email) || !existsEmail.includes(email)) {
-      alert('이메일을 확인해 주세요');
+      customAlert('이메일을 확인해 주세요');
     } else if (password === '' || password !== thisUser.password) {
-      alert('비밀번호를 확인해 주세요');
+      customAlert('비밀번호를 확인해 주세요');
     } else {
       try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);

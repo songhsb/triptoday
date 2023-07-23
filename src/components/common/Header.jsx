@@ -104,7 +104,6 @@ const Header = () => {
 
   return (
     <StHeader>
-      {/* <ModalForAlert /> */}
       <StLogo onClick={() => navigate('/')}>
         <StTravelImg>
           <img src={logoimg} alt="로고" />
