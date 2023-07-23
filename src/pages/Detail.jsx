@@ -30,7 +30,7 @@ const Detail = () => {
   const [list, setList] = useState([]);
   const [seeMore, setSeeMore] = useState(false);
 
-  const { isLoading, isError, data } = useQuery('postsData', getPosts);
+  const { isLoading, isError, data, isFetching } = useQuery('postsData', getPosts);
 
   const queryClient = useQueryClient();
 
@@ -100,7 +100,9 @@ const Detail = () => {
     }
   };
   const handleCommentDelete = async id => {
-    deleteMutation.mutate(id);
+    if (window.confirm('삭제 하시겠습니까?')) {
+      deleteMutation.mutate(id);
+    }
   };
   // 코멘드 관련 입니다
 
@@ -111,7 +113,7 @@ const Detail = () => {
     if (!isLoading && !isError) {
       locationData();
     }
-  }, [isLoading, isError]);
+  }, [isLoading, isError, isFetching]);
 
   if (isLoading) {
     return <LoadingSpinner />;

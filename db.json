@@ -52,15 +52,24 @@
   "likes": [
     {
       "id": 1,
-      "userList": ["olxloh@naver.com", "jieun2563@naver.com"]
+      "userList": [
+        "olxloh@naver.com",
+        "jieun2563@naver.com"
+      ]
     },
     {
       "id": 2,
-      "userList": ["khhds00@naver.com"]
+      "userList": [
+        "khhds00@naver.com"
+      ]
     },
     {
       "id": 3,
-      "userList": ["olxloh@naver.com", "jieun2563@naver.com", "khhds00@naver.com"]
+      "userList": [
+        "olxloh@naver.com",
+        "jieun2563@naver.com",
+        "khhds00@naver.com"
+      ]
     },
     {
       "userList": [],
@@ -97,14 +106,383 @@
     {
       "userList": [],
       "id": 12
+    },
+    {
+      "userList": [],
+      "id": 13
+    },
+    {
+      "userList": [],
+      "id": 14
+    },
+    {
+      "userList": [],
+      "id": 15
+    },
+    {
+      "userList": [],
+      "id": 16
+    },
+    {
+      "userList": [],
+      "id": 17
+    },
+    {
+      "userList": [],
+      "id": 18
+    },
+    {
+      "userList": [],
+      "id": 19
+    },
+    {
+      "userList": [],
+      "id": 20
+    },
+    {
+      "userList": [],
+      "id": 21
+    },
+    {
+      "userList": [],
+      "id": 22
+    },
+    {
+      "userList": [],
+      "id": 23
+    },
+    {
+      "userList": [],
+      "id": 24
+    },
+    {
+      "userList": [],
+      "id": 25
+    },
+    {
+      "userList": [],
+      "id": 26
+    },
+    {
+      "userList": [],
+      "id": 27
+    },
+    {
+      "userList": [],
+      "id": 28
+    },
+    {
+      "userList": [],
+      "id": 29
+    },
+    {
+      "userList": [],
+      "id": 30
+    },
+    {
+      "userList": [],
+      "id": 31
+    },
+    {
+      "userList": [],
+      "id": 32
+    },
+    {
+      "userList": [],
+      "id": 33
+    },
+    {
+      "userList": [],
+      "id": 34
+    },
+    {
+      "userList": [],
+      "id": 35
+    },
+    {
+      "userList": [],
+      "id": 36
+    },
+    {
+      "userList": [],
+      "id": 37
+    },
+    {
+      "userList": [],
+      "id": 38
+    },
+    {
+      "userList": [],
+      "id": 39
+    },
+    {
+      "userList": [],
+      "id": 40
+    },
+    {
+      "userList": [],
+      "id": 41
+    },
+    {
+      "userList": [],
+      "id": 42
+    },
+    {
+      "userList": [],
+      "id": 43
+    },
+    {
+      "userList": [],
+      "id": 44
+    },
+    {
+      "userList": [],
+      "id": 45
+    },
+    {
+      "userList": [],
+      "id": 46
+    },
+    {
+      "userList": [],
+      "id": 47
+    },
+    {
+      "userList": [],
+      "id": 48
+    },
+    {
+      "userList": [],
+      "id": 49
+    },
+    {
+      "userList": [],
+      "id": 50
+    },
+    {
+      "userList": [],
+      "id": 51
+    },
+    {
+      "userList": [],
+      "id": 52
+    },
+    {
+      "userList": [],
+      "id": 53
+    },
+    {
+      "userList": [],
+      "id": 54
+    },
+    {
+      "userList": [],
+      "id": 55
+    },
+    {
+      "userList": [],
+      "id": 56
+    },
+    {
+      "userList": [],
+      "id": 57
+    },
+    {
+      "userList": [],
+      "id": 58
+    },
+    {
+      "userList": [],
+      "id": 59
+    },
+    {
+      "userList": [],
+      "id": 60
+    },
+    {
+      "userList": [],
+      "id": 61
+    },
+    {
+      "userList": [],
+      "id": 62
+    },
+    {
+      "userList": [],
+      "id": 63
+    },
+    {
+      "userList": [],
+      "id": 64
+    },
+    {
+      "userList": [],
+      "id": 65
+    },
+    {
+      "userList": [],
+      "id": 66
+    },
+    {
+      "userList": [],
+      "id": 67
+    },
+    {
+      "userList": [],
+      "id": 68
+    },
+    {
+      "userList": [],
+      "id": 69
+    },
+    {
+      "userList": [],
+      "id": 70
+    },
+    {
+      "userList": [],
+      "id": 71
+    },
+    {
+      "userList": [],
+      "id": 72
+    },
+    {
+      "userList": [],
+      "id": 73
+    },
+    {
+      "userList": [],
+      "id": 74
+    },
+    {
+      "userList": [],
+      "id": 75
+    },
+    {
+      "userList": [],
+      "id": 76
+    },
+    {
+      "userList": [],
+      "id": 77
+    },
+    {
+      "userList": [],
+      "id": 78
+    },
+    {
+      "userList": [],
+      "id": 79
+    },
+    {
+      "userList": [],
+      "id": 80
+    },
+    {
+      "userList": [],
+      "id": 81
+    },
+    {
+      "userList": [],
+      "id": 82
+    },
+    {
+      "userList": [],
+      "id": 83
+    },
+    {
+      "userList": [],
+      "id": 84
+    },
+    {
+      "userList": [],
+      "id": 85
+    },
+    {
+      "userList": [],
+      "id": 86
+    },
+    {
+      "userList": [],
+      "id": 87
+    },
+    {
+      "userList": [],
+      "id": 88
+    },
+    {
+      "userList": [],
+      "id": 89
+    },
+    {
+      "userList": [],
+      "id": 90
+    },
+    {
+      "userList": [],
+      "id": 91
+    },
+    {
+      "userList": [],
+      "id": 92
+    },
+    {
+      "userList": [],
+      "id": 93
+    },
+    {
+      "userList": [],
+      "id": 94
+    },
+    {
+      "userList": [],
+      "id": 95
+    },
+    {
+      "userList": [],
+      "id": 96
+    },
+    {
+      "userList": [],
+      "id": 97
+    },
+    {
+      "userList": [],
+      "id": 98
+    },
+    {
+      "userList": [],
+      "id": 99
+    },
+    {
+      "userList": [],
+      "id": 100
+    },
+    {
+      "userList": [],
+      "id": 101
+    },
+    {
+      "userList": [],
+      "id": 102
+    },
+    {
+      "userList": [],
+      "id": 103
+    },
+    {
+      "userList": [],
+      "id": 104
+    },
+    {
+      "userList": [],
+      "id": 105
+    },
+    {
+      "userList": [],
+      "id": 106
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "email": "작성자 아이디",
-      "body": "some comment",
-      "postId": "1"
-    }
-  ]
+  "comments": []
 }
