@@ -48,3 +48,4 @@ React 아웃소싱 팀프로젝트 2023.07.17-2023.07.24
 | 댓글 수정 | /comments/:id | `PATCH`   |comment ID|      |
 | 댓글 등록 | /comments/:id | `DELETE`   | comment ID |      |
 
+![image](https://github.com/songhsb/triptoday/assets/126348461/f8772397-d39e-4d9a-a65c-f7275de056dc)
